@@ -1,0 +1,22 @@
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social {
+  background-color: white;
+  border-radius: 13%;
+  width: 35px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: white;
+  margin-bottom: 10px;
+}
+
+#insta {
+  border-radius: 35%;
+}

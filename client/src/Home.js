@@ -1,14 +1,19 @@
-    import React from 'react';
-    import Image from './images/performance.jpg';
-    import './Home.css';
-    
-    function Home() {
-        return (
-            <div>
-                <img className = "homeImage" src = {Image}/>
+import React from 'react';
+import Image from './images/performance.jpg';
+import './Home.css';
+
+function Home() {
+    return (
+        <div className="homeContainer">
+            <img className="homeImage" src={Image} />
+            <div className="whatPlay">
+                <h1>Check What's Playing</h1>
+                <button>What's Playing</button>
             </div>
-        )
-    }
-    
-    export default Home;
-    
+
+            
+        </div>
+    )
+}
+
+export default Home;
