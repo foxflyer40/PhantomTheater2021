@@ -6,6 +6,7 @@ import CurrentShow from './reactComponents/currentshow/CurrentShow'
 import About from './About';
 import Artist from './Artist';
 import Reserve from './Reserve';
+import firebase from './components/Firebase/firebase.js'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

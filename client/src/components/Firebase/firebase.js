@@ -1,25 +1,35 @@
-import app from 'firebase/app'
+
+import firebase from 'firebase/app'
+// import 'firebase/auth'
+import 'firebase/database'
+import 'firebase/storage'
 
 
 const config = {
-   apiKey: process.env.REACT_APP_API_KEY,
-   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-   databaseURL: process.env.REACT_APP_DATABASE_URL,
-   projectId: process.env.REACT_APP_PROJECT_ID,
-   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-   appId: process.env.REACT_APP_APPID
-};
-
-
-class Firebase {
-   constructor() {
-      app.initializeApp(config)
-   }
+   apiKey: "AIzaSyC32BYfJa6MVeFxrCqnToHtY-jXTnyvX5Q",
+   authDomain: "phantom-theater.firebaseapp.com",
+   databaseURL: "https://phantom-theater.firebaseio.com",
+   projectId: "phantom-theater",
+   storageBucket: "phantom-theater.appspot.com",
+   messagingSenderId: "639829835229",
+   appId: "1:639829835229:web:380419746959a2c613ca34"
 }
 
 
-export default Firebase
+firebase.initializeApp(config)
+const database = firebase.database()
+const ref = database.ref()
+
+async function read() {
+
+   let myVar = await ref.once('value')
+      
+   return myVar
+}
+
+read()
+
+export default firebase
 
 
 
