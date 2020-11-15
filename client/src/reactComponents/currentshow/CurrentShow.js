@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from './images/kooza-show.jpg'
+import Image from '../images/kooza-show.jpg'
 import './CurrentShow.css'
 
 function CurrentShow() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
-import Facebook from './images/facebook.png'
-import Instagram from './images/instagram.png'
+import Facebook from '../images/facebook.png'
+import Instagram from '../images/instagram.png'
 
 //copyright info
 //social media buttons

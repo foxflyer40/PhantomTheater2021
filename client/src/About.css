@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.about p {
+  color: black;
+}
+
+.aboutImage1, .aboutImage3 {
+  width: 40vw;
+  float: right;
+  padding-left:15px;
+}
+
+.aboutImage2 {
+  width: 40vw;
+  float: left;
+  padding-left:15px;
+}
+
+
+.aboutWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 15px;
+  text-align: justify;
+}
+
+.contactWrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin: 20px 15px;
+  text-align: justify;
+}
+
+.sponsorsWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 15px;
+  text-align: justify;
+}
+
