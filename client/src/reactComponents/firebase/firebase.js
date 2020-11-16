@@ -3,7 +3,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 
-// import 'firebase/auth'
+ import 'firebase/auth'
 // import 'firebase/database'
 // import 'firebase/storage'
 
@@ -18,31 +18,23 @@ const firebaseConfig = {
    appId: "1:915188435781:web:f47068e4ba636fb18a4c2c"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-
-
-
-
-
-
-
-
-
+const app = firebase.initializeApp(firebaseConfig);
 
 
 
 
 // set firebase as window accessible 
-window.firebase = firebase;
+// window.firebase = firebase;
 
 //export the database
-export const firestore = firebase.firestore();
+export const firestore = app.firestore();
 
 // use firebase internal timestamps
 firestore.settings({ timestampsInSnapshots: true });
 
 // export the component
 export default firebase;
+
+export const auth = app.auth()
 
 
