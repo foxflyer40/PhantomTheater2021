@@ -17,10 +17,10 @@ function Admin() {
 
 
    // write to shows collection
-   async function enterNewShow() {
+   async function enterNewShow(event) {
+      event.preventDefault()
       console.log('new show fired')
-      //on click of submit add values to form input
-
+      
       // docRef and .add return a new id# assigned to a new blank entry in the db
       const docRef = await firestore.collection('shows').add(show)
       // use the new docRef to get the blank db item
@@ -30,27 +30,27 @@ function Admin() {
       const newShow = collectAllIdsAndDocs(doc)
    }
 
-   function handleSubmit(event) {
+   function handleSubmit(event) { // combine these two functions
       event.preventDefault()
-      // recieve input from form
-      const target = event.target
-      const value = target.value
-      const name = target.name
-
-      console.log(name)
+      // form sets state onChange - 
+      // read state
+      console.log(title, ' / ', type, ' / ', blurb)
 
       // make object for insertion in db
+
+
+      // pass it to enterNewShow to go to db
    }
 
    return (
       <div>
-         <form id='adminForm' >
+         <form id='adminForm' onSubmit={enterNewShow}>
             <label>
                Show Title:
             <input
                   type='text'
                   name='titleIn'
-                  onSubmit={handleSubmit}
+                  onChange={evt => setTitle(evt.target.value)}
                ></input>
             </label>
 
@@ -61,7 +61,7 @@ function Admin() {
             <input
                   type='text'
                   name='blurbIn'
-                  onSubmit={handleSubmit}
+                  onChange={evt => setBlurb(evt.target.value)}
                ></input>
             </label>
 
@@ -72,6 +72,7 @@ function Admin() {
             <input
                   type='text'
                   name='typeIn'
+                  onChange={evt => setType(evt.target.value)}
                ></input>
             </label>
             <br />
