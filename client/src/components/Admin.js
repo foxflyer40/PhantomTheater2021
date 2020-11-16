@@ -44,7 +44,7 @@ function Admin() {
 
    return (
       <div>
-         <form id='adminForm' onSubmit={enterNewShow}>
+         <form id='adminForm' onSubmit={handleSubmit}>
             <label>
                Show Title:
             <input

@@ -44,7 +44,7 @@ function AllShows() {
          allShowsList.appendChild(displayBreak)
       })
    }
-
+seeAllShows()
    return (
       <div>
 

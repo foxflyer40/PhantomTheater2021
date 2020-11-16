@@ -9,7 +9,7 @@ import 'firebase/firestore'
 
 // configure firebase
 const firebaseConfig = {
-   apiKey: "AIzaSyBi_A_sbAYFbzySxXCEWpHmwcA8U8GH8Ao",
+   apiKey: 'process.env.REACT_APP_API_KEY',
    authDomain: "phantom-database-ee13a.firebaseapp.com",
    databaseURL: "https://phantom-database-ee13a.firebaseio.com",
    projectId: "phantom-database-ee13a",
