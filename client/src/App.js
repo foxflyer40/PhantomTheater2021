@@ -6,9 +6,10 @@ import CurrentShow from './reactComponents/currentshow/CurrentShow'
 import About from './About';
 import Artist from './Artist';
 import Reserve from './Reserve';
-import Admin from './components/Admin'
-import AllShows from './components/AllShows'
-import firebase from './components/firebase.js'
+import Admin from './reactComponents/forms/Admin'
+import AllShows from './reactComponents/allShows/AllShows'
+import Login from './reactComponents/forms/Login'
+
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -23,9 +24,10 @@ function App() {
                <Route exact path="/">
                   <Home />
                   <CurrentShow />
-                  <Admin />
-                  <AllShows />
                </Route>
+               <Route path="./allShows" component={AllShows} />
+               <Route path="/admin" component={Admin} />
+               <Route path='/login' component={Login} />
                <Route path="/About" component={About} />
                <Route path="/Artist" component={Artist} />
                <Route path="/Reserve" component={Reserve} />

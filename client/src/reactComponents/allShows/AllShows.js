@@ -1,6 +1,6 @@
 import React from 'react';
 // get the database
-import { firestore } from './firebase';
+import { firestore } from '../firebase/firebase';
 
 // repetitive code that gets all ids and documents in a collection for .map
 const collectAllIdsAndDocs = doc => {
