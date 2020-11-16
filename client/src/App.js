@@ -6,31 +6,38 @@ import CurrentShow from './reactComponents/currentshow/CurrentShow'
 import About from './About';
 import Artist from './Artist';
 import Reserve from './Reserve';
+import Admin from './components/Admin'
+import AllShows from './components/AllShows'
+import firebase from './components/firebase.js'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Nav />
+   return (
+      <Router>
+         <div className="App">
+            <Nav />
 
-        <Switch>
+            <Switch>
 
-          <Route exact path="/">
-            <Home />
-            <CurrentShow />
-          </Route>
-          <Route path="/About" component={About} />
-          <Route path="/Artist" component={Artist} />
-          <Route path="/Reserve" component={Reserve} />
+               <Route exact path="/">
+                  <Home />
+                  <CurrentShow />
+                  <Admin />
+                  <AllShows />
+               </Route>
+               <Route path="/About" component={About} />
+               <Route path="/Artist" component={Artist} />
+               <Route path="/Reserve" component={Reserve} />
+               
+            </Switch>
 
-        </Switch>
+            
 
-        <Footer />
-      </div>
-    </Router>
-  );
+            <Footer />
+         </div>
+      </Router>
+   );
 }
 
 export default App;
