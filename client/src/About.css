@@ -1,49 +1,106 @@
-* {
-  margin: 0;
-  padding: 0;
+@media screen and (min-width: 200px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about p {
+    color: black;
+  }
+
+  .aboutImage1,
+  .aboutImage2 {
+    width: 80vw;
+    margin-bottom: 15px;
+  }
+
+  .aboutImgDiv {
+    display: flex;
+    justify-content: center;
+  }
+
+  h3 {
+    font-size: 25pt;
+    text-align: center;
+  }
+
+  .aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px;
+    text-align: justify;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px;
+    text-align: justify;
+  }
+
+  .sponsorsWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px;
+    text-align: justify;
+  }
+
+  .sponsorsList {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-width: 150px;
+    -moz-column-width: 150px;
+    column-width: 150px;
+    column-gap: 20px;
+  }
+
+  .sponsorHowTo {
+    font-size: 14pt;
+  }
 }
 
-.about {
-  display: flex;
-  flex-direction: column;
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  h3 {
+    font-size: 25pt;
+  }
+
+  .aboutImage1,
+  .aboutImage3 {
+    width: 40vw;
+    float: right;
+    padding-left: 15px;
+  }
+
+  .aboutImage2 {
+    width: 40vw;
+    float: left;
+  }
+
+  .aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px;
+    text-align: justify;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    margin: 20px 15px;
+    text-align: justify;
+  }
+
+  .sponsorsWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 15px;
+    text-align: justify;
+  }
 }
-
-.about p {
-  color: black;
-}
-
-.aboutImage1, .aboutImage3 {
-  width: 40vw;
-  float: right;
-  padding-left:15px;
-}
-
-.aboutImage2 {
-  width: 40vw;
-  float: left;
-  padding-left:15px;
-}
-
-
-.aboutWrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 15px;
-  text-align: justify;
-}
-
-.contactWrapper {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  margin: 20px 15px;
-  text-align: justify;
-}
-
-.sponsorsWrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 15px;
-  text-align: justify;
-}
-

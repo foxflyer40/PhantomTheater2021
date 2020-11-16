@@ -5,7 +5,7 @@ import './CurrentShow.css'
 function CurrentShow() {
   return (
     <div className="currentShowContainer">
-      <div className="images">
+      <div className="imageBox">
         <div className="image_row">
           <img src={Image} />
           <h3>Show Title</h3>

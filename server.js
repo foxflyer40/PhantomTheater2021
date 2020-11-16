@@ -10,7 +10,9 @@ require('dotenv').config()
 app.use(express.static(path.resolve('./client/public')))
 
 
-//  app.get('/admin')
+// app.get('/admin', (req, res) => {
+//    res.sendFile(path.resolve('/index/admin'))
+// } )
 
 
 
