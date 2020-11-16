@@ -1,13 +1,10 @@
 @media screen and (min-width: 200px) {
-  .currentShowContainer {
-    height: 100vw;
-  }
-  
-  .imageBox {
+    .imageBox {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: auto;
     justify-content: center;
+    transition: transform 0.2s ease-out;
   }
 
   .image_row {
@@ -16,24 +13,48 @@
     align-items: center;
     justify-content: space-around;
     margin: 15px;
-    text-align: justify;
   }
 
   .image_row img {
     height: 25vw;
-    width: auto;
     box-shadow: 0 25px 50px rgb(196, 196, 196);
-    transition: transform 0.2s ease-out;
+    transition: transform 0.5s ease-out;
     border-radius: 12px;
     margin-bottom: 5px;
+  }
+  
+  .imageBox img:hover{
+    transform: scale(1.1);
   }
 
   .imageBox p {
     color: black;
-    
+    text-align: justify;
   }
 
-  .image_row img:hover {
-    transform: scale(1.1);
+
+}
+
+@media screen and (min-width:400px) and (max-width:750px){
+  .image_row h3{
+    font-size:16pt;
+    margin-bottom:10px;
+    margin-top:11px;
+  }
+  .image_row p{
+    font-size: 11pt;
   }
 }
+
+@media screen and (min-width:751px){
+  .image_row h3{
+    font-size:30pt;
+    margin-bottom:10px;
+    margin-top:11px;
+  }
+  .image_row p{
+    font-size: 14pt;
+    width:25vw;
+  }
+}
+

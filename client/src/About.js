@@ -1,9 +1,6 @@
 import React from 'react'
-import Nav from './reactComponents/nav/Nav'
-import Footer from './reactComponents/footer/Footer'
 import Masks from "./reactComponents/images/masks.jpg"
 import Dance from "./reactComponents/images/moderndance.jpg"
-import Stage from "./reactComponents/images/stage.jpg"
 import './About.css'
 
 //about us/contact us form/sponsors
