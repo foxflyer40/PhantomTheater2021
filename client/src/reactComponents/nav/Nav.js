@@ -17,7 +17,7 @@ function Nav() {
         <Link to="/"><img className="logo" src={Logo} /></Link>
         { /* This is the links on the right side of the nav bar */}
         <ul className="ul-List">
-          <Link className="tag">Place</Link>
+          <Link to="/Season" className="tag">Season</Link>
           <Link to="/Reserve" className="tag">Reserve</Link>
         </ul>
       </nav>

@@ -1,12 +1,54 @@
-/* .artistsContainer{
-
-} */
-
-p{
-color:black;
+.artistsContainer {
+  background-color: #1d2433;
+  color: white;
 }
 
-.artistImage{
-height:150px;
-width:auto;   
+.artistImage {
+  height: 200px;
+  width: auto;
+  margin-right: 5%;
+}
+
+.artist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artistImageContainer {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.text_container a {
+  text-decoration: none;
+  color: chartreuse;
+}
+
+.text_container {
+  margin-top: 20px;
+  width: 90vw;
+  text-align: center;
+  margin: 20px 6% 0px 6%;
+  font-size: 14pt;
+}
+.text_container h5 {
+  font-size: 14pt;
+}
+.artistsContainer h1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: chartreuse;
+  font-size: 40pt;
+}
+
+.line {
+  border: solid 1px;
+  border-color: #ffae57;
+  border-left: none;
+  border-right: none;
+  width: 60vw;
+  height: 5px;
+  margin-top: 50px;
+  margin-bottom: 60px;
 }

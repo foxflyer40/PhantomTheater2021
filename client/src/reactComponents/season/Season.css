@@ -1,0 +1,34 @@
+.season_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom:50px;
+    padding-top:50px;
+    background-color: #1d2433;
+    color:white;
+    align-items: center;
+}
+
+.calendar_season img{
+ width: 30vw;
+ margin-right:100px;
+}
+.season_list{
+    list-style:none;
+}
+ul a{
+    text-decoration: none;
+    margin-right:20px;
+    color:chartreuse;
+    
+}
+
+.season_list li{
+    padding-bottom:20px;
+}
+
+.calendar_container{
+    display: flex;
+    padding-top:50px;
+}

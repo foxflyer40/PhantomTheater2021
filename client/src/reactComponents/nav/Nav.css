@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-around;
     min-height: 8vh;
-    width:100vw;
+    
     background-color: black;
     align-items: center;
   }
