@@ -1,6 +1,6 @@
 import React from 'react'
-import Masks from "./reactComponents/images/masks.jpg"
-import Dance from "./reactComponents/images/moderndance.jpg"
+import Masks from "../images/masks.jpg"
+import Dance from "../images/moderndance.jpg"
 import './About.css'
 
 //about us/contact us form/sponsors
