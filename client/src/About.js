@@ -28,7 +28,7 @@ Direct from a Sears Roebuck catalog kit, the historic Edgcomb Barn is Phantom Th
         BOX 416
         WARREN, VT 05674
 (802) 496-5997
-PHANTOM THEATER IS LOCATED AT THE CORNER OF AIRPORT & DUMP ROADS IN WARREN, VERMONT.
+PHANTOM THEATER IS LOCATED AT THE CORNER OF AIRPORT and DUMP ROADS IN WARREN, VERMONT.
 Please respect our neighbors' wishes and access Phantom Theater from East Warren Road. </p>
 
       </div>
