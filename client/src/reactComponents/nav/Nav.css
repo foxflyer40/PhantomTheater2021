@@ -1,58 +1,48 @@
-@media screen and (min-width: 200px) {
-  /* Targetting the Logo image to resize it */
-  .logo {
-    height: 75px;
-    width: auto;
-  }
-
-  /* Nav container styling */
+@media screen and (min-width: 800px) {
   nav {
     display: flex;
-    justify-content: space-around;
-    min-height: 8vh;
-    
+    width: 100%;
+    height: 20%;
     background-color: black;
+    color: chartreuse;
+    justify-content: center;
     align-items: center;
   }
 
-  /* list styling */
-  .tag {
-    color: white;
+  a {
     text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 10px;
+    color: chartreuse;
+    margin: 0 40px;
   }
 
-  /* list styling */
-  .ul-List {
-    display: flex;
+  li {
     list-style: none;
-    justify-content: space-around;
-    width: 20%;
-  }
-}
-
-@media screen and (min-width: 400px) and (max-width:750px){
-  .tag{
-   font-size:12pt ;
-   margin-right:10px;
-   
-  }
-  .ul-List{
-    padding-left: 15px;
-    padding-right: 6px;
-  }
-}
-
-@media screen and (min-width:751px) {
-  .tag{
     font-size: 14pt;
-    margin-right:15px;
   }
-  .ul-List{
-    padding-left: 15px;
-    
+
+  .logo {
+    width: 300px;
+    height: auto;
+  }
+
+  .logo img {
+    width: 200px;
+    height: auto;
+    z-index: 1;
+    padding-top: 20px;
   }
 }
 
+@media screen and (min-width:200px) {
+  .menuNavBar{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    width: 200px;
+  }
+
+
+}
