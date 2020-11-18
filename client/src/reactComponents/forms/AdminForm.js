@@ -2,49 +2,32 @@ import React, { useState } from 'react';
 // get the database
 import { firestore } from '../firebase/firebase';
 
-// repetitive code that gets all ids and documents in a collection for .map
-const collectAllIdsAndDocs = doc => {
-   return { id: doc.id, ...doc.data() }
-}
 
-
-function Admin() {
+function AdminForm() {
+   // create state for show information
    let [title, setTitle] = useState({})
    let [type, setType] = useState({})
    let [blurb, setBlurb] = useState({})
 
-   let show = [title, type, blurb]
+   // construct object from state to pass to db
+   let show = { title: title, type: type, blurb: blurb }
 
-
-   // write to shows collection
+   // write current state to shows collection
    async function enterNewShow(event) {
       event.preventDefault()
-      console.log('new show fired')
-      
-      // docRef and .add return a new id# assigned to a new blank entry in the db
-      const docRef = await firestore.collection('shows').add(show)
-      // use the new docRef to get the blank db item
-      const doc = await docRef.get()
-
-      // connect the new entry with the id returned 
-      const newShow = collectAllIdsAndDocs(doc)
+      // get the collection 'shows' | .doc creates new entry with auto ID | .set(show) fills new entry with show object built from state values set by form
+      console.log('show before: ', show)
+      firestore.collection('shows').doc().set(show)
+      event.target.titleIn.value = ''
+      event.target.blurbIn.value = ''
+      event.target.typeIn.value = ''
+      console.log('show after: ', show)
    }
 
-   function handleSubmit(event) { // combine these two functions
-      event.preventDefault()
-      // form sets state onChange - 
-      // read state
-      console.log(title, ' / ', type, ' / ', blurb)
-
-      // make object for insertion in db
-
-
-      // pass it to enterNewShow to go to db
-   }
-
+   // form sets state on input change and fires enterNewShow on submit
    return (
       <div>
-         <form id='adminForm' onSubmit={handleSubmit}>
+         <form id='adminForm' onSubmit={enterNewShow}>
             <label>
                Show Title:
             <input
@@ -82,4 +65,4 @@ function Admin() {
    )
 }
 
-export default Admin
+export default AdminForm
