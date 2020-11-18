@@ -35,6 +35,7 @@ function App() {
                   <Route path="/adminForm" component={AdminForm} />
                   <Route path="/proposalForm" component={ProposalForm} />
                   <Route path='/login' component={Login} />
+                  <Route path='/adminDash' component={Dashboard} />
                   <Route path="/About" component={About} />
                   <Route path="/Artist" component={Artist} />
                   <Route path="/Reserve" component={Reserve} />

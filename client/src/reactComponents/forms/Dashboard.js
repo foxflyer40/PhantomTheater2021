@@ -1,82 +1,33 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 // get the database
 import { firestore } from "../firebase/firebase";
+import { useHistory } from 'react-router-dom'
+
 
 // repetitive code that gets all ids and documents in a collection for .map
 const collectAllIdsAndDocs = (doc) => {
   return { id: doc.id, ...doc.data() };
 };
 
+
 function Dashboard() {
-  let [title, setTitle] = useState({});
-  let [type, setType] = useState({});
-  let [blurb, setBlurb] = useState({});
 
-  let show = [title, type, blurb];
+const history = useHistory()
 
-  // write to shows collection
-  async function enterNewShow(event) {
-    event.preventDefault();
-    console.log("new show fired");
+function editShow() {
+   history.push('/adminForm')
+}
 
-    // docRef and .add return a new id# assigned to a new blank entry in the db
-    const docRef = await firestore.collection("shows").add(show);
-    // use the new docRef to get the blank db item
-    const doc = await docRef.get();
-
-    // connect the new entry with the id returned
-    const newShow = collectAllIdsAndDocs(doc);
-  }
-
-  function handleSubmit(event) {
-    // combine these two functions
-    event.preventDefault();
-    // form sets state onChange -
-    // read state
-    console.log(title, " / ", type, " / ", blurb);
-
-    // make object for insertion in db
-
-    // pass it to enterNewShow to go to db
-  }
 
   return (
     <div>
       <h2>Admin Dashboard</h2>
-      <form id="adminForm" onSubmit={handleSubmit}>
-        <label>
-          Show Title:
-          <input
-            type="text"
-            name="titleIn"
-            onChange={(evt) => setTitle(evt.target.value)}
-          ></input>
-        </label>
-
-        <br />
-
-        <label>
-          Show Blurb:
-          <input
-            type="text"
-            name="blurbIn"
-            onChange={(evt) => setBlurb(evt.target.value)}
-          ></input>
-        </label>
-
-        <br />
-
-        <label>
-          Type:
-          <input
-            type="text"
-            name="typeIn"
-            onChange={(evt) => setType(evt.target.value)}
-          ></input>
-        </label>
-        <br />
-        <input type="submit" value="submit"></input>
-      </form>
+      <div className='className="d-flex align-items-space-around justify-content-center' >
+      <Button type='submit'>View/Edit Show Proposal</Button>
+      <Button onClick={editShow} type='submit'>Add/Edit Existing Show</Button>
+      <Button type='submit'>Add/Edit Artist</Button>
+      </div>
     </div>
   );
 }

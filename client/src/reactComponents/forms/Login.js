@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { useAuth } from "./AuthContext";
+import { useHistory } from 'react-router-dom'
 
 export default function Login() {
   //grabs input from the form
@@ -14,6 +15,8 @@ export default function Login() {
   //loading is set in state to disable button after it is clicked
   //prevents multiple users from being created accidentally
   const [loading, setLoading] = useState(false);
+  
+  const history = useHistory()
 
   async function handleSubmit(evt) {
     evt.preventDefault();
@@ -25,6 +28,7 @@ export default function Login() {
       //waits for login to happen, otherwise, catch block is run and error is printed
       await login(emailRef.current.value, passwordRef.current.value);
       console.log("Login successful");
+      history.push('/adminDash')
     } catch {
       setError("Login Failed");
     }

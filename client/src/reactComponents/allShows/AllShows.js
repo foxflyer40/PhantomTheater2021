@@ -25,6 +25,7 @@ function AllShows() {
          let showType = show.type
          let showBlurb = show.blurb
          // create dom elements to add to list
+         //not needed
          let allShowsList = document.getElementById('all-shows-list')
          let displayId = document.createElement('h6')
          let displayTitle = document.createElement('h3')
@@ -37,6 +38,7 @@ function AllShows() {
          displayType.textContent = showType
          displayBlurb.textContent = showBlurb
          // append the dislpay to the container
+         //not needed
          allShowsList.appendChild(displayId)
          allShowsList.appendChild(displayTitle)
          allShowsList.appendChild(displayType)
