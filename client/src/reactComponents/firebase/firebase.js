@@ -1,24 +1,26 @@
-
 import firebase from 'firebase/app'
+import 'firebase/auth'
 import 'firebase/firestore'
 
-
- import 'firebase/auth'
 // import 'firebase/database'
 // import 'firebase/storage'
 
 // configure firebase
-const firebaseConfig = {
-   apiKey: 'process.env.REACT_APP_API_KEY',
-   authDomain: "phantom-database-ee13a.firebaseapp.com",
-   databaseURL: "https://phantom-database-ee13a.firebaseio.com",
-   projectId: "phantom-database-ee13a",
-   storageBucket: "phantom-database-ee13a.appspot.com",
-   messagingSenderId: "915188435781",
-   appId: "1:915188435781:web:f47068e4ba636fb18a4c2c"
-};
+const app =  firebase.initializeApp({
+   apiKey: 'AIzaSyC-QSpHlepjOuyJHG8pp7sT6Gp8WVzDM9A',
+   authDomain: 'phantom-auth-test.firebaseapp.com',
+   databaseURL: 'https://phantom-auth-test.firebaseio.com',
+   projectId: 'phantom-auth-test',
+   storageBucket: 'phantom-auth-test.appspot.com',
+   messagingSenderId: '784040185097',
+   appId: '1:784040185097:web:71819b25d547914b6ad7d8'
+});
+
+
+
+
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+// const app = firebase.initializeApp(firebaseConfig);
 
 
 
@@ -33,7 +35,7 @@ export const firestore = app.firestore();
 firestore.settings({ timestampsInSnapshots: true });
 
 // export the component
-export default firebase;
+export default app;
 
 export const auth = app.auth()
 
