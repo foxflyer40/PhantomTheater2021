@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 // get the database
-import { firestore  } from "../firebase/firebase";
+import { firestore } from "../firebase/firebase";
 
 
 
 
 function AdminForm() {
-  // create state for show information
-  let [title, setTitle] = useState({});
-  let [type, setType] = useState({});
-  let [blurb, setBlurb] = useState({});
-  let [imageLg, setImageLg] = useState({});
-  let [imageSm, setImageSm] = useState({});
+   // create state for show information
+   let [title, setTitle] = useState({});
+   let [type, setType] = useState({});
+   let [blurb, setBlurb] = useState({});
+   let [imageLgName, setImageLgName] = useState({})
+   let [imageLg, setImageLg] = useState({});
+   let [imageSm, setImageSm] = useState({});
 
-  let [status, setStatus] = useState({});  //proposed / Booked / archived
-  let [dates, setDates] = useState([]);  // creates array of dates/times
+   let [status, setStatus] = useState({});  //proposed / Booked / archived
+   let [dates, setDates] = useState([]);  // creates array of dates/times
 
    // create state for each artist field
    let [displayName, setDisplayName] = useState({})
@@ -22,6 +23,7 @@ function AdminForm() {
    let [phone, setPhone] = useState({})
    let [email, setEmail] = useState({})
    let [bio, setBio] = useState({})
+
    let [image1, setImage1] = useState({})
    let [image2, setImage2] = useState({})
    let [image3, setImage3] = useState({})
@@ -29,13 +31,18 @@ function AdminForm() {
    let [video1, setVideo1] = useState({})
    let [link1, setLink1] = useState({})
    let [link2, setLink2] = useState({})
-  
-  
-// construct object from state to pass to db
+
+
+   // construct object from state to pass to db
    let show = {
       title: title,
-      type: type, 
+      type: type,
       blurb: blurb,
+      imageLgName: imageLgName,
+      imageLg: imageLg,
+      imageSm: imageSm,
+      status: status,
+      dates: dates,
       displayName: displayName,
       contactName: contactName,
       phone: phone,
@@ -50,17 +57,18 @@ function AdminForm() {
       link2: link2
    }
 
- 
-  // write current state to shows collection
-  async function enterNewShow(event) {
-    event.preventDefault();
-    // get the collection 'shows' | .doc creates new entry with auto ID | .set(show) fills new entry with show object built from state values set by form
-  
-    firestore.collection("shows").doc().set(show);
-    event.target.titleIn.value = "";
-    event.target.blurbIn.value = "";
-     event.target.typeIn.value = "";
-           event.target.displayNameInput.value = ''
+
+   // write current state to shows collection
+   async function enterNewShow(event) {
+      event.preventDefault();
+      // get the collection 'shows' | .doc creates new entry with auto ID | .set(show) fills new entry with show object built from state values set by form
+console.log(show)
+
+      firestore.collection("shows").doc().set(show);
+      event.target.titleIn.value = "";
+      event.target.blurbIn.value = "";
+      event.target.typeIn.value = "";
+      event.target.displayNameInput.value = ''
       event.target.contactNameInput.value = ''
       event.target.addressInput.value = ''
       event.target.phoneInput.value = ''
@@ -73,59 +81,69 @@ function AdminForm() {
       event.target.video1Input.value = ''
       event.target.link1Input.value = ''
       event.target.link2Input.value = ''
-   
-  }
 
+   }
 
-
-
-  // form sets state on input change and fires enterNewShow on submit
-  return (
-    <div>
-      <form id="adminForm" onSubmit={enterNewShow}>
-        <label>
-          Show Title:
+   // form sets state on input change and fires enterNewShow on submit
+   return (
+      <div>
+         <form id="adminForm" onSubmit={enterNewShow}>
+            <label>
+               Show Title:
           <input
-            type="text"
-            name="titleIn"
-            onChange={(evt) => setTitle(evt.target.value)}
-          ></input>
-        </label>
+                  type="text"
+                  name="titleIn"
+                  onChange={(evt) => setTitle(evt.target.value)}
+               ></input>
+            </label>
 
-        <br />
+            <br />
 
-        <label>
-          Show Blurb:
+            <label>
+               Show Blurb:
           <input
-            type="text"
-            name="blurbIn"
-            onChange={(evt) => setBlurb(evt.target.value)}
-          ></input>
-        </label>
+                  type="text"
+                  name="blurbIn"
+                  onChange={(evt) => setBlurb(evt.target.value)}
+               ></input>
+            </label>
 
-        <br />
+            <br />
 
-        <label>
-          Type:
+            <label>
+               Type:
           <input
-            type="text"
-            name="typeIn"
-            onChange={(evt) => setType(evt.target.value)}
-          ></input>
-        </label>
-        <br />
-        <input type="submit" value="submit"></input>
-      </form>
-        
-        {/* <div id='imageUploader'>
-            <progress value='0' max='100' id='uploader'>0%</progress>
-            <input type='file' value='upload' id='btnImageLg'></input>
-           
-        </div> */}
+                  type="text"
+                  name="typeIn"
+                  onChange={(evt) => setType(evt.target.value)}
+               ></input>
+            </label>
+            <br />
+            <input type="submit" value="submit"></input>
+            <br />
+
+            {/* <progress value='0' max='100' id='uploader'>0%</progress> */}
+            <label>
+               File name:
+                <input
+                  type='text'
+                  onChange={evt => {
+                     setImageLgName(evt.target.value)
+                  }}
+               ></input></label>
+            <input
+               type='file'
+               value=''
+               onChange={evt => {
+                  setImageLg(evt.target.files[0])
+               }}
+            ></input>
+
+         </form>
 
 
 
-        
+
          <form id='ArtistForm' onSubmit={enterNewShow} >
             <label>
                Artist Name:
@@ -190,8 +208,8 @@ function AdminForm() {
             <input type='submit' value='submit'></input>
          </form>
 
-    </div>
-  );
+      </div>
+   );
 }
 
 export default AdminForm;

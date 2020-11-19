@@ -17,17 +17,6 @@ const app =  firebase.initializeApp({
 });
 
 
-
-
-// Initialize Firebase
-// const app = firebase.initializeApp(firebaseConfig);
-
-
-
-
-// set firebase as window accessible 
-// window.firebase = firebase;
-
 //export the database
 export const firestore = app.firestore();
 
