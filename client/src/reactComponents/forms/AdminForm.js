@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // get the database
 import { firestore } from "../firebase/firebase";
+import { storage } from '../firebase/firebase'
 
 
 
@@ -8,8 +9,8 @@ import { firestore } from "../firebase/firebase";
 function AdminForm() {
    // create state for show information
    let [title, setTitle] = useState({});
-   let [type, setType] = useState({});
    let [blurb, setBlurb] = useState({});
+   let [type, setType] = useState({});
    let [imageLgName, setImageLgName] = useState({})
    let [imageLg, setImageLg] = useState({});
    let [imageSm, setImageSm] = useState({});
@@ -22,8 +23,8 @@ function AdminForm() {
    let [contactName, setContactName] = useState({})
    let [phone, setPhone] = useState({})
    let [email, setEmail] = useState({})
-   let [bio, setBio] = useState({})
 
+   let [bio, setBio] = useState({})
    let [image1, setImage1] = useState({})
    let [image2, setImage2] = useState({})
    let [image3, setImage3] = useState({})
@@ -62,32 +63,64 @@ function AdminForm() {
    async function enterNewShow(event) {
       event.preventDefault();
       // get the collection 'shows' | .doc creates new entry with auto ID | .set(show) fills new entry with show object built from state values set by form
-console.log(show)
-
-      firestore.collection("shows").doc().set(show);
-      event.target.titleIn.value = "";
-      event.target.blurbIn.value = "";
-      event.target.typeIn.value = "";
-      event.target.displayNameInput.value = ''
-      event.target.contactNameInput.value = ''
-      event.target.addressInput.value = ''
-      event.target.phoneInput.value = ''
-      event.target.emailInput.value = ''
-      event.target.bioInput.value = ''
-      event.target.image1Input.value = ''
-      event.target.image2Input.value = ''
-      event.target.image3Input.value = ''
-      event.target.image4Input.value = ''
-      event.target.video1Input.value = ''
-      event.target.link1Input.value = ''
-      event.target.link2Input.value = ''
-
+      if (!event.target.titleIn.value) {
+         alert('please enter a show.')
+         console.log(show)
+      } else {
+         console.log(show)
+         // write show data to db
+         await firestore.collection("shows").doc().set(show);
+         // clear form inputs
+         event.target.titleIn.value = "";
+         event.target.blurbIn.value = "";
+         event.target.typeIn.value = "";
+         event.target.imageLgNameInput.value = ""
+         event.target.imageLgInput.value = ""
+         event.target.imageSmInput.value = ""
+         event.target.statusIn.value = ""
+         event.target.datesIn.value = ""
+         event.target.displayNameInput.value = ''
+         event.target.contactNameInput.value = ''
+         event.target.phoneInput.value = ''
+         event.target.emailInput.value = ''
+         event.target.bioInput.value = ''
+         event.target.image1Input.value = ''
+         event.target.image2Input.value = ''
+         event.target.image3Input.value = ''
+         event.target.image4Input.value = ''
+         event.target.video1Input.value = ''
+         event.target.link1Input.value = ''
+         event.target.link2Input.value = ''
+// clear state
+         setTitle({})
+         setType({})
+         setBlurb({})
+         setImageLgName({})
+         setImageLg({})
+         setImageSm({})
+         setStatus({})
+         setDates({})
+         setDisplayName({})
+         setContactName({})
+         setPhone({})
+         setEmail({})
+         setBio({})
+         setImage1({})
+         setImage2({})
+         setImage3({})
+         setImage4({})
+         setVideo1({})
+         setLink1({})
+         setLink2({})
+      }
    }
 
    // form sets state on input change and fires enterNewShow on submit
    return (
       <div>
          <form id="adminForm" onSubmit={enterNewShow}>
+            <input type="submit" value="submit"></input>
+            <br />
             <label>
                Show Title:
           <input
@@ -119,32 +152,68 @@ console.log(show)
                ></input>
             </label>
             <br />
-            <input type="submit" value="submit"></input>
-            <br />
+           
 
             {/* <progress value='0' max='100' id='uploader'>0%</progress> */}
             <label>
                File name:
                 <input
                   type='text'
+                  name='imageLgNameInput'
                   onChange={evt => {
                      setImageLgName(evt.target.value)
                   }}
                ></input></label>
+
+            <br />
+            <label>
+               Image Large:
             <input
-               type='file'
-               value=''
-               onChange={evt => {
-                  setImageLg(evt.target.files[0])
-               }}
-            ></input>
+                  type='file'
+                  name='imageLgInput'
+                  value=''
+                  onChange={evt => {
+                     setImageLg(evt.target.files[0])
+                  }}
+               ></input></label>
 
-         </form>
+            <br />
+            <label>
+               Image Small:
+            <input
+                  type='file'
+                  name='imageSmInput'
+                  value=''
+                  onChange={evt => {
+                     setImageSm(evt.target.files[0])
+                  }}
+               ></input></label>
+
+            <br />
+            <label>
+               Status:
+                <input
+                  type='text'
+                  name='statusIn'
+                  onChange={evt => {
+                     setStatus(evt.target.value)
+                  }}
+               ></input></label>
+
+            <br />
+            <label>
+               Dates:
+                <input
+                  type='text'
+                  name="datesIn"
+                  onChange={evt => {
+                     setDates(evt.target.value)
+                  }}
+               ></input></label>
 
 
-
-
-         <form id='ArtistForm' onSubmit={enterNewShow} >
+            <br />
+            <br />
             <label>
                Artist Name:
                <input type='text' name='displayNameInput' onChange={evt => setDisplayName(evt.target.value)}></input>
@@ -204,8 +273,7 @@ console.log(show)
                Link 2:
                <input type='text' name='link2Input' onChange={evt => setLink2(evt.target.value)}></input>
             </label>
-            <br />
-            <input type='submit' value='submit'></input>
+          
          </form>
 
       </div>

@@ -19,6 +19,7 @@ const app =  firebase.initializeApp({
 
 //export the database
 export const firestore = app.firestore();
+export const storage = app.storage();
 
 // use firebase internal timestamps
 firestore.settings({ timestampsInSnapshots: true });

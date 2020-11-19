@@ -1,11 +1,14 @@
 import React from 'react';
 // get the database
 import { firestore } from '../firebase/firebase';
+import { storage } from '../firebase/firebase'
 
 // repetitive code that gets all ids and documents in a collection for .map
 const collectAllIdsAndDocs = doc => {
    return { id: doc.id, ...doc.data() }
 }
+
+
 
 
 
@@ -39,11 +42,11 @@ function AllShows() {
          displayBlurb.textContent = showBlurb
          // append the dislpay to the container
          //not needed
-         allShowsList.appendChild(displayId)
-         allShowsList.appendChild(displayTitle)
-         allShowsList.appendChild(displayType)
-         allShowsList.appendChild(displayBlurb)
-         allShowsList.appendChild(displayBreak)
+         // allShowsList.appendChild(displayId)
+         // allShowsList.appendChild(displayTitle)
+         // allShowsList.appendChild(displayType)
+         // allShowsList.appendChild(displayBlurb)
+         // allShowsList.appendChild(displayBreak)
       })
    }
 seeAllShows()
