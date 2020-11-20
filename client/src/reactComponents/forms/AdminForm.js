@@ -3,15 +3,12 @@ import React, { useState } from "react";
 import { firestore } from "../firebase/firebase";
 import { storage } from '../firebase/firebase'
 
-
-
-
 function AdminForm() {
    // create state for show information
    let [title, setTitle] = useState({});
    let [blurb, setBlurb] = useState({});
    let [type, setType] = useState({});
-   let [imageLgName, setImageLgName] = useState({})
+
    let [imageLg, setImageLg] = useState({});
    let [imageSm, setImageSm] = useState({});
 
@@ -39,7 +36,7 @@ function AdminForm() {
       title: title,
       type: type,
       blurb: blurb,
-      imageLgName: imageLgName,
+
       imageLg: imageLg,
       imageSm: imageSm,
       status: status,
@@ -74,11 +71,11 @@ function AdminForm() {
          event.target.titleIn.value = "";
          event.target.blurbIn.value = "";
          event.target.typeIn.value = "";
-         event.target.imageLgNameInput.value = ""
          event.target.imageLgInput.value = ""
          event.target.imageSmInput.value = ""
          event.target.statusIn.value = ""
          event.target.datesIn.value = ""
+         
          event.target.displayNameInput.value = ''
          event.target.contactNameInput.value = ''
          event.target.phoneInput.value = ''
@@ -91,11 +88,11 @@ function AdminForm() {
          event.target.video1Input.value = ''
          event.target.link1Input.value = ''
          event.target.link2Input.value = ''
-// clear state
+         // clear state
          setTitle({})
          setType({})
          setBlurb({})
-         setImageLgName({})
+
          setImageLg({})
          setImageSm({})
          setStatus({})
@@ -152,25 +149,12 @@ function AdminForm() {
                ></input>
             </label>
             <br />
-           
 
-            {/* <progress value='0' max='100' id='uploader'>0%</progress> */}
-            <label>
-               File name:
-                <input
-                  type='text'
-                  name='imageLgNameInput'
-                  onChange={evt => {
-                     setImageLgName(evt.target.value)
-                  }}
-               ></input></label>
-
-            <br />
             <label>
                Image Large:
             <input
-                  type='file'
-                  name='imageLgInput'
+                  type='text'
+                  name='imageLgIn'
                   value=''
                   onChange={evt => {
                      setImageLg(evt.target.files[0])
@@ -181,8 +165,8 @@ function AdminForm() {
             <label>
                Image Small:
             <input
-                  type='file'
-                  name='imageSmInput'
+                  type='text'
+                  name='imageSmIn'
                   value=''
                   onChange={evt => {
                      setImageSm(evt.target.files[0])
@@ -211,9 +195,8 @@ function AdminForm() {
                   }}
                ></input></label>
 
+            <hr />
 
-            <br />
-            <br />
             <label>
                Artist Name:
                <input type='text' name='displayNameInput' onChange={evt => setDisplayName(evt.target.value)}></input>
@@ -273,7 +256,7 @@ function AdminForm() {
                Link 2:
                <input type='text' name='link2Input' onChange={evt => setLink2(evt.target.value)}></input>
             </label>
-          
+
          </form>
 
       </div>

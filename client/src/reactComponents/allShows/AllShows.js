@@ -1,60 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 // get the database
 import { firestore } from '../firebase/firebase';
-import { storage } from '../firebase/firebase'
+import { storage } from '../firebase/firebase';
+import SingleShow from '../SingleShow/SingleShow'
 
 // repetitive code that gets all ids and documents in a collection for .map
 const collectAllIdsAndDocs = doc => {
    return { id: doc.id, ...doc.data() }
 }
 
-
-
-
-
 function AllShows() {
+   let [allShows, setAllShows] = useState(null)
+
 
    // print list of all shows
    async function seeAllShows() {
       // get all data from shows collection
       const showSnapshot = await firestore.collection('shows').get()
       // create array of all shows
-      const allShows = showSnapshot.docs.map(collectAllIdsAndDocs)
-      // use for each to iterate over show array and print out details
-      allShows.forEach(show => {
-         // set array values to useable vars
-         let showId = show.id
-         let showTitle = show.title
-         let showType = show.type
-         let showBlurb = show.blurb
-         // create dom elements to add to list
-         //not needed
-         let allShowsList = document.getElementById('all-shows-list')
-         let displayId = document.createElement('h6')
-         let displayTitle = document.createElement('h3')
-         let displayType = document.createElement('h4')
-         let displayBlurb = document.createElement('h5')
-         let displayBreak = document.createElement('br')
-         // connect variables and dom elements
-         displayId.textContent = showId
-         displayTitle.textContent = showTitle
-         displayType.textContent = showType
-         displayBlurb.textContent = showBlurb
-         // append the dislpay to the container
-         //not needed
-         // allShowsList.appendChild(displayId)
-         // allShowsList.appendChild(displayTitle)
-         // allShowsList.appendChild(displayType)
-         // allShowsList.appendChild(displayBlurb)
-         // allShowsList.appendChild(displayBreak)
-      })
+      const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
+      if (!allShows) {
+         setAllShows(allShowsArray)
+      }
    }
-seeAllShows()
+   seeAllShows()
+  
+
+ async function  handleDelete(id) {
+      console.log('function fired')
+    const allShowsIn = allShows
+    
+    await firestore.doc(`shows/${id}`).delete()
+      const newShowsIn = allShowsIn.filter(show => show.id !== id)
+    setAllShows(newShowsIn)
+    
+
+   }
+
    return (
       <div>
-
-         <div id='all-shows-list'>All Shows</div>
-
+           { allShows ? allShows.map(show => {
+            return <SingleShow
+               deleteThisShow={handleDelete}
+               id={show.id}
+               title={show.title}
+               dates={show.dates}
+               type={show.type}
+               blurb={show.blurb}
+               artist={show.displayName}
+            ></SingleShow>
+         }) : 'Loading'
+         }
       </div>
    )
 }
