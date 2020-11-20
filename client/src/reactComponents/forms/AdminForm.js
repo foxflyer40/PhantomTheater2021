@@ -5,30 +5,30 @@ import { storage } from '../firebase/firebase'
 
 function AdminForm() {
    // create state for show information
-   let [title, setTitle] = useState({});
-   let [blurb, setBlurb] = useState({});
-   let [type, setType] = useState({});
+   let [title, setTitle] = useState(null);
+   let [blurb, setBlurb] = useState(null);
+   let [type, setType] = useState(null);
 
-   let [imageLg, setImageLg] = useState({});
-   let [imageSm, setImageSm] = useState({});
+   let [imageLg, setImageLg] = useState(null);
+   let [imageSm, setImageSm] = useState(null);
 
-   let [status, setStatus] = useState({});  //proposed / Booked / archived
+   let [status, setStatus] = useState(null);  //proposed / Booked / archived
    let [dates, setDates] = useState([]);  // creates array of dates/times
 
    // create state for each artist field
-   let [displayName, setDisplayName] = useState({})
-   let [contactName, setContactName] = useState({})
-   let [phone, setPhone] = useState({})
-   let [email, setEmail] = useState({})
+   let [displayName, setDisplayName] = useState(null)
+   let [contactName, setContactName] = useState(null)
+   let [phone, setPhone] = useState(null)
+   let [email, setEmail] = useState(null)
 
-   let [bio, setBio] = useState({})
-   let [image1, setImage1] = useState({})
-   let [image2, setImage2] = useState({})
-   let [image3, setImage3] = useState({})
-   let [image4, setImage4] = useState({})
-   let [video1, setVideo1] = useState({})
-   let [link1, setLink1] = useState({})
-   let [link2, setLink2] = useState({})
+   let [bio, setBio] = useState(null)
+   let [image1, setImage1] = useState(null)
+   let [image2, setImage2] = useState(null)
+   let [image3, setImage3] = useState(null)
+   let [image4, setImage4] = useState(null)
+   let [video1, setVideo1] = useState(null)
+   let [link1, setLink1] = useState(null)
+   let [link2, setLink2] = useState(null)
 
 
    // construct object from state to pass to db
@@ -71,23 +71,23 @@ function AdminForm() {
          event.target.titleIn.value = "";
          event.target.blurbIn.value = "";
          event.target.typeIn.value = "";
-         event.target.imageLgInput.value = ""
-         event.target.imageSmInput.value = ""
+         event.target.imageLgIn.value = ""
+         event.target.imageSmIn.value = ""
          event.target.statusIn.value = ""
          event.target.datesIn.value = ""
          
-         event.target.displayNameInput.value = ''
-         event.target.contactNameInput.value = ''
-         event.target.phoneInput.value = ''
-         event.target.emailInput.value = ''
-         event.target.bioInput.value = ''
-         event.target.image1Input.value = ''
-         event.target.image2Input.value = ''
-         event.target.image3Input.value = ''
-         event.target.image4Input.value = ''
-         event.target.video1Input.value = ''
-         event.target.link1Input.value = ''
-         event.target.link2Input.value = ''
+         event.target.displayNameInput.value = ""
+         event.target.contactNameInput.value = ""
+         event.target.phoneInput.value = ""
+         event.target.emailInput.value = ""
+         event.target.bioInput.value = ""
+         event.target.image1Input.value = ""
+         event.target.image2Input.value = ""
+         event.target.image3Input.value = ""
+         event.target.image4Input.value = ""
+         event.target.video1Input.value = ""
+         event.target.link1Input.value = ""
+         event.target.link2Input.value = ""
          // clear state
          setTitle({})
          setType({})
@@ -155,9 +155,9 @@ function AdminForm() {
             <input
                   type='text'
                   name='imageLgIn'
-                  value=''
+                  
                   onChange={evt => {
-                     setImageLg(evt.target.files[0])
+                     setImageLg(evt.target.value)
                   }}
                ></input></label>
 
@@ -167,9 +167,9 @@ function AdminForm() {
             <input
                   type='text'
                   name='imageSmIn'
-                  value=''
+                  
                   onChange={evt => {
-                     setImageSm(evt.target.files[0])
+                     setImageSm(evt.target.value)
                   }}
                ></input></label>
 

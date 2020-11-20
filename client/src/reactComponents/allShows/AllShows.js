@@ -20,28 +20,39 @@ function AllShows() {
       // create array of all shows
       const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
       if (!allShows) {
+
+
+         console.log('allShowsArray = ', allShowsArray)
+
+
          setAllShows(allShowsArray)
+
       }
    }
    seeAllShows()
-  
 
- async function  handleDelete(id) {
-      console.log('function fired')
-    const allShowsIn = allShows
-    
-    await firestore.doc(`shows/${id}`).delete()
+   async function handleDelete(id) {
+      console.log('delete function fired')
+      const allShowsIn = allShows
+
+      await firestore.doc(`shows/${id}`).delete()
       const newShowsIn = allShowsIn.filter(show => show.id !== id)
-    setAllShows(newShowsIn)
-    
+      setAllShows(newShowsIn)
+   }
+
+   async function handleEdit(id) {
+      console.log('Edit function fired', id)
+
 
    }
 
    return (
       <div>
-           { allShows ? allShows.map(show => {
+         { allShows ? allShows.map(show => {
             return <SingleShow
+               key={show.id}
                deleteThisShow={handleDelete}
+               editThisShow={handleEdit}
                id={show.id}
                title={show.title}
                dates={show.dates}
