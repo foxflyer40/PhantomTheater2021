@@ -13,10 +13,8 @@ function ProposalForm() {
   //do we still want two separate collections
   let showProposal = {
     title: title,
+    type: "proposal",
     description: description,
-  };
-
-  let artistProposal = {
     artist: artist,
     contactName: contactName,
     phone: phone,
@@ -25,8 +23,8 @@ function ProposalForm() {
 
   async function submitProposal(event) {
     event.preventDefault();
-    firestore.collection("artists").doc().set(artistProposal);
     firestore.collection("shows").doc().set(showProposal);
+    //clears out form upon submission
     event.target.title.value = "";
     event.target.artist.value = "";
     event.target.description.value = "";
@@ -43,7 +41,7 @@ function ProposalForm() {
       <div className="w-100" style={{ maxWidth: "420px" }}>
         <Card>
           <Card.Body>
-            <h2 className="text-center mb-2">Artist Submission Form</h2>
+            <h2 className="text-center mb-2">Show Proposal Form</h2>
             <br />
 
             <Form id="ArtistForm" onSubmit={submitProposal}>
@@ -88,7 +86,9 @@ function ProposalForm() {
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label for="bio">Bio:</Form.Label>
+                <Form.Label for="bio">
+                  Brief description of your act:
+                </Form.Label>
                 <textarea
                   className="form-control"
                   name="description"

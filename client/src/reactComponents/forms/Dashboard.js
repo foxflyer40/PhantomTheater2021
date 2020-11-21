@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 // get the database
 import { firestore } from "../firebase/firebase";
-import { useHistory } from 'react-router-dom'
 import AllShows from './AllShows'
 import AllProposals from './AllProposals'
 import AdminForm from './AdminForm'
@@ -13,8 +12,7 @@ import AdminForm from './AdminForm'
 function Dashboard() {
    const [toggle, setToggle] = useState('shows')
 
-   const history = useHistory()
-
+   
    function editShow() {
       setToggle('shows')
       console.log(toggle)
