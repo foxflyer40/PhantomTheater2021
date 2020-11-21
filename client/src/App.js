@@ -7,7 +7,7 @@ import About from './About';
 import Artist from './Artist';
 import Reserve from './Reserve';
 import AdminForm from './reactComponents/forms/AdminForm'
-import AllShows from './reactComponents/allShows/AllShows'
+import AllShows from './reactComponents/forms/AllShows'
 import Login from './reactComponents/forms/Login'
 import ArtistForm from './reactComponents/forms/ArtistForm'
 import ProposalForm from './reactComponents/forms/ProposalForm'
@@ -30,12 +30,14 @@ function App() {
                      <Home />
                      <CurrentShow />
                   </Route>
-                  <Route path="/artistForm" component={ArtistForm} />
-                  <Route path="/allShows" component={AllShows} />
-                  <Route path="/adminForm" component={AdminForm} />
-                  <Route path="/proposalForm" component={ProposalForm} />
                   <Route path='/login' component={Login} />
                   <Route path='/adminDash' component={Dashboard} />
+                  <Route path="/proposalForm" component={ProposalForm} />
+
+                  <Route path="/adminForm" component={AdminForm} />
+                  <Route path="/artistForm" component={ArtistForm} />
+                  <Route path="/allShows" component={AllShows} />
+
                   <Route path="/About" component={About} />
                   <Route path="/Artist" component={Artist} />
                   <Route path="/Reserve" component={Reserve} />
