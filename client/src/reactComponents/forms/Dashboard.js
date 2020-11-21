@@ -5,6 +5,7 @@ import { firestore } from "../firebase/firebase";
 import { useHistory } from 'react-router-dom'
 import AllShows from './AllShows'
 import AllProposals from './AllProposals'
+import AdminForm from './AdminForm'
 
 
 
@@ -24,6 +25,10 @@ function Dashboard() {
       console.log(toggle)
    }
 
+   function addShow() {
+      setToggle('add')
+   }
+
 
    return (
       <div>
@@ -32,9 +37,11 @@ function Dashboard() {
 
             <Button onClick={editProposal} type='submit'>Proposals</Button>
             <Button onClick={editShow} type='submit'>Shows</Button>
+            <Button onClick={addShow} type='submit'>Add a Show</Button>
             <hr />
             <div>
-               {toggle === 'shows' ? < AllShows /> : <AllProposals />}
+               { toggle === 'add' ? <AdminForm /> : 
+                  toggle === 'shows' ? < AllShows /> : <AllProposals />}
                
                
             </div>
