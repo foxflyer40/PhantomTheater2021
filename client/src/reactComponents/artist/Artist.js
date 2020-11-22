@@ -12,7 +12,7 @@ function Artist() {
           <img className="artistImage" src={ArtistImage} />
           <img className="artistImage" src={ArtistImage} />
         </div>
-        <div className="text_container">
+        <div className="textContainer">
           <p>
             velit laoreet id donec ultrices tincidunt arcu non sodales neque
             sodales ut etiam sit amet nisl purus in mollis nunc sed id semper
@@ -27,29 +27,18 @@ function Artist() {
             adipiscing commodo elit at imperdiet dui accumsan sit amet nulla
             facilisi morbi tempus iaculis urna id volutpat lacus laoreet non
             curabitur gravida arcu ac tortor dignissim convallis aenean et
-            tortor at risus viverra adipiscing at in tellus integer feugiat
-            scelerisque varius morbi enim nunc faucibus a pellentesque sit amet
-            porttitor eget dolor morbi non arcu risus quis varius quam quisque
-            id diam vel quam elementum pulvinar etiam non quam lacus suspendisse
-            faucibus interdum posuere lorem ipsum dolor sit amet consectetur
-            adipiscing elit duis tristique sollicitudin nibh sit amet commodo
-            nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue
-            mauris rhoncus aenean vel elit scelerisque mauris pellentesque
-            pulvinar pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas maecenas pharetra convallis
-            posuere morbi leo urna molestie at elementum eu facilisis sed odio
-            morbi quis commodo odio aenean sed adipiscing diam donec adipiscing
-            tristique risus
+            tortor
           </p>
-          <h5>
-            Contact Info : fake_email@email.com  (802)888-8888
+          <div className="artistContact">
+            <h5>
+              Contact Info : fake_email@email.com  (802)888-8888
           </h5>
-
-         <a href="#">www.fakeweb.com</a>
+            <a href="#">www.fakeweb.com</a>
+          </div>
         </div>
         <div className="line"></div>
       </div>
-      
+
       <div className="artist">
         <h1>Artist Name</h1>
 
@@ -58,7 +47,7 @@ function Artist() {
           <img className="artistImage" src={ArtistImage} />
           <img className="artistImage" src={ArtistImage} />
         </div>
-        <div className="text_container">
+        <div className="textContainer">
           <p>
             velit laoreet id donec ultrices tincidunt arcu non sodales neque
             sodales ut etiam sit amet nisl purus in mollis nunc sed id semper
@@ -73,28 +62,18 @@ function Artist() {
             adipiscing commodo elit at imperdiet dui accumsan sit amet nulla
             facilisi morbi tempus iaculis urna id volutpat lacus laoreet non
             curabitur gravida arcu ac tortor dignissim convallis aenean et
-            tortor at risus viverra adipiscing at in tellus integer feugiat
-            scelerisque varius morbi enim nunc faucibus a pellentesque sit amet
-            porttitor eget dolor morbi non arcu risus quis varius quam quisque
-            id diam vel quam elementum pulvinar etiam non quam lacus suspendisse
-            faucibus interdum posuere lorem ipsum dolor sit amet consectetur
-            adipiscing elit duis tristique sollicitudin nibh sit amet commodo
-            nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue
-            mauris rhoncus aenean vel elit scelerisque mauris pellentesque
-            pulvinar pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas maecenas pharetra convallis
-            posuere morbi leo urna molestie at elementum eu facilisis sed odio
-            morbi quis commodo odio aenean sed adipiscing diam donec adipiscing
-            tristique risus
+            tortor
           </p>
-          <h5>
-            Contact Info : fake_email@email.com (802)888-8888
+          <div className="artistContact">
+            <h5>
+              Contact Info : fake_email@email.com  (802)888-8888
           </h5>
-          <a href="#">www.fakeweb.com</a>
+            <a href="#">www.fakeweb.com</a>
+          </div>
         </div>
         <div className="line"></div>
       </div>
-    
+
       <div className="artist">
         <h1>Artist Name</h1>
 
@@ -103,7 +82,7 @@ function Artist() {
           <img className="artistImage" src={ArtistImage} />
           <img className="artistImage" src={ArtistImage} />
         </div>
-        <div className="text_container">
+        <div className="textContainer">
           <p>
             velit laoreet id donec ultrices tincidunt arcu non sodales neque
             sodales ut etiam sit amet nisl purus in mollis nunc sed id semper
@@ -118,24 +97,14 @@ function Artist() {
             adipiscing commodo elit at imperdiet dui accumsan sit amet nulla
             facilisi morbi tempus iaculis urna id volutpat lacus laoreet non
             curabitur gravida arcu ac tortor dignissim convallis aenean et
-            tortor at risus viverra adipiscing at in tellus integer feugiat
-            scelerisque varius morbi enim nunc faucibus a pellentesque sit amet
-            porttitor eget dolor morbi non arcu risus quis varius quam quisque
-            id diam vel quam elementum pulvinar etiam non quam lacus suspendisse
-            faucibus interdum posuere lorem ipsum dolor sit amet consectetur
-            adipiscing elit duis tristique sollicitudin nibh sit amet commodo
-            nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue
-            mauris rhoncus aenean vel elit scelerisque mauris pellentesque
-            pulvinar pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas maecenas pharetra convallis
-            posuere morbi leo urna molestie at elementum eu facilisis sed odio
-            morbi quis commodo odio aenean sed adipiscing diam donec adipiscing
-            tristique risus
+            tortor
           </p>
-          <h5>
-            Contact Info : fake_email@email.com  (802)888-8888
+          <div className="artistContact">
+            <h5>
+              Contact Info : fake_email@email.com  (802)888-8888
           </h5>
-          <a href="#">www.fakeweb.com</a>
+            <a href="#">www.fakeweb.com</a>
+          </div>
         </div>
       </div>
     </div>

@@ -11,8 +11,16 @@
     display: none;
   }
 
-  .burgerNavBar .menu {
+  #burgerbar {
+    display:none !important;
+  }
+
+  .burgerNavBar li {
     display:none;
+  }
+
+  .burgerLogo {
+    display: none;
   }
 }
 

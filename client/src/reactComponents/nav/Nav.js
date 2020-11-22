@@ -9,16 +9,13 @@ function Nav() {
 
   return (
     <div className="menuNavBar">
-      {/*logo */}
-      <div className='logo'>
-        <img className="logoimg" src={Logo} />
-      </div>
-      {/*burger menu */}
       {/*menu */}
       <nav className='menu'>
-        <li><Link to="/">Home</Link></li>
         <li><Link to="/About">About</Link></li>
         <li><Link to="/Artist">Artists</Link></li>
+        <Link to="/"><div className='logo'>
+          <img className="logoimg" src={Logo} />
+        </div></Link>
         <li><Link to="/Season">Season</Link></li>
         <li><Link to="/Reserve">Reserve</Link></li>
       </nav>

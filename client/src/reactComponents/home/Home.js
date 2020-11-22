@@ -18,7 +18,7 @@ function Home() {
       <div className='whatNext'>
         <div className='whatNextImg'><img src={Image2} /></div>
         <div className="whatNextText">
-          <h3>Next Show Title</h3>
+          <h2>Next Show Title</h2>
           <br />
           <p>20/20/2020- 02/02/0202</p>
         </div>

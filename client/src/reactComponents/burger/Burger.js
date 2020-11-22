@@ -21,7 +21,11 @@ const Burger = () => {
   return (
     <div id="burgerbar">
       {/*logo */}
-      <div>
+      <div className='burgerLogo'>
+        <img className="burgerLogoImg" src={Logo} />
+      </div>
+
+      <div className="burgerDiv">
         <button id="burger" onClick={handleModal}>
           <img src={BurgerIcon} />
         </button>

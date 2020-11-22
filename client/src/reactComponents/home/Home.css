@@ -3,6 +3,7 @@
   position: relative;
 }
 
+/* currently playing image and text */
 .currentPlay {
   display: flex;
   flex-direction: column;
@@ -11,7 +12,7 @@
 }
 
 .imageDiv img {
-  width: 100vw;
+  width: 100%;
   height: auto;
   object-fit: cover;
 }
@@ -20,6 +21,7 @@
   color: white;
 }
 
+/* next playing image and text */
 .whatNext {
   display: flex;
   flex-direction: column;
@@ -34,11 +36,7 @@
 
 .whatNextText {
   color: white;
-  position: absolute;
-  text-align: right;
 }
-
-
 
 .footer {
   position: relative;
@@ -55,6 +53,14 @@
   .whatNext {
     position: relative;
   }
+
+  .whatNextText {
+    position: absolute;
+    width: 60vw;
+    top: 5%;
+    left: 35%;
+    text-align: right;
+  }
 }
 
 @media screen and (min-width: 400px) {
@@ -63,8 +69,8 @@
   }
 
   .whatNextText {
-    top:65%;
-    left: 40%;
+    top: 5%;
+    left: 35%;
   }
 }
 
@@ -72,21 +78,11 @@
   .currentPlayText {
     top: 30%;
   }
-
-  .whatNextText {
-    top:65%;
-    left: 45%;
-  }
 }
 
 @media screen and (min-width: 550px) {
   .currentPlayText {
     top: 35%;
-  }
-
-  .whatNextText {
-    top: 70%;
-    left: 50%;
   }
 }
 
@@ -94,17 +90,16 @@
   .currentPlayText {
     top: 40%;
   }
-
-  .whatNextText {
-    top: 70%;
-    left: 55%;
-  }
 }
 
 @media screen and (min-width: 800px) {
+  .whatNext img {
+    width: 75%;
+    height: auto;
+  }
+  
   .currentPlayText {
     position: absolute;
-    width: 100%;
     top: 85%;
     left: 5%;
   }
@@ -112,58 +107,16 @@
   .whatNext {
     position: absolute;
     top: 65%;
-    left: 63%;
+    left: 50%;
   }
 
   .whatNextText {
-    top: 50%;
+    width: 25vw;
+    top: 55%;
     left: 25%;
   }
-}
 
-@media screen and (min-width: 1000px) {
-  .whatNext {
-    top: 70%;
-    left: 70%;
-  }
-
-  .whatNextText {
-    top: 50%;
-    left: 25%;
+  .whatNextText h2 {
+    font-size: 24pt;
   }
 }
-
-@media screen and (min-width: 1100px) {
-  .whatNext {
-    top: 75%;
-    left: 75%;
-  }
-
-  .whatNextText {
-    top: 50%;
-    left: 20%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .whatNext {
-    top: 80%;
-    left: 80%;
-  }
-
-  .whatNextText {
-    top: 45%;
-    left: 10%;
-  }
-}
-
-/* .imageDiv::after {
-    opacity: 0.4;
-    content: "";
-    background: black;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  } */

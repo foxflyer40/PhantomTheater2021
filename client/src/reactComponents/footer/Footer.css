@@ -3,29 +3,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 
+  height: 20vw;
 }
 
 .social {
   background-color: white;
   border-radius: 13%;
   width: 35px;
-  margin-bottom: 20px;
   justify-content: space-around;
   display: flex;
-  
 }
 
 p {
   color: white;
   margin-bottom: 10px;
 }
-.social_images{
+.social_images {
   flex-direction: row;
   display: flex;
   width: 100px;
   justify-content: space-between;
+  margin: 20px 0px;
 }
+
 #insta {
   border-radius: 35%;
 }
