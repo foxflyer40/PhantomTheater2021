@@ -1,19 +1,14 @@
 // imports for the Nav Bar
 import React from "react";
 import Logo from "../images/Logo.jpg";
-import "./Nav.css";
+import "./BurgerNav.css";
 import { Link } from "react-router-dom";
 
-function Nav() {
+function BurgerNav() {
 
 
   return (
-    <div className="menuNavBar">
-      {/*logo */}
-      <div className='logo'>
-        <img className="logoimg" src={Logo} />
-      </div>
-      {/*burger menu */}
+    <div className="burgerNavBar">
       {/*menu */}
       <nav className='menu'>
         <li><Link to="/">Home</Link></li>
@@ -27,4 +22,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default BurgerNav;

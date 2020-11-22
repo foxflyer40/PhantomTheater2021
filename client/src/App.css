@@ -5,3 +5,19 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+@media screen and (min-width: 600px) {
+  #burger {
+    display: none;
+  }
+
+  .burgerNavBar .menu {
+    display:none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menuNavBar{
+    display: none !important;
+  }
+}

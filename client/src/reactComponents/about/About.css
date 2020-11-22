@@ -40,7 +40,7 @@
   }
 
   h3 {
-    font-size: 25pt;
+    font-size: 40pt;
     text-align: center;
   }
 
@@ -133,11 +133,12 @@
   }
 
   .about{
-    font-size: 20pt;
+    font-size: 16pt;
     padding-right: 50px;
   }
   .about h1{
     color:chartreuse;
     margin-bottom:50px;
+    font-size: 40pt;
   }
 }

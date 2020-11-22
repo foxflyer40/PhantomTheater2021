@@ -1,5 +1,5 @@
 /* Add a black background color to the top navigation */
-.menuNavBar {
+.burgerNavBar {
   overflow: hidden;
   background-color: black;
   display: flex;
@@ -12,7 +12,7 @@
   display: flex;
 }
 /* Style the links inside the navigation bar */
-.menuNavBar a {
+.burgerNavBar a {
   float: right;
   color: chartreuse;
   text-align: center;
@@ -21,14 +21,18 @@
   font-size: 17px;
 }
 /* Change the color of links on hover */
-.menuNavBar a:hover {
+.burgerNavBar a:hover {
   background-color: #ddd;
   color: black;
 }
 /* Add an active class to highlight the current page */
-.menuNavBar a.active {
+.burgerNavBar a.active {
   background-color: #4caf50;
   color: white;
+}
+/* Hide the link that should open and close the topnav on small screens */
+.burgerNavBar .menu-btn {
+  display: none;
 }
 
 li {
@@ -41,5 +45,3 @@ li {
   z-index: 1;
   /* padding-top: 20px; */
 }
-
-

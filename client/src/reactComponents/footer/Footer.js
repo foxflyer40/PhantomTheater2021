@@ -9,7 +9,6 @@ import Instagram from '../images/instagram.png'
 function Footer() {
   return (
     <div className="footer">
-      <h1>This is the footer</h1>
       <div className="social_images">
         <img className='social' src={Facebook} />
         <img className='social' id="insta" src={Instagram} />

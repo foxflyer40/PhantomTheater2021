@@ -1,66 +1,163 @@
+.homeContainer {
+  background-color: black;
+  position: relative;
+}
+
+.currentPlay {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.imageDiv img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+.currentPlayText {
+  color: white;
+}
+
+.whatNext {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  text-align: center;
+}
+
+.whatNext img {
+  width: 100%;
+  height: auto;
+}
+
+.whatNextText {
+  color: white;
+  position: absolute;
+  text-align: right;
+}
+
+
+
+.footer {
+  position: relative;
+}
+
 @media screen and (min-width: 200px) {
-  .footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
-
-  .whatPlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .currentPlayText {
     position: absolute;
-    top: 35%;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-size: 12pt;
+    width: 60vw;
+    top: 28%;
+    left: 5%;
   }
 
-  .playButton {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 32px;
-  }
-
-  .homeContainer {
+  .whatNext {
     position: relative;
-    justify-content: center;
   }
 }
 
-/* for minimized on desktop */
-@media screen and (min-width: 400px) and (max-width: 750px) {
-  .whatPlay h1 {
-    font-size: 32pt;
+@media screen and (min-width: 400px) {
+  .currentPlayText {
+    top: 30%;
+  }
+
+  .whatNextText {
+    top:65%;
+    left: 40%;
   }
 }
 
-/* for full desktop */
-@media screen and (min-width: 751px) {
-  .homeContainer {
-    background-color: 
-  }
-  
-  .whatPlay h1 {
-    font-size: 45pt;
-  }
-  section {
-    display: flex;
-    height: auto;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+@media screen and (min-width: 450px) {
+  .currentPlayText {
+    top: 30%;
   }
 
-  .imageDiv img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .whatNextText {
+    top:65%;
+    left: 45%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .currentPlayText {
+    top: 35%;
   }
 
-  .imageDiv::after {
+  .whatNextText {
+    top: 70%;
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .currentPlayText {
+    top: 40%;
+  }
+
+  .whatNextText {
+    top: 70%;
+    left: 55%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .currentPlayText {
+    position: absolute;
+    width: 100%;
+    top: 85%;
+    left: 5%;
+  }
+
+  .whatNext {
+    position: absolute;
+    top: 65%;
+    left: 63%;
+  }
+
+  .whatNextText {
+    top: 50%;
+    left: 25%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .whatNext {
+    top: 70%;
+    left: 70%;
+  }
+
+  .whatNextText {
+    top: 50%;
+    left: 25%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .whatNext {
+    top: 75%;
+    left: 75%;
+  }
+
+  .whatNextText {
+    top: 50%;
+    left: 20%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .whatNext {
+    top: 80%;
+    left: 80%;
+  }
+
+  .whatNextText {
+    top: 45%;
+    left: 10%;
+  }
+}
+
+/* .imageDiv::after {
     opacity: 0.4;
     content: "";
     background: black;
@@ -69,32 +166,4 @@
     position: absolute;
     left: 0;
     top: 0;
-  }
-
-  .imageDiv {
-    position: relative;
-  }
-
-  .whatNextImg img {
-    width: 300px;
-    height: auto;
-    margin-right: 20px;
-  }
-
-  .whatNext {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* position: absolute;
-    top: 35%;
-    left: 40%; */
-    text-align: center;
-    color:black;
-  }
-
-.whatNextText p{
-  color:black;
-}
-
-}
+  } */
