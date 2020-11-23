@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // get the database
-import { firestore } from "../firebase/firebase";
+import app, { firestore } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { storage } from "../firebase/firebase";
 
@@ -11,6 +11,7 @@ function AdminForm() {
   let [type, setType] = useState(null);
 
   let [imageLg, setImageLg] = useState(null);
+  let [imageLgFile, setimageLgFile] = useState(null)
   let [imageSm, setImageSm] = useState(null);
 
   let [status, setStatus] = useState(null); //proposed / Booked / archived
@@ -54,6 +55,7 @@ function AdminForm() {
     video1: video1,
     link1: link1,
     link2: link2,
+
   };
 
   // write current state to shows collection
@@ -112,6 +114,27 @@ function AdminForm() {
     }
   }
 
+  const handleChange = (event) => {
+    if (event.target.files[0]) {
+      setimageLgFile(event.target.files[0]);
+    }
+  };
+
+  const handleUpload = (evt) => {  
+    evt.preventDefault();
+
+    let storageRef = app.storage().ref();
+    let largeRef = storageRef.child(`/images/${imageLgFile.name}`);
+      
+    largeRef.put(imageLgFile).then((snapshot) => {
+      console.log(snapshot);
+      largeRef.getDownloadURL().then((url) => {
+        console.log(url);
+        setImageLg(url)
+      });
+    });
+  };
+
   // form sets state on input change and fires enterNewShow on submit
   return (
     <div>
@@ -127,7 +150,10 @@ function AdminForm() {
 
               <Form
                 id="adminForm"
-                onSubmit={enterNewShow}
+                onSubmit={(event) => {
+                  enterNewShow(event)
+                  handleUpload(event);
+                }}
                 type="submit"
                 value="submit"
               >
@@ -158,9 +184,9 @@ function AdminForm() {
                 <Form.Group>
                   <Form.Label>Image (large):</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="file"
                     name="imageLgIn"
-                    onChange={(evt) => setImageLg(evt.target.value)}
+                     onChange={handleChange}
                   />
                 </Form.Group>
                 <Form.Group>
