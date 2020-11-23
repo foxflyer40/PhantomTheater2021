@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { firestore } from "../firebase/firebase";
+import { useHistory } from 'react-router-dom'
 
 function ProposalForm() {
+  
+   const history = useHistory()
 //   let [title, setTitle] = useState("");
   let [artist, setArtist] = useState("");
   let [description, setDescription] = useState("");
@@ -32,6 +35,8 @@ function ProposalForm() {
    //  event.target.contactName.value = "";
     event.target.phone.value = "";
     event.target.email.value = "";
+    alert(`Thank you ${artist}, for submitting your proposal.`)
+    history.push('/')
   }
 
   return (

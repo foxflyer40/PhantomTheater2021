@@ -8,13 +8,14 @@ export default function SingleShow(props) {
          {/* {props.id} */}
          {/* <br /> */}
          {/* <h4>{props.title}</h4> */}
-         {props.description}
+{/*        
          <br />
-         <br />
-         {props.artist}
-         <br />
-         {/* {props.contactName}
          <br /> */}
+        <h4> {props.artist} </h4>
+         
+        <h5>   {props.description} </h5>
+         {/* {props.contactName}*/}
+         <br /> 
          {props.phone}
          <br />
          {props.email}

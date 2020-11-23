@@ -53,11 +53,11 @@ export default function AllProposals() {
                editThisShow={handleEdit}
                id={proposal.id}
                // title={proposal.title}
-               artist= {`Artist: \n ${proposal.artist}`} 
+               artist= {`Artist: ${proposal.artist}`} 
                // contactName={proposal.contactName}
-               phone={proposal.phone}
-               email={proposal.email}
-               description={proposal.description}
+               phone={`Phone: ${proposal.phone}`}
+               email={`Email:  ${proposal.email}`}
+               description={`Show Description: ${proposal.description}`}
             ></SingleProposal>
          }) : 'Loading'
          }

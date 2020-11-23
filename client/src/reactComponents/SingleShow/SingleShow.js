@@ -6,8 +6,9 @@ export default function SingleShow(props) {
    return (
       <div>
          {/* {props.id} */}
-         <br />
-         <h4>{props.title}</h4> 
+        
+         <h4>{props.title}</h4>
+          <br />
          {props.dates}
          <br />
          {props.artist}
