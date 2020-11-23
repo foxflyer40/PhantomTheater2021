@@ -7,14 +7,16 @@ export default function SingleShow(props) {
       <div>
          {props.id}
          <br />
-         <h4>{props.title}</h4> 
-         {props.dates}
+         <h4>{props.title}</h4>
+         {props.description}
          <br />
-         {props.artist}
+         {props.name}
          <br />
-         {props.type}
+         {props.contactName}
          <br />
-         {props.blurb}
+         {props.phone}
+         <br />
+         {props.email}
          <br />
          <button id='btnDelete' onClick={() => props.deleteThisShow(props.id)}>-Delete-</button>
          <button id='btnEdit' onClick={() => props.editThisShow(props.id)}>- Edit -</button>

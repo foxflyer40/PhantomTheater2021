@@ -11,7 +11,7 @@ import AllShows from './reactComponents/forms/AllShows'
 import Login from './reactComponents/forms/Login'
 import ArtistForm from './reactComponents/forms/ArtistForm'
 import ProposalForm from './reactComponents/forms/ProposalForm'
-
+import EditShow from './reactComponents/forms/EditShow'
 import { AuthProvider } from "./reactComponents/forms/AuthContext";
 
 import Dashboard from "./reactComponents/forms/Dashboard";
@@ -33,7 +33,7 @@ function App() {
                   <Route path='/login' component={Login} />
                   <Route path='/adminDash' component={Dashboard} />
                   <Route path="/proposalForm" component={ProposalForm} />
-
+                  <Route path='/editShow' component={EditShow} />
                   <Route path="/adminForm" component={AdminForm} />
                   <Route path="/artistForm" component={ArtistForm} />
                   <Route path="/allShows" component={AllShows} />

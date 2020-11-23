@@ -13,7 +13,7 @@ function ProposalForm() {
   //do we still want two separate collections
   let showProposal = {
     title: title,
-    type: "proposal",
+    status: "proposal",
     description: description,
     artist: artist,
     contactName: contactName,
