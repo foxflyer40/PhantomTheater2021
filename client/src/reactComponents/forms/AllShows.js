@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { firestore } from '../firebase/firebase';
 import { storage } from '../firebase/firebase';
 import SingleShow from '../SingleShow/SingleShow'
+import { useHistory } from 'react-router-dom'
 
 // repetitive code that gets all ids and documents in a collection for .map
 const collectAllIdsAndDocs = doc => {
@@ -10,23 +11,21 @@ const collectAllIdsAndDocs = doc => {
 }
 
 function AllShows() {
+  
    let [allShows, setAllShows] = useState(null)
-
+   const history = useHistory()
 
    // print list of all shows
    async function seeAllShows() {
       // get all data from shows collection
-      const showSnapshot = await firestore.collection('shows').get()
+      const showsRef = firestore.collection('shows')
+      const showSnapshot = await showsRef.where('status', '!=', 'proposal').get()
+    
       // create array of all shows
       const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
       if (!allShows) {
-
-
          console.log('allShowsArray = ', allShowsArray)
-
-
          setAllShows(allShowsArray)
-
       }
    }
    seeAllShows()
@@ -34,7 +33,6 @@ function AllShows() {
    async function handleDelete(id) {
       console.log('delete function fired')
       const allShowsIn = allShows
-
       await firestore.doc(`shows/${id}`).delete()
       const newShowsIn = allShowsIn.filter(show => show.id !== id)
       setAllShows(newShowsIn)
@@ -42,13 +40,13 @@ function AllShows() {
 
    async function handleEdit(id) {
       console.log('Edit function fired', id)
-
-
+      history.push(`/EditShow#${id}`)
    }
 
    return (
       <div>
          { allShows ? allShows.map(show => {
+            console.log(show)
             return <SingleShow
                key={show.id}
                deleteThisShow={handleDelete}

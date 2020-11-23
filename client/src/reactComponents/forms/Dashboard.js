@@ -15,12 +15,12 @@ function Dashboard() {
    
    function editShow() {
       setToggle('shows')
-      console.log(toggle)
+    
    }
 
    function editProposal() {
       setToggle('proposals')
-      console.log(toggle)
+   
    }
 
    function addShow() {
