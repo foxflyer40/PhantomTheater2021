@@ -6,32 +6,32 @@ import { storage } from "../firebase/firebase";
 
 function AdminForm() {
   // create state for show information
-  let [title, setTitle] = useState(null);
-  let [blurb, setBlurb] = useState(null);
-  let [type, setType] = useState(null);
+  let [title, setTitle] = useState("");
+  let [blurb, setBlurb] = useState("");
+  let [type, setType] = useState("");
 
-  let [imageLg, setImageLg] = useState(null);
-  let [imageLgFile, setimageLgFile] = useState(null)
-  let [imageSm, setImageSm] = useState(null);
+  let [imageLg, setImageLg] = useState("");
+  let [imageLgFile, setimageLgFile] = useState("")
+  let [imageSm, setImageSm] = useState("");
 
-  let [status, setStatus] = useState(null); //proposed / Booked / archived
-  let [dates, setDates] = useState([]); // creates array of dates/times
+  let [status, setStatus] = useState(""); //proposed / Booked / archived
+  let [dates, setDates] = useState(""); // creates array of dates/times
 
   // create state for each artist field
-  let [displayName, setDisplayName] = useState(null);
-  let [contactName, setContactName] = useState(null);
-  let [phone, setPhone] = useState(null);
-  let [email, setEmail] = useState(null);
+  let [displayName, setDisplayName] = useState("");
+  let [contactName, setContactName] = useState("");
+  let [phone, setPhone] = useState("");
+  let [email, setEmail] = useState("");
 
-  let [bio, setBio] = useState(null);
-  let [description, setDescription] = useState(null);
-  let [image1, setImage1] = useState(null);
-  let [image2, setImage2] = useState(null);
-  let [image3, setImage3] = useState(null);
-  let [image4, setImage4] = useState(null);
-  let [video1, setVideo1] = useState(null);
-  let [link1, setLink1] = useState(null);
-  let [link2, setLink2] = useState(null);
+  let [bio, setBio] = useState("");
+  let [description, setDescription] = useState("");
+  let [image1, setImage1] = useState("");
+  let [image2, setImage2] = useState("");
+  let [image3, setImage3] = useState("");
+  let [image4, setImage4] = useState("");
+  let [video1, setVideo1] = useState("");
+  let [link1, setLink1] = useState("");
+  let [link2, setLink2] = useState("");
 
   // construct object from state to pass to db
   let show = {
@@ -91,26 +91,26 @@ function AdminForm() {
       event.target.link1Input.value = "";
       event.target.link2Input.value = "";
       // clear state
-      setTitle({});
-      setType({});
-      setBlurb({});
-      setImageLg({});
-      setImageSm({});
-      setStatus({});
-      setDates({});
-      setDisplayName({});
-      setContactName({});
-      setPhone({});
-      setEmail({});
-      setBio({});
-      setDescription({});
-      setImage1({});
-      setImage2({});
-      setImage3({});
-      setImage4({});
-      setVideo1({});
-      setLink1({});
-      setLink2({});
+      setTitle("");
+      setType("");
+      setBlurb("");
+      setImageLg("");
+      setImageSm("");
+      setStatus("");
+      setDates("");
+      setDisplayName("");
+      setContactName("");
+      setPhone("");
+      setEmail("");
+      setBio("");
+      setDescription("");
+      setImage1("");
+      setImage2("");
+      setImage3("");
+      setImage4("");
+      setVideo1("");
+      setLink1("");
+      setLink2("");
     }
   }
 

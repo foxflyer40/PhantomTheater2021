@@ -3,32 +3,33 @@ import { Form, Button, Card, Container } from "react-bootstrap";
 import { firestore } from "../firebase/firebase";
 
 function ProposalForm() {
-  let [title, setTitle] = useState({});
-  let [artist, setArtist] = useState({});
-  let [description, setDescription] = useState({});
-  let [contactName, setContactName] = useState({});
-  let [phone, setPhone] = useState({});
-  let [email, setEmail] = useState({});
+//   let [title, setTitle] = useState("");
+  let [artist, setArtist] = useState("");
+  let [description, setDescription] = useState("");
+//   let [contactName, setContactName] = useState("");
+  let [phone, setPhone] = useState("");
+  let [email, setEmail] = useState("");
 
   //do we still want two separate collections
   let showProposal = {
-    title: title,
+   //  title: title,
     status: "proposal",
     description: description,
     artist: artist,
-    contactName: contactName,
+   //  contactName: contactName,
     phone: phone,
     email: email,
   };
 
   async function submitProposal(event) {
     event.preventDefault();
+    console.log(showProposal)
     firestore.collection("shows").doc().set(showProposal);
     //clears out form upon submission
-    event.target.title.value = "";
+   //  event.target.title.value = "";
     event.target.artist.value = "";
     event.target.description.value = "";
-    event.target.contactName.value = "";
+   //  event.target.contactName.value = "";
     event.target.phone.value = "";
     event.target.email.value = "";
   }
@@ -45,14 +46,14 @@ function ProposalForm() {
             <br />
 
             <Form id="ArtistForm" onSubmit={submitProposal}>
-              <Form.Group id="artName">
+              {/* <Form.Group id="artName">
                 <Form.Label>Title?:</Form.Label>
                 <Form.Control
                   type="text"
                   name="title"
                   onChange={(evt) => setTitle(evt.target.value)}
                 />
-              </Form.Group>
+              </Form.Group> */}
               <Form.Group id="artName">
                 <Form.Label>Artist Name:</Form.Label>
                 <Form.Control
@@ -61,14 +62,14 @@ function ProposalForm() {
                   onChange={(evt) => setArtist(evt.target.value)}
                 />
               </Form.Group>
-              <Form.Group id="contactName">
+              {/* <Form.Group id="contactName">
                 <Form.Label>Contact Name:</Form.Label>
                 <Form.Control
                   type="text"
                   name="contactName"
                   onChange={(evt) => setContactName(evt.target.value)}
                 />
-              </Form.Group>
+              </Form.Group> */}
               <Form.Group id="contactPhone">
                 <Form.Label>Contact Phone:</Form.Label>
                 <Form.Control

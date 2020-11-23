@@ -4,12 +4,12 @@ import { firestore } from "../firebase/firebase";
 
 function ArtistForm() {
   // create state for each artist field
-  let [displayName, setDisplayName] = useState({});
-  let [contactName, setContactName] = useState({});
-  let [phone, setPhone] = useState({});
-  let [email, setEmail] = useState({});
-  let [bio, setBio] = useState({});
-  let [date, setDate] = useState({});
+  let [displayName, setDisplayName] = useState("");
+  let [contactName, setContactName] = useState("");
+  let [phone, setPhone] = useState("");
+  let [email, setEmail] = useState("");
+  let [bio, setBio] = useState("");
+  let [date, setDate] = useState("");
 
   // create artist object from state
   let artist = {

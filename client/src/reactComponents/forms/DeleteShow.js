@@ -10,7 +10,7 @@ const collectAllIdsAndDocs = doc => {
 }
 
 function DeleteShow() {
-   let [allShows, setAllShows] = useState(null)
+   let [allShows, setAllShows] = useState("")
 
 
    // print list of all shows

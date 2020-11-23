@@ -5,15 +5,16 @@ import React from 'react'
 export default function SingleShow(props) {
    return (
       <div>
-         {props.id}
-         <br />
-         <h4>{props.title}</h4>
+         {/* {props.id} */}
+         {/* <br /> */}
+         {/* <h4>{props.title}</h4> */}
          {props.description}
          <br />
-         {props.name}
          <br />
-         {props.contactName}
+         {props.artist}
          <br />
+         {/* {props.contactName}
+         <br /> */}
          {props.phone}
          <br />
          {props.email}

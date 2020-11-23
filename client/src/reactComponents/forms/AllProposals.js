@@ -52,9 +52,9 @@ export default function AllProposals() {
                deleteThisShow={handleDelete}
                editThisShow={handleEdit}
                id={proposal.id}
-               title={proposal.title}
-               name={proposal.name}
-               contactName={proposal.contactName}
+               // title={proposal.title}
+               artist= {`Artist: \n ${proposal.artist}`} 
+               // contactName={proposal.contactName}
                phone={proposal.phone}
                email={proposal.email}
                description={proposal.description}

@@ -13,6 +13,7 @@ import ArtistForm from './reactComponents/forms/ArtistForm'
 import ProposalForm from './reactComponents/forms/ProposalForm'
 import EditShow from './reactComponents/forms/EditShow'
 import { AuthProvider } from "./reactComponents/forms/AuthContext";
+import PrivateRoute from '../src/reactComponents/forms/PrivateRoute'
 
 import Dashboard from "./reactComponents/forms/Dashboard";
 

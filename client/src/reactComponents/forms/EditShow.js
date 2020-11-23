@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { firestore } from '../firebase/firebase'
 import { storage } from '../firebase/firebase'
 import { Form, Button, Card, Container } from "react-bootstrap";
+import { useHistory } from 'react-router-dom'
 
 let nullShow = {
    title: 'title',
@@ -27,6 +28,8 @@ let nullShow = {
 }
 
 export default function EditShow() {
+
+   const history = useHistory()
 
    // create state object to hold values from database
    let [thisShow, setThisShow] = useState(nullShow)
@@ -66,37 +69,36 @@ export default function EditShow() {
          alert('no such document', id)
       } else {
          let showInData = showIn.data()
-
+         
          setThisShow(showInData)
-
-         setTitle(showInData.title)
-         setBlurb(showInData.blurb)
-         setType(showInData.type)
-         setImageLg(showInData.imageLg)
-         setImageSm(showInData.imageSm)
-         setStatus(showInData.status)
-         setDates(showInData.dates)
-         setDisplayName(showInData.displayName)
-         setContactName(showInData.contactName)
-         setPhone(showInData.phone)
-         setEmail(showInData.email)
-         setBio(showInData.bio)
-         setDescription(showInData.description)
-         setImage1(showInData.image1)
-         setImage2(showInData.image2)
-         setImage3(showInData.image3)
-         setImage4(showInData.image4)
-         setVideo1(showInData.video1)
-         setLink1(showInData.link1)
-         setLink2(showInData.link2)
+         
+         showInData.title ? setTitle(showInData.title) : setTitle('')
+         showInData.blurb ? setBlurb(showInData.blurb) : setBlurb('')
+         showInData.type ? setType(showInData.type) : setType('')
+         showInData.imageLg ? setImageLg(showInData.imageLg) : setImageLg('')
+         showInData.imageSm ? setImageSm(showInData.imageSm) : setImageSm('')
+         showInData.status ?  setStatus(showInData.status) : setStatus('')
+         showInData.dates ?  setDates(showInData.dates) : setDates('')
+         showInData.displayName ? setDisplayName(showInData.displayName) : setDisplayName('')
+         showInData.contactName ? setContactName(showInData.contactName) : setContactName('')
+         showInData.phone ? setPhone(showInData.phone) : setPhone('')
+         showInData.email ? setEmail(showInData.email) : setEmail('')
+         showInData.bio ? setBio(showInData.bio) : setBio('')
+         showInData.description ? setDescription(showInData.description) : setDescription('')
+         showInData.image1 ? setImage1(showInData.image1) : setImage1 ('')
+         showInData.image2 ? setImage2(showInData.image2) : setImage2('')
+         showInData.image3 ? setImage3(showInData.image3) : setImage3('')
+         showInData.image4 ? setImage4(showInData.image4) : setImage4('')
+         showInData.video1 ? setVideo1(showInData.video1) : setVideo1('')
+         showInData.link1 ? setLink1(showInData.link1) : setLink1('')
+         showInData.link2 ? setLink2(showInData.link2) : setLink2('')
       }
    }
 
    if (thisShow.title === 'title') {
-
-
       getOneShow()
    }
+
    console.log('state changed on page load: ', thisShow)
    //*************************************************** */
 
@@ -130,6 +132,7 @@ export default function EditShow() {
       console.log('second: ', showUpdate)
       let id = document.location.hash.substring(1)
       await firestore.collection('shows').doc(id).set(showUpdate)
+      history.push('/adminDash')
    }
 
 
