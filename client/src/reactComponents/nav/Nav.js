@@ -1,9 +1,11 @@
-// imports for the Nav Bar
+//-----------------------------imports for the Nav Bar----------------------------------------------
 import React from "react";
 import Logo from "../images/Logo.jpg";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 
+
+//------ Nav Bar component function containing links to About, Artist, Season and Reserve pages---------
 function Nav() {
 
 

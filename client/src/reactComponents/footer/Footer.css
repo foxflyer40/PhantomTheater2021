@@ -1,3 +1,4 @@
+/*------------------------- Main footer container/wraper styling------------- */
 .footer {
   background-color: black;
   display: flex;
@@ -6,6 +7,7 @@
   height: 20vw;
 }
 
+/*--------------------- styling targetting both logo images------------------ */
 .social {
   background-color: white;
   border-radius: 13%;
@@ -18,6 +20,8 @@ p {
   color: white;
   margin-bottom: 10px;
 }
+
+/* ------------------------- Styling for container of social media logo images-------------- */
 .social_images {
   flex-direction: row;
   display: flex;
@@ -26,6 +30,7 @@ p {
   margin: 20px 0px;
 }
 
+/*---------------modifying border for instagram logo only to match Facebook logo--------------- */
 #insta {
   border-radius: 35%;
 }

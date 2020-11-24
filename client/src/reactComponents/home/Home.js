@@ -1,8 +1,10 @@
+//-----------------------------Imports---------------------------------------------------------------
 import React from "react";
 import Image from "../images/phantomdinner.jpg";
 import Image2 from '../images/artist.jpg';
 import "./Home.css";
 
+//------ Homepage component function with currently playing as central image and next show -----------
 function Home() {
   return (
     <div className="homeContainer">
@@ -28,5 +30,6 @@ function Home() {
     </div>
   );
 }
+
 
 export default Home;

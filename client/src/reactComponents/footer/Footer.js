@@ -1,11 +1,11 @@
+//---------------------------------------------Imports---------------------------------------------------
 import React from 'react'
 import './Footer.css'
 import Facebook from '../images/facebook.png'
 import Instagram from '../images/instagram.png'
 
-//copyright info
-//social media buttons
-//
+//------------ Footer function returning Footer containing Social Media Links and Copyright Info ---------
+
 function Footer() {
   return (
     <div className="footer">

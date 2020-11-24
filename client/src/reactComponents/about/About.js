@@ -1,9 +1,11 @@
+//-------------------------------------Imports--------------------------
 import React from "react";
 import Masks from "../images/masks.jpg";
 import Google from "../images/google.jpg";
 import "./About.css";
 
-//about us/contact us form/sponsors
+//------About Page component function containing Phantom Theater information 
+// and sponsor list. -----------------------------------------------------------
 function About() {
   return (
     <div className="about">

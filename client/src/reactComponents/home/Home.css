@@ -3,7 +3,7 @@
   position: relative;
 }
 
-/* currently playing image and text */
+/*------------------------- currently playing image and text -------------------------*/
 .currentPlay {
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
   color: white;
 }
 
-/* next playing image and text */
+/*------------------------ next playing image and text styling------------------------ */
 .whatNext {
   display: flex;
   flex-direction: column;
@@ -38,9 +38,12 @@
   color: white;
 }
 
+/* ------------------------ Positioning footer------------------------------------------ */
 .footer {
   position: relative;
 }
+
+/* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 200px) {
   .currentPlayText {
@@ -63,6 +66,8 @@
   }
 }
 
+
+/* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width: 400px) {
   .currentPlayText {
     top: 30%;
@@ -74,11 +79,15 @@
   }
 }
 
+/* -----------------------Screen resizing styling--------------- */
+
 @media screen and (min-width: 450px) {
   .currentPlayText {
     top: 30%;
   }
 }
+
+/* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 550px) {
   .currentPlayText {
@@ -86,11 +95,14 @@
   }
 }
 
+/* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width: 600px) {
   .currentPlayText {
     top: 40%;
   }
 }
+
+/* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 800px) {
   .whatNext img {

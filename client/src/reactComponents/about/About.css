@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+/*---------------------Styling for orange/peach line element----------------- */
 .about .line {
   border: solid 1px;
   border-color: #ffae57;
@@ -14,6 +15,7 @@
   margin-bottom: 30px;
 }
 
+/* ---------- Styling for about container , font color and background color---------- */
 .about {
   display: flex;
   flex-direction: column;
@@ -22,6 +24,7 @@
   align-items: center;
 }
 
+/*-----------------------Headers style, font color and margin adjustment----------- */
 .about h1 {
   color: chartreuse;
   margin-bottom: 10px;
@@ -60,6 +63,7 @@
   align-items: center;
 }
 
+/* --------------Contact elements styling-------- */
 .contactWrapper {
   display: flex;
   flex-direction: column;
@@ -68,6 +72,7 @@
   align-items: center;
 }
 
+/* ------Sponsor list wrapper styling ---- */
 .sponsorsWrapper {
   display: flex;
   flex-direction: column;
@@ -76,6 +81,8 @@
   font-size: 14pt;
 }
 
+
+/* ------Sponsor List Items Styling------------- */
 .sponsorsList {
   -webkit-column-count: 3;
   -moz-column-count: 3;
@@ -90,6 +97,8 @@
   font-size: 18pt;
   text-align: justify;
 }
+
+/* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 200px) {
   h3 {
