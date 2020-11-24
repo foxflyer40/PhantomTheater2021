@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import { firestore } from "../firebase/firebase";
 import AllShows from './AllShows'
 import AllProposals from './AllProposals'
-import AdminForm from './AdminForm'
+import AddShow from './AddShow'
 
 
 
@@ -38,7 +38,7 @@ function Dashboard() {
             <Button onClick={addShow} type='submit'>Add a Show</Button>
             <hr />
             <div>
-               { toggle === 'add' ? <AdminForm /> : 
+               { toggle === 'add' ? <AddShow /> : 
                   toggle === 'shows' ? < AllShows /> : <AllProposals />}
                
                

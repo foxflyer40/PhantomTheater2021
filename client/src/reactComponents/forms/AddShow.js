@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import app, { firestore } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { storage } from "../firebase/firebase";
-import DatesModal from '../forms/DatesModal'
+import DatesModal from './DatesModal'
 
 function AdminForm() {
    const [modal, setModal] = useState(false)

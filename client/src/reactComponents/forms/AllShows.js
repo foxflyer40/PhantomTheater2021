@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // get the database
 import { firestore } from '../firebase/firebase';
 import { storage } from '../firebase/firebase';
-import SingleShow from '../SingleShow/SingleShow'
+import SingleShow from './SingleShow'
 import { useHistory } from 'react-router-dom'
 
 // repetitive code that gets all ids and documents in a collection for .map

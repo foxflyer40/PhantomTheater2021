@@ -7,7 +7,7 @@ import Artist from "./reactComponents/artist/Artist";
 import Reserve from "./reactComponents/reserve/Reserve";
 import Season from "./reactComponents/season/Season";
 import Burger from "./reactComponents/burger/Burger.js";
-import AdminForm from "./reactComponents/forms/AdminForm";
+import AddShow from "./reactComponents/forms/AddShow";
 import AllShows from "./reactComponents/forms/AllShows";
 import Login from "./reactComponents/forms/Login";
 import ArtistForm from "./reactComponents/forms/ArtistForm";
@@ -36,7 +36,7 @@ function App() {
             <Route path="/adminDash" component={Dashboard} />
             <Route path="/proposalForm" component={ProposalForm} />
             <Route path="/editShow" component={EditShow} />
-            <Route path="/adminForm" component={AdminForm} />
+            <Route path="/addShow" component={AddShow} />
             <Route path="/artistForm" component={ArtistForm} />
             <Route path="/allShows" component={AllShows} />
             <Route path="/Season" component={Season} />

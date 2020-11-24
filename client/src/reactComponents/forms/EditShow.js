@@ -140,7 +140,7 @@ export default function EditShow() {
    }
 
    async function enterDates() {
-      
+
    }
 
 
@@ -160,6 +160,7 @@ export default function EditShow() {
                      value="submit"
                   >
                      <div className="d-flex flex-direction row">
+                        {/* left side column of form */}
                         <Card.Body>
                            <h2 className="text-center mb-2">Edit Show:</h2>
                            <br />
@@ -238,6 +239,8 @@ export default function EditShow() {
                               /> */}
                            </Form.Group>
                         </Card.Body>
+                        {/* left side column of form END*/}
+                        {/* right side column of form */}
                         <Card.Body>
                            <Form.Group>
                               <br />
@@ -375,8 +378,9 @@ export default function EditShow() {
 
                            <Button className="w-100" type="submit">
                               Submit Updates
-                </Button>
+                           </Button>
                         </Card.Body>
+                        {/* right side column of form END */}
                      </div>
                   </Form>
                </Card>

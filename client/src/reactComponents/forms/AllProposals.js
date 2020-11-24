@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { firestore } from '../firebase/firebase'
 import { storage } from '../firebase/firebase';
-import SingleShow from '../SingleShow/SingleShow'
 import { useHistory } from 'react-router-dom'
-import SingleProposal from '../SingleShow/SingleProposal'
+import SingleProposal from './SingleProposal'
 
 // repetitive code that gets all ids and documents in a collection for .map
 const collectAllIdsAndDocs = doc => {
