@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import app, { firestore } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { storage } from "../firebase/firebase";
+import DatesModal from '../forms/DatesModal'
 
 function AdminForm() {
+   const [modal, setModal] = useState(false)
   // create state for show information
   let [title, setTitle] = useState("");
   let [blurb, setBlurb] = useState("");
@@ -14,7 +16,8 @@ function AdminForm() {
   let [imageLgFile, setimageLgFile] = useState("");
   let [imageSm, setImageSm] = useState("");
 
-  let [status, setStatus] = useState(""); //proposed / Booked / archived
+   let [status, setStatus] = useState(""); //proposed / Booked / archived
+   let [numOfShows, setNumOfShows] = useState(0)
   let [dates, setDates] = useState(""); // creates array of dates/times
 
   // create state for each artist field
@@ -132,7 +135,20 @@ function AdminForm() {
         setImageLg(url);
       });
     });
-  };
+   };
+   
+
+
+      const handleModalOpen = () => {
+         setModal(true)
+        console.log('open', numOfShows)
+      }
+      const handleModalClose = () => {
+         setModal(false)
+         console.log('close', numOfShows)
+      }
+
+  console.log(modal)
 
   // form sets state on input change and fires enterNewShow on submit
   return (
@@ -205,14 +221,16 @@ function AdminForm() {
                       onChange={(evt) => setStatus(evt.target.value)}
                     />
                   </Form.Group>
-                  <Form.Group>
-                    <Form.Label>Dates: </Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="datesIn"
-                      onChange={(evt) => setDates(evt.target.value)}
-                    />
-                  </Form.Group>
+                          <Form.Group>
+                             <Form.Label>Number of Shows: </Form.Label>
+                             
+                             <input type='number' name='numberOfShows' onChange={(evt) => setNumOfShows(evt.target.value)}></input>
+                             <Button className="w-100" onClick={handleModalOpen} >
+                                Enter Dates
+                              </Button>
+                             {modal && <DatesModal closeModal={handleModalClose} numOfShows={numOfShows} />}
+                          
+                          </Form.Group>
                 </Card.Body>
                 <Card.Body>
                   <br />
