@@ -1,9 +1,11 @@
-// imports for the Nav Bar
+// imports for the Nav Bar -----------------
 import React from "react";
 import Logo from "../images/Logo.jpg";
 import "./BurgerNav.css";
 import { Link } from "react-router-dom";
 
+
+// Nav Bar functionality with links to home, about , artists, season and reserve components
 function BurgerNav() {
 
 
@@ -22,4 +24,5 @@ function BurgerNav() {
   );
 }
 
+//------export the component---------
 export default BurgerNav;

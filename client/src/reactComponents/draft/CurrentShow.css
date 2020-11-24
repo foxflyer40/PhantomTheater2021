@@ -1,3 +1,4 @@
+/* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width: 200px) {
     .imageBox {
     display: flex;
@@ -35,6 +36,7 @@
 
 }
 
+/* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width:400px) and (max-width:750px){
   .image_row h3{
     font-size:16pt;
@@ -46,6 +48,7 @@
   }
 }
 
+/* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width:751px){
   .image_row h3{
     font-size:30pt;

@@ -157,4 +157,5 @@ function About() {
   );
 }
 
+//------export the component---------
 export default About;

@@ -1,7 +1,9 @@
+// ----------------Imports -----------------------
 import React from "react";
 import "./Season.css";
 import Calendar from "../images/calendar.jpg";
 
+// ------- Season function with calendar and show titles and dates
 function Season() {
   return (
     <div className="season_container">
@@ -46,4 +48,5 @@ function Season() {
   );
 }
 
+//------export the component---------
 export default Season;

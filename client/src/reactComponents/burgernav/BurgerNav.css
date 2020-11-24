@@ -1,4 +1,5 @@
-/* Add a black background color to the top navigation */
+/* -----Add a black background color to the top navigation----- */
+/*-----------------Burger Nav Bar container ------------------- */
 .burgerNavBar {
   overflow: hidden;
   background-color: black;
@@ -11,7 +12,9 @@
 .menu {
   display: flex;
 }
-/* Style the links inside the navigation bar */
+
+/*-------------- Style the links inside the navigation bar------- */
+
 .burgerNavBar a {
   float: right;
   color: chartreuse;
@@ -20,12 +23,12 @@
   text-decoration: none;
   font-size: 17px;
 }
-/* Change the color of links on hover */
+/* ------------Change the color of links on hover------------ */
 .burgerNavBar a:hover {
   background-color: #ddd;
   color: black;
 }
-/* Add an active class to highlight the current page */
+/* -----------Add an active class to highlight the current page------ */
 .burgerNavBar a.active {
   background-color: #4caf50;
   color: white;

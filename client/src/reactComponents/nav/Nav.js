@@ -26,4 +26,5 @@ function Nav() {
   );
 }
 
+//------export the component---------
 export default Nav;

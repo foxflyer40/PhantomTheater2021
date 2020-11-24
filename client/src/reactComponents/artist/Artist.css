@@ -1,3 +1,5 @@
+
+/* -------------Individual artist container styling ------------ */
 .artist .line {
   border: solid 1px;
   border-color: #ffae57;
@@ -56,6 +58,8 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+/* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 601px) {
   .artistsContainer h1 {

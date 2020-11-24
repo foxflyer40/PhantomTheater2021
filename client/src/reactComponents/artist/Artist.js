@@ -1,6 +1,10 @@
+// ---------------------Imports --------------------------
 import React from "react";
 import "./Artist.css";
 import ArtistImage from "../images/artist.jpg";
+
+
+//----------------Artist component function ----------------
 
 function Artist() {
   return (
@@ -111,4 +115,5 @@ function Artist() {
   );
 }
 
+//------export the component---------
 export default Artist;

@@ -1,10 +1,10 @@
+//-----------------------Imports -----------------
 import firebase from 'firebase/app'
-
 import 'firebase/firestore'
 import 'firebase/auth'
 import 'firebase/storage'
 
-// configure firebase
+//---------configure firebase--------
 const app =  firebase.initializeApp({
    apiKey: 'AIzaSyBi_A_sbAYFbzySxXCEWpHmwcA8U8GH8Ao',
    authDomain: 'phantom-database-ee13a.firebaseapp.com',
@@ -16,15 +16,15 @@ const app =  firebase.initializeApp({
 });
 
 
-//export the database
+//-----------export the database------
 export const firestore = app.firestore();
 export const auth = app.auth();
 export const storage = app.storage();
 
-// use firebase internal timestamps
+//------- use firebase internal timestamps-------
 firestore.settings({ timestampsInSnapshots: true });
 
-// export the component
+//------export the component---------
 export default app;
 
 

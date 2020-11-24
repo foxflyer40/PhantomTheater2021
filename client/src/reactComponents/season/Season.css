@@ -1,3 +1,5 @@
+
+/* -----Main Season page container styling-------- */
 .season_container{
     display: flex;
     justify-content: center;
@@ -10,10 +12,15 @@
     align-items: center;
 }
 
+
+/*--------------------- Calendar image-------------- */
+
 .calendar_season img{
  width: 30vw;
  margin-right:100px;
 }
+
+/* -----Eliminating dotted list style and margin and color for links------*/
 .season_list{
     list-style:none;
 }
@@ -24,10 +31,13 @@ ul a{
     
 }
 
+/*  --- modifying positioning of show titles and dates list ------ */
+
 .season_list li{
     padding-bottom:20px;
 }
 
+/* ---- Main container  for calendar image and show titles list ---- */
 .calendar_container{
     display: flex;
     padding-top:50px;

@@ -1,3 +1,4 @@
+//------------Imports -----------
 import "./App.css";
 import Nav from "./reactComponents/nav/Nav";
 import Home from "./reactComponents/home/Home";
@@ -20,6 +21,7 @@ import Dashboard from "./reactComponents/forms/Dashboard";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+// Function containing the route paths  to all components
 function App() {
   return (
     <Router>
@@ -51,4 +53,5 @@ function App() {
   );
 }
 
+//------export the component---------
 export default App;

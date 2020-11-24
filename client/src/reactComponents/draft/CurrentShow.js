@@ -1,7 +1,10 @@
+//----------------------------Imports----------------------
 import React from "react";
 import Image from "../images/kooza-show.jpg";
 import "./CurrentShow.css";
 
+
+// ------  Current show function rendering title, images and description
 function CurrentShow() {
   return (
     <div className="currentShowContainer">
@@ -44,4 +47,5 @@ function CurrentShow() {
   );
 }
 
+//------export the component---------
 export default CurrentShow;

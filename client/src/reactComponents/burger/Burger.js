@@ -1,12 +1,13 @@
+// ------------ Imports ---------------
 import React, { useState } from "react";
 import BurgerNav from "../burgernav/BurgerNav";
 import Logo from "../images/Logo.jpg";
 import BurgerIcon from "../images/burgericon.jpg";
 import './Burger.css'
 
-// burger component creation
+// ------burger component creation
 const Burger = () => {
-  //create a variable, a toggle, and set the state of the variable to false
+  //-----create a variable, a toggle, and set the state of the variable to false
   const [modal, setModal] = useState(false);
   //function that will toggle the variable on and off
   const handleModal = () => {
@@ -36,4 +37,5 @@ const Burger = () => {
   );
 };
 
+//------export the component---------
 export default Burger;

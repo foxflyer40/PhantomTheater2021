@@ -20,4 +20,5 @@ function Footer() {
   )
 }
 
+//------export the component---------
 export default Footer
