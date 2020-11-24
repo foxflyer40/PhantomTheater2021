@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Card, Container } from "react-bootstrap";
-import { firestore } from "../firebase/firebase";
+import app, { firestore } from "../firebase/firebase";
 
 function ArtistForm() {
   // create state for each artist field
@@ -9,7 +9,19 @@ function ArtistForm() {
   let [phone, setPhone] = useState("");
   let [email, setEmail] = useState("");
   let [bio, setBio] = useState("");
-  let [date, setDate] = useState("");
+  let [showName, setShowName] = useState("");
+  let [showDesc, setShowDesc] = useState("");
+
+  let [imageFile, setImageFile] = useState("");
+  let [mainImage, setMainImage] = useState("");
+
+  let [imageTwoFile, setImageTwoFile] = useState("");
+  let [imageTwo, setImageTwo] = useState("");
+
+  let [imageThreeFile, setImageThreeFile] = useState("");
+  let [imageThree, setImageThree] = useState("");
+
+  let [videoLink, setVideoLink] = useState("");
 
   // create artist object from state
   let artist = {
@@ -17,8 +29,13 @@ function ArtistForm() {
     contactName: contactName,
     phone: phone,
     email: email,
+    showName: showName,
+    showDesc: showDesc,
     bio: bio,
-    date: new Date(date).toLocaleDateString(),
+    mainImage: mainImage,
+    imageTwo: imageTwo,
+    imageThree: imageThree,
+    videoLink: videoLink,
   };
 
   // write current state to artist collection
@@ -31,8 +48,81 @@ function ArtistForm() {
     event.target.phoneInput.value = "";
     event.target.emailInput.value = "";
     event.target.bioInput.value = "";
-    event.target.dateInput.value = "";
+    event.target.showNameInput.value = "";
+    event.target.showDescInput.value = "";
+    event.target.vidInput.value = "";
   }
+
+  //-----------------------------------image uploading/handling-------------------------//
+
+  //because of the code above, the url is not being set in the img fields in DB but we do have access to them
+  //the files are being submitted but we still need to get the URLs to be entered
+
+  //-----------main img--------//
+
+  const handleImgMain = (event) => {
+    if (event.target.files[0]) {
+      setImageFile(event.target.files[0]);
+    }
+  };
+
+  const handleUploadMain = (evt) => {
+    evt.preventDefault();
+
+    let storageRef = app.storage().ref();
+    let mainRef = storageRef.child(`/images/${imageFile.name}`);
+
+    mainRef.put(imageFile).then((snapshot) => {
+      mainRef.getDownloadURL().then((url) => {
+        console.log(url);
+        setMainImage(url);
+      });
+    });
+  };
+
+  //--------------second img---------------//
+
+  const handleImgTwo = (event) => {
+    if (event.target.files[0]) {
+      setImageTwoFile(event.target.files[0]);
+    }
+  };
+
+  const handleUploadTwo = (evt) => {
+    evt.preventDefault();
+
+    let storageRef = app.storage().ref();
+    let imgTwoRef = storageRef.child(`/images/${imageTwoFile.name}`);
+
+    imgTwoRef.put(imageTwoFile).then((snapshot) => {
+      imgTwoRef.getDownloadURL().then((url) => {
+        console.log(url);
+        setImageTwo(url);
+      });
+    });
+  };
+
+  //-----------third img-----------//
+
+  const handleImgThree = (event) => {
+    if (event.target.files[0]) {
+      setImageThreeFile(event.target.files[0]);
+    }
+  };
+
+  const handleUploadThree = (evt) => {
+    evt.preventDefault();
+
+    let storageRef = app.storage().ref();
+    let imgThreeRef = storageRef.child(`/images/${imageThreeFile.name}`);
+
+    imgThreeRef.put(imageThreeFile).then((snapshot) => {
+      imgThreeRef.getDownloadURL().then((url) => {
+        console.log(url);
+        setImageThree(url);
+      });
+    });
+  };
 
   return (
     <div>
@@ -46,7 +136,15 @@ function ArtistForm() {
               <h2 className="text-center mb-2">Artist Submission Form</h2>
               <br />
 
-              <Form id="ArtistForm" onSubmit={enterNewArtist}>
+              <Form
+                id="ArtistForm"
+                onSubmit={(evt) => {
+                  enterNewArtist(evt);
+                  handleUploadMain(evt);
+                  handleUploadTwo(evt);
+                  handleUploadThree(evt);
+                }}
+              >
                 <Form.Group id="artName">
                   <Form.Label>Artist Name:</Form.Label>
                   <Form.Control
@@ -79,6 +177,25 @@ function ArtistForm() {
                     onChange={(evt) => setEmail(evt.target.value)}
                   />
                 </Form.Group>
+                <Form.Group id="showName">
+                  <Form.Label>Show Name:</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="showNameInput"
+                    onChange={(evt) => setShowName(evt.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Description of the Show: </Form.Label>
+                  <Form.Control
+                    type="text"
+                    id="showDesc"
+                    name="showDescInput"
+                    // I'd like to make it so that this field looks like bio looks
+                    height="20px"
+                    onChange={(evt) => setShowDesc(evt.target.value)}
+                  />
+                </Form.Group>
                 <Form.Group>
                   <Form.Label for="bio">Bio:</Form.Label>
                   <textarea
@@ -88,12 +205,25 @@ function ArtistForm() {
                     onChange={(evt) => setBio(evt.target.value)}
                   />
                 </Form.Group>
-                <Form.Group id="date">
-                  <Form.Label>Date:</Form.Label>
+                <Form.Group>
+                  <Form.Label>Main Image:</Form.Label>
+                  <Form.Control type="file" onChange={handleImgMain} />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Image Two:</Form.Label>
+                  <Form.Control type="file" onChange={handleImgTwo} />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Image Three:</Form.Label>
+                  <Form.Control type="file" onChange={handleImgThree} />
+                </Form.Group>
+
+                <Form.Group id="vidLink">
+                  <Form.Label>Video Link:</Form.Label>
                   <Form.Control
-                    type="datetime-local"
-                    name="dateInput"
-                    onChange={(evt) => setDate(evt.target.value)}
+                    type="url"
+                    name="vidInput"
+                    onChange={(evt) => setVideoLink(evt.target.value)}
                   />
                 </Form.Group>
 
