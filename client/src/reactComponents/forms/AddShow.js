@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import app, { firestore } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { storage } from "../firebase/firebase";
-import DatesModal from './DatesModal'
+
 
 function AdminForm() {
-   const [modal, setModal] = useState(false)
+  
   // create state for show information
   let [title, setTitle] = useState("");
   let [blurb, setBlurb] = useState("");
@@ -18,7 +18,7 @@ function AdminForm() {
 
    let [status, setStatus] = useState(""); //proposed / Booked / archived
    let [numOfShows, setNumOfShows] = useState(0)
-  let [dates, setDates] = useState(""); // creates array of dates/times
+//   let [dates, setDates] = useState(""); // creates array of dates/times
 
   // create state for each artist field
   let [displayName, setDisplayName] = useState("");
@@ -44,7 +44,7 @@ function AdminForm() {
     imageLg: imageLg,
     imageSm: imageSm,
     status: status,
-    dates: dates,
+   //  dates: dates,
     displayName: displayName,
     contactName: contactName,
     phone: phone,
@@ -78,7 +78,7 @@ function AdminForm() {
       event.target.imageLgIn.value = "";
       event.target.imageSmIn.value = "";
       event.target.statusIn.value = "";
-      event.target.datesIn.value = "";
+      // event.target.datesIn.value = "";
       event.target.showDescriptionInput.value = "";
       event.target.displayNameInput.value = "";
       event.target.contactNameInput.value = "";
@@ -99,7 +99,7 @@ function AdminForm() {
       setImageLg("");
       setImageSm("");
       setStatus("");
-      setDates("");
+      // setDates("");
       setDisplayName("");
       setContactName("");
       setPhone("");
@@ -137,16 +137,16 @@ function AdminForm() {
     });
    };
    
-      const handleModalOpen = () => {
-         setModal(true)
-        console.log('open', numOfShows)
-      }
-      const handleModalClose = () => {
-         setModal(false)
-         console.log('close', numOfShows)
-      }
+//       const handleModalOpen = () => {
+//          setModal(true)
+//         console.log('open', numOfShows)
+//       }
+//       const handleModalClose = () => {
+//          setModal(false)
+//          console.log('close', numOfShows)
+//       }
 
-  console.log(modal)
+//   console.log(modal)
 
   // form sets state on input change and fires enterNewShow on submit
   return (
@@ -219,7 +219,7 @@ function AdminForm() {
                       onChange={(evt) => setStatus(evt.target.value)}
                     />
                   </Form.Group>
-                          <Form.Group>
+                          {/* <Form.Group>
                              <Form.Label>Number of Shows: </Form.Label>
                              
                              <input
@@ -238,7 +238,7 @@ function AdminForm() {
                                 closeModal={handleModalClose}
                                 numOfShows={numOfShows} />}
                           
-                          </Form.Group>
+                          </Form.Group> */}
                 </Card.Body>
                 <Card.Body>
                   <br />
