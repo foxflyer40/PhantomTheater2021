@@ -17,8 +17,12 @@ export default function SingleShow(props) {
          <br />
          {props.blurb}
          <br />
+         <br />
          <button id='btnDelete' onClick={() => props.deleteThisShow(props.id)}>-Delete-</button>
+
          <button id='btnEdit' onClick={() => props.editThisShow(props.id)}>- Edit -</button>
+
+         <button>add Dates</button>
          <hr />
 
       </div>
