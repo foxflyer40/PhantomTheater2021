@@ -137,8 +137,6 @@ function AdminForm() {
     });
    };
    
-
-
       const handleModalOpen = () => {
          setModal(true)
         console.log('open', numOfShows)
@@ -224,11 +222,21 @@ function AdminForm() {
                           <Form.Group>
                              <Form.Label>Number of Shows: </Form.Label>
                              
-                             <input type='number' name='numberOfShows' onChange={(evt) => setNumOfShows(evt.target.value)}></input>
-                             <Button className="w-100" onClick={handleModalOpen} >
+                             <input
+                                type='number'
+                                name='numberOfShows'
+                                onChange={(evt) => setNumOfShows(evt.target.value)}>
+                             </input>
+                             
+                             <Button
+                                className="w-100"
+                                onClick={handleModalOpen} >
                                 Enter Dates
                               </Button>
-                             {modal && <DatesModal closeModal={handleModalClose} numOfShows={numOfShows} />}
+                             
+                             {modal && <DatesModal
+                                closeModal={handleModalClose}
+                                numOfShows={numOfShows} />}
                           
                           </Form.Group>
                 </Card.Body>
