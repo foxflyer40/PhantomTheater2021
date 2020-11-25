@@ -7,6 +7,12 @@
   height: 20vw;
 }
 
+.footer a {
+  color:  rgb(195, 247, 9);
+  font-size: 12pt;
+  text-decoration: none;
+}
+
 /*--------------------- styling targetting both logo images------------------ */
 .social {
   background-color: white;
@@ -34,3 +40,4 @@ p {
 #insta {
   border-radius: 35%;
 }
+
