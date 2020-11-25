@@ -43,6 +43,12 @@ function AllShows() {
       history.push(`/EditShow#${id}`)
    }
 
+   async function addDatesThisShow(id) {
+      console.log('addDates for ', id)
+   }
+
+
+
    return (
       <div>
          { allShows ? allShows.map(show => {
@@ -57,6 +63,7 @@ function AllShows() {
                type={show.type}
                blurb={show.blurb}
                artist={show.displayName}
+               addDatesThisShow={addDatesThisShow}
             ></SingleShow>
          }) : 'Loading'
          }

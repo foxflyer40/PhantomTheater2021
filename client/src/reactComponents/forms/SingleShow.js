@@ -22,7 +22,7 @@ export default function SingleShow(props) {
 
          <button id='btnEdit' onClick={() => props.editThisShow(props.id)}>- Edit -</button>
 
-         <button>add Dates</button>
+         <button id='btnAddDates' onClick={() => props.addDatesThisShow(props.id) }> add Dates</button>
          <hr />
 
       </div>
