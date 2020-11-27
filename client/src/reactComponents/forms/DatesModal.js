@@ -9,7 +9,7 @@ const DatesModal = (props) => {
    }
 
    return (
-      <div>
+      <div>Dates
          <span>
          <input
             type='number'

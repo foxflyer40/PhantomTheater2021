@@ -5,7 +5,7 @@ import React from 'react'
 export default function SingleShow(props) {
    return (
       <div>
-         {/* {props.id} */}
+         {props.id}
          {/* <br /> */}
          {/* <h4>{props.title}</h4> */}
 {/*        

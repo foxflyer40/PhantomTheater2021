@@ -67,10 +67,12 @@ function AllShows() {
                blurb={show.blurb}
                artist={show.displayName}
                addDatesThisShow={addDatesThisShow}
-            ></SingleShow>
-            
+            ></SingleShow>            
          }) : 'Loading'
          }
+         {/* <div id='modal' style={{ visibility: modal ? 'visible' : 'hidden' }} >
+         <DatesModal />
+            </div> */}
          
       </div>
    )
