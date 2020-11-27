@@ -217,13 +217,15 @@ export default function EditShow() {
                            </Form.Group>
                            <Form.Group>
                               <Form.Label>Status:</Form.Label>
-                              <Form.Control
-                                 type="text"
+                              <select
+                                 className='form-control'
                                  id="status"
                                  name="statusIn"
                                  value={status}
-                                 onChange={(evt) => setStatus(evt.target.value)}
-                              />
+                                 onChange={(evt) => setStatus(evt.target.value)}>
+                                 <option selected>Proposal </option>
+                                 <option>Booked</option>
+                              </select>
                            </Form.Group>
                            <Form.Group>
                               <Form.Label>Dates: </Form.Label>

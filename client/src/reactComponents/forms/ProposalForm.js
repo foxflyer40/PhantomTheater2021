@@ -1,38 +1,52 @@
+//----------------imports----------------//
+
 import React, { useState } from "react";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { firestore } from "../firebase/firebase";
 import { useHistory } from 'react-router-dom'
 
-function ProposalForm() {
-  
-   const history = useHistory()
-//   let [title, setTitle] = useState("");
+
+function ProposalForm() { 
+  //hook set-up
+  const history = useHistory()
   let [artist, setArtist] = useState("");
   let [description, setDescription] = useState("");
-//   let [contactName, setContactName] = useState("");
   let [phone, setPhone] = useState("");
   let [email, setEmail] = useState("");
 
-  //do we still want two separate collections
-  let showProposal = {
-   //  title: title,
+  //do we still want two separate collections??
+  
+
+  async function submitProposal(event) {
+    event.preventDefault();
+
+    let showProposal = {
     status: "proposal",
     description: description,
     artist: artist,
-   //  contactName: contactName,
     phone: phone,
     email: email,
   };
 
-  async function submitProposal(event) {
-    event.preventDefault();
+//fetch for sending e-mail notification when form is submitted
+  fetch('/send', {
+    method: 'POST',
+    body: JSON.stringify(showProposal),
+    headers: {
+      Accept: 'application/json',
+      "Content-Type": "application/json"
+    },
+  }).then((response) => response.json())
+    .then((response) => {
+      console.log(response.message)
+    })
+
     console.log(showProposal)
     firestore.collection("shows").doc().set(showProposal);
+
     //clears out form upon submission
-   //  event.target.title.value = "";
     event.target.artist.value = "";
     event.target.description.value = "";
-   //  event.target.contactName.value = "";
     event.target.phone.value = "";
     event.target.email.value = "";
     alert(`Thank you ${artist}, for submitting your proposal.`)
@@ -50,15 +64,7 @@ function ProposalForm() {
             <h2 className="text-center mb-2">Show Proposal Form</h2>
             <br />
 
-            <Form id="ArtistForm" onSubmit={submitProposal}>
-              {/* <Form.Group id="artName">
-                <Form.Label>Title?:</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="title"
-                  onChange={(evt) => setTitle(evt.target.value)}
-                />
-              </Form.Group> */}
+            <Form id="ArtistForm" onSubmit={submitProposal} method="POST">
               <Form.Group id="artName">
                 <Form.Label>Artist Name:</Form.Label>
                 <Form.Control
@@ -67,14 +73,6 @@ function ProposalForm() {
                   onChange={(evt) => setArtist(evt.target.value)}
                 />
               </Form.Group>
-              {/* <Form.Group id="contactName">
-                <Form.Label>Contact Name:</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="contactName"
-                  onChange={(evt) => setContactName(evt.target.value)}
-                />
-              </Form.Group> */}
               <Form.Group id="contactPhone">
                 <Form.Label>Contact Phone:</Form.Label>
                 <Form.Control
