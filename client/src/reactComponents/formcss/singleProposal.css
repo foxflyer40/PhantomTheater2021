@@ -1,0 +1,16 @@
+.single_proposal h4{
+    color: rgb(195, 247, 9);
+
+}
+.single_proposal{
+    background-color: #1d2433;
+    color:white;
+}
+
+.proposal_button{
+    border:none;
+  background-color:#007bff ;
+  color: white;
+  width: 75px;
+    height: 35px;
+}

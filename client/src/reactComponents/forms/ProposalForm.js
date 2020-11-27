@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { firestore } from "../firebase/firebase";
 import { useHistory } from 'react-router-dom'
+import "../formcss/proposal.css"
 
 function ProposalForm() {
   
@@ -40,6 +41,7 @@ function ProposalForm() {
   }
 
   return (
+    <div className="proposal_container">
     <Container
       className="d-flex align-items center justify-content-center mt-5"
       style={{ minHeight: "80vh" }}
@@ -102,7 +104,7 @@ function ProposalForm() {
                   onChange={(evt) => setDescription(evt.target.value)}
                 />
               </Form.Group>
-              <Button className="w-100" type="submit">
+              <Button id="submit_button" className="w-100" type="submit">
                 Submit
               </Button>
             </Form>
@@ -110,6 +112,7 @@ function ProposalForm() {
         </Card>
       </div>
     </Container>
+    </div>
   );
 }
 

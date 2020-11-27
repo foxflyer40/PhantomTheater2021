@@ -1,0 +1,11 @@
+.artist_container{
+    color:rgb(195, 247, 9);
+}
+.form-control-file{
+    color: white;
+    
+}
+
+button #file-upload-button{
+    background-color:#ffae57;
+}

@@ -4,6 +4,7 @@ import { storage } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import DatesModal from './DatesModal'
+import "../formcss/editShow.css"
 
 let nullShow = {
    title: "title",
@@ -148,7 +149,7 @@ export default function EditShow() {
    }
 
    return (
-      <div>
+      <div className="edit_show">
          <Container
             className="d-flex align-items center justify-content-center mt-5"
             style={{ minHeight: "80vh" }}
