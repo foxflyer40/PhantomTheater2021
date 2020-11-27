@@ -4,6 +4,7 @@ import { firestore } from '../firebase/firebase';
 import { storage } from '../firebase/firebase';
 import SingleShow from './SingleShow'
 import { useHistory } from 'react-router-dom'
+import DatesModal from './DatesModal'
 
 // repetitive code that gets all ids and documents in a collection for .map
 const collectAllIdsAndDocs = doc => {
@@ -11,7 +12,7 @@ const collectAllIdsAndDocs = doc => {
 }
 
 function AllShows() {
-  
+   const [modal, setModal] = useState(false)
    let [allShows, setAllShows] = useState(null)
    const history = useHistory()
 
@@ -43,10 +44,18 @@ function AllShows() {
       history.push(`/EditShow#${id}`)
    }
 
+   async function addDatesThisShow(id) {
+      setModal(true)
+     
+      console.log('addDates for ', id)
+   }
+
+
+
    return (
       <div>
          { allShows ? allShows.map(show => {
-            console.log(show)
+           
             return <SingleShow
                key={show.id}
                deleteThisShow={handleDelete}
@@ -57,9 +66,12 @@ function AllShows() {
                type={show.type}
                blurb={show.blurb}
                artist={show.displayName}
+               addDatesThisShow={addDatesThisShow}
             ></SingleShow>
+            
          }) : 'Loading'
          }
+         
       </div>
    )
 }

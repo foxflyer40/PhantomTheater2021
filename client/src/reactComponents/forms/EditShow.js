@@ -3,6 +3,7 @@ import { firestore } from "../firebase/firebase";
 import { storage } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import DatesModal from './DatesModal'
 
 let nullShow = {
    title: "title",
@@ -30,6 +31,7 @@ let nullShow = {
 export default function EditShow() {
    const history = useHistory();
 
+   const [modal, setModal] = useState(false)
    // create state object to hold values from database
    let [thisShow, setThisShow] = useState(nullShow);
 
@@ -76,7 +78,7 @@ export default function EditShow() {
          showInData.imageLg ? setImageLg(showInData.imageLg) : setImageLg("");
          showInData.imageSm ? setImageSm(showInData.imageSm) : setImageSm("");
          showInData.status ? setStatus(showInData.status) : setStatus("");
-         showInData.dates ? setDates(showInData.dates) : setDates("");
+         showInData.dates ? setDates(showInData.dates) : setDates([]);
          showInData.displayName
             ? setDisplayName(showInData.displayName)
             : setDisplayName("");
@@ -103,7 +105,6 @@ export default function EditShow() {
       getOneShow();
    }
 
-   console.log("state changed on page load: ", thisShow);
    //*************************************************** */
 
    async function enterUpdates(event) {
@@ -139,11 +140,12 @@ export default function EditShow() {
       history.push("/adminDash");
    }
 
-   async function enterDates() {
-
+   const handleModalOpen = () => {
+      setModal(true)
    }
-
-
+   const handleModalClose = () => {
+      setModal(false)
+   }
 
    return (
       <div>
@@ -226,17 +228,26 @@ export default function EditShow() {
                               />
                            </Form.Group>
                            <Form.Group>
-                              <Form.Label>Dates: </Form.Label>
-                              <Button className="w-100" onClick={enterDates}>
-                                 Enter Dates
+                              <Button
+                                 className="w-100"
+                                 onClick={handleModalOpen} >
+                                 Add Showtimes
                               </Button>
-                              {/* <Form.Control
-                                 type="datetime-local"
+                              <Form.Label>Showtimes: </Form.Label>
+
+                              {modal && <DatesModal
+                                 closeModal={handleModalClose}
+                              />}
+                           </Form.Group>
+                           <Form.Group>
+                              <Form.Label>Showtimes:</Form.Label>
+                              <Form.Control
+                                 type="array"
                                  id="dates"
-                                 name="datesIn"
+                                 name="dates"
                                  value={dates}
-                                 onChange={(evt) => setDates(evt.target.value)}
-                              /> */}
+                                
+                              />
                            </Form.Group>
                         </Card.Body>
                         {/* left side column of form END*/}

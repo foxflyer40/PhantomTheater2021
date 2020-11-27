@@ -3,6 +3,19 @@
   position: relative;
 }
 
+/*-------------------Home Page Image Overlay Text Styling-------------------------- */
+.homeContainer h1,
+.homeContainer h2 {
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.homeContainer p {
+  font-size: 16pt;
+}
+
 /*------------------------- currently playing image and text -------------------------*/
 .currentPlay {
   display: flex;
@@ -26,11 +39,11 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  text-align: center;
+  text-align: right;
 }
 
 .whatNext img {
-  width: 100%;
+  width: 70%;
   height: auto;
 }
 
@@ -49,7 +62,7 @@
   .currentPlayText {
     position: absolute;
     width: 60vw;
-    top: 28%;
+    top: 15%;
     left: 5%;
   }
 
@@ -64,56 +77,56 @@
     left: 35%;
     text-align: right;
   }
-}
 
+  .whatNext img {
+    width: 100%;
+  }
+}
 
 /* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width: 400px) {
   .currentPlayText {
-    top: 30%;
+    top: 20%;
   }
 
   .whatNextText {
     top: 5%;
     left: 35%;
   }
-}
 
-/* -----------------------Screen resizing styling--------------- */
-
-@media screen and (min-width: 450px) {
-  .currentPlayText {
-    top: 30%;
-  }
 }
 
 /* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 550px) {
-  .currentPlayText {
-    top: 35%;
+  .homeContainer h1 {
+    font-size: 40pt;
   }
+
+  .homeContainer h2 {
+    font-size: 30pt;
+  }
+
 }
 
 /* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width: 600px) {
   .currentPlayText {
-    top: 40%;
+    top: 25%;
   }
 }
 
 /* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 800px) {
-  .whatNext img {
-    width: 75%;
-    height: auto;
-  }
-  
   .currentPlayText {
     position: absolute;
-    top: 85%;
+    top: 70%;
     left: 5%;
+  }
+
+  .currentPlayText h1 {
+    font-size: 36pt;
   }
 
   .whatNext {
@@ -122,13 +135,92 @@
     left: 50%;
   }
 
+  .whatNext img {
+    width: 75%;
+  }
+
   .whatNextText {
     width: 25vw;
-    top: 55%;
-    left: 25%;
+    top: 30%;
+    left: 45%;
   }
 
   .whatNextText h2 {
-    font-size: 24pt;
+    font-size: 30pt;
+  }
+
+  .whatNextText p {
+    font-size: 14pt;
+  }
+}
+
+/* -----------------------Screen resizing styling--------------- */
+
+@media screen and (min-width: 900px) {
+  .currentPlayText {
+    position: absolute;
+    top: 78%;
+    left: 5%;
+  }
+
+  .whatNextText {
+    width: 25vw;
+    top: 35%;
+    left: 45%;
+  }
+}
+
+/* -----------------------Screen resizing styling--------------- */
+
+@media screen and (min-width: 1050px) {
+  .currentPlayText {
+    position: absolute;
+    top: 78%;
+    left: 5%;
+  }
+
+  .whatNextText {
+    width: 25vw;
+    top: 35%;
+    left: 45%;
+  }
+}
+
+/* -----------------------Screen resizing styling--------------- */
+
+@media screen and (min-width: 1170px) {
+  .currentPlayText {
+    position: absolute;
+    top: 85%;
+    left: 5%;
+  }
+
+  .whatNextText {
+    width: 25vw;
+    top: 55%;
+    left: 45%;
+  }
+}
+
+/* -----------------------Screen resizing styling--------------- */
+@media screen and (min-width: 1250px) {
+  .currentPlayText {
+    position: absolute;
+    top: 85%;
+    left: 5%;
+  }
+
+  .whatNextText {
+    width: 25vw;
+    top: 60%;
+    left: 45%;
+  }
+
+  .currentPlayText h1 {
+    font-size: 38pt;
+  }
+
+  .whatNextText h2 {
+    font-size: 32pt;
   }
 }
