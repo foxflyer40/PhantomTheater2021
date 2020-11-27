@@ -1,9 +1,12 @@
 // ----------------Imports -----------------------
-import React from "react";
+import React, {useState} from "react";
 import "./Season.css";
 import Calendar from "../images/calendar.jpg";
 import { firestore } from "../firebase/firebase";
-import { useHistory} from 'react-router-dom'
+import SeasonEvent from '../forms/SeasonEvent';
+
+
+
 
 const collectAllIdsAndDocs = (doc) => {
   return { id: doc.id, ...doc.data() };
@@ -13,13 +16,13 @@ const collectAllIdsAndDocs = (doc) => {
 // ------- Season function with calendar and show titles and dates
 function Season() {
   
-let [allshows, setAllShows] = useState(null)
-const history = useHistory()
+let [allShows, setAllShows] = useState(null)
+
 
 async function seeAllShows(){
 
   const showsRef = firestore.collection('shows')
-  const showSnapshot = await showsRef.where('status', '!=', 'proposal').get
+  const showSnapshot = await showsRef.where('status', '!=', 'proposal').get()
 
 
 const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
@@ -30,48 +33,30 @@ if (!allShows) {
 
 }
 
-
+seeAllShows()
+console.log('line 35')
 
 
   return (
     <div className="season_container">
       <h1>Season Page!</h1>
-      <div className="calendar_container">
-        <div className="calendar_season">
-          <img src={Calendar} />
-        </div>
-        <ul className="season_list">
-          <li>
-            <a href="#">Show Title!</a>20/20/2020
-          </li>
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
+      { allShows ? allShows.map(show => {
 
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
+        return <SeasonEvent
+        key = {show.id}
+        id = {show.id}
+        title={show.title}
+        dates={show.dates}
+        type ={show.type}
+        blurb = {show.blurb}
+        artist = {show.displayName}
+        imageLg = {show.imageLg}
+        ></SeasonEvent>
+ 
+      }) : 'loading'
+      
+      }
 
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
-          <li>
-            <a href="#">Show Title!</a> 20/20/2020
-          </li>
-        </ul>
-      </div>
     </div>
   );
 }

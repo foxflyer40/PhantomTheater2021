@@ -2,6 +2,8 @@
 import React from "react";
 import "./Artist.css";
 import ArtistImage from "../images/artist.jpg";
+import {firestore} from "../firebase/firebase";
+
 
 
 //----------------Artist component function ----------------
