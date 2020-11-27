@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import app, { firestore } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { storage } from "../firebase/firebase";
+import "../formcss/addShow.css"
 
 
 function AdminForm() {
@@ -150,8 +151,8 @@ function AdminForm() {
 
   // form sets state on input change and fires enterNewShow on submit
   return (
-    <div>
-      <Container
+    <div className="add_show">
+      <Container id="container_add"
         className="d-flex align-items center justify-content-center mt-5"
         style={{ minHeight: "80vh" }}
       >
@@ -166,12 +167,12 @@ function AdminForm() {
               type="submit"
               value="submit"
             >
-              <div className="d-flex flex-direction row">
+              <div id="form" className="d-flex flex-direction row">
                 <Card.Body>
                   <h2 className="text-center mb-2">Add A Show:</h2>
                   <br />
 
-                  <Form.Group>
+                  <Form.Group >
                     <Form.Label>Show Title:</Form.Label>
                     <Form.Control
                       type="text"
@@ -240,6 +241,7 @@ function AdminForm() {
                           
                           </Form.Group> */}
                 </Card.Body>
+                {/* Second Card Body */}
                 <Card.Body>
                   <br />
                   <br />
@@ -296,7 +298,15 @@ function AdminForm() {
                       onChange={(evt) => setDescription(evt.target.value)}
                     />
                   </Form.Group>
-                  <Form.Group>
+                 
+                </Card.Body>
+                {/* End of Second Card Body */}
+
+                {/* Start of the Third Card Body */}
+                <Card.Body>
+
+                <br/><br/><br/>
+                <Form.Group>
                     <Form.Label>Image 1:</Form.Label>
                     <Form.Control
                       type="text"

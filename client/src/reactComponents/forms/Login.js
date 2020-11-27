@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { useAuth } from "./AuthContext";
 import { useHistory } from 'react-router-dom'
+import "../formcss/login.css"
 
 export default function Login() {
   //grabs input from the form
@@ -36,6 +37,7 @@ export default function Login() {
   }
 
   return (
+    <div className="login_container">
     <Container
       className="d-flex align-items center justify-content-center mt-5"
       style={{ minHeight: "80vh" }}
@@ -62,5 +64,6 @@ export default function Login() {
         </Card>
       </div>
     </Container>
+    </div>
   );
 }

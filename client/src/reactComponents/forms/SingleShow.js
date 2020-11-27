@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../formcss/singleShow.css"
 
 
 
@@ -8,7 +8,7 @@ export default function SingleShow(props) {
 // let today = new Date()
 
    return (
-      <div>
+      <div className="single_show">
          {/* {props.id} */}
          {numberOfShows}
          {/* {today} */}
@@ -34,11 +34,11 @@ export default function SingleShow(props) {
          {props.blurb}
          <br />
          <br />
-         <button id='btnDelete' onClick={() => props.deleteThisShow(props.id)}>-Delete-</button>
+         <button id='btnDelete' className="show_button" onClick={() => props.deleteThisShow(props.id)}>-Delete-</button>
 
-         <button id='btnEdit' onClick={() => props.editThisShow(props.id)}>- Edit -</button>
+         <button id='btnEdit' className="show_button" onClick={() => props.editThisShow(props.id)}>- Edit -</button>
 
-         <button id='btnAddDates' onClick={() => props.addDatesThisShow(props.id) }> add Dates</button>
+         <button id='btnAddDates' className="show_button" onClick={() => props.addDatesThisShow(props.id) }> add Dates</button>
          <hr />
 
       </div>

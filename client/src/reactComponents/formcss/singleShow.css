@@ -1,0 +1,12 @@
+.show_button{
+  border:none;
+  background-color:#007bff ;
+  color: white;
+  width: 75px;
+    height: 35px;
+   
+}
+
+.single_show h4{
+    color:rgb(195, 247, 9);
+}

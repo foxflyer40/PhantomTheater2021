@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import app, { firestore } from "../firebase/firebase";
+import "../formcss/artistForm.css"
 
 function ArtistForm() {
   // create state for each artist field
@@ -125,7 +126,7 @@ function ArtistForm() {
   };
 
   return (
-    <div>
+    <div className="artist_container">
       <Container
         className="d-flex align-items center justify-content-center mt-5"
         style={{ minHeight: "80vh" }}
@@ -207,15 +208,15 @@ function ArtistForm() {
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Main Image:</Form.Label>
-                  <Form.Control type="file" onChange={handleImgMain} />
+                  <Form.Control className="img_submit" type="file" onChange={handleImgMain} />
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Image Two:</Form.Label>
-                  <Form.Control type="file" onChange={handleImgTwo} />
+                  <Form.Control className="img_submit" type="file" onChange={handleImgTwo} />
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Image Three:</Form.Label>
-                  <Form.Control type="file" onChange={handleImgThree} />
+                  <Form.Control className="img_submit" type="file" onChange={handleImgThree} />
                 </Form.Group>
 
                 <Form.Group id="vidLink">

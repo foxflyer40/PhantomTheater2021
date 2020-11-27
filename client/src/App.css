@@ -6,7 +6,9 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
+.App{
+  background-color: #1d2433;
+}
 p {
   font-family: 'IM Fell Double Pica';
 }
