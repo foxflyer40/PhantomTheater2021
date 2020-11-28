@@ -3,24 +3,26 @@ import React, { useState } from "react";
 import app, { firestore } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { storage } from "../firebase/firebase";
+import { useHistory } from 'react-router-dom'
+import NumberFormat from 'react-number-format'
 import "../formcss/addShow.css";
 
 function AdminForm() {
   // create state for show information
+  const history = useHistory()
   let [title, setTitle] = useState("");
   let [blurb, setBlurb] = useState("");
   let [type, setType] = useState("");
 
   let [imageLg, setImageLg] = useState("");
   let [imageLgFile, setimageLgFile] = useState("");
-  let [imageSm, setImageSm] = useState("");
 
-  let [status, setStatus] = useState(""); //proposed / Booked / archived
+  let [status, setStatus] = useState("Booked"); 
   let [numOfShows, setNumOfShows] = useState(0);
   //   let [dates, setDates] = useState(""); // creates array of dates/times
 
   // create state for each artist field
-  let [displayName, setDisplayName] = useState("");
+  let [artist, setArtist] = useState("");
   let [contactName, setContactName] = useState("");
   let [phone, setPhone] = useState("");
   let [email, setEmail] = useState("");
@@ -30,7 +32,6 @@ function AdminForm() {
   let [image1, setImage1] = useState("");
   let [image2, setImage2] = useState("");
   let [image3, setImage3] = useState("");
-  let [image4, setImage4] = useState("");
   let [video1, setVideo1] = useState("");
   let [link1, setLink1] = useState("");
   let [link2, setLink2] = useState("");
@@ -41,10 +42,8 @@ function AdminForm() {
     type: type,
     blurb: blurb,
     imageLg: imageLg,
-    imageSm: imageSm,
     status: status,
-    //  dates: dates,
-    displayName: displayName,
+    artist: artist,
     contactName: contactName,
     phone: phone,
     email: email,
@@ -53,7 +52,6 @@ function AdminForm() {
     image1: image1,
     image2: image2,
     image3: image3,
-    image4: image4,
     video1: video1,
     link1: link1,
     link2: link2,
@@ -75,11 +73,9 @@ function AdminForm() {
       event.target.blurbIn.value = "";
       event.target.typeIn.value = "";
       event.target.imageLgIn.value = "";
-      event.target.imageSmIn.value = "";
       event.target.statusIn.value = "";
-      // event.target.datesIn.value = "";
       event.target.showDescriptionInput.value = "";
-      event.target.displayNameInput.value = "";
+      event.target.artistInput.value = "";
       event.target.contactNameInput.value = "";
       event.target.phoneInput.value = "";
       event.target.emailInput.value = "";
@@ -87,19 +83,17 @@ function AdminForm() {
       event.target.image1Input.value = "";
       event.target.image2Input.value = "";
       event.target.image3Input.value = "";
-      event.target.image4Input.value = "";
       event.target.video1Input.value = "";
       event.target.link1Input.value = "";
       event.target.link2Input.value = "";
+      alert("Show has been added!")
+      history.push('/adminDash')
       // clear state
       setTitle("");
       setType("");
       setBlurb("");
       setImageLg("");
-      setImageSm("");
-      setStatus("");
-      // setDates("");
-      setDisplayName("");
+      setArtist("");
       setContactName("");
       setPhone("");
       setEmail("");
@@ -108,7 +102,6 @@ function AdminForm() {
       setImage1("");
       setImage2("");
       setImage3("");
-      setImage4("");
       setVideo1("");
       setLink1("");
       setLink2("");
@@ -136,16 +129,6 @@ function AdminForm() {
     });
   };
 
-  //       const handleModalOpen = () => {
-  //          setModal(true)
-  //         console.log('open', numOfShows)
-  //       }
-  //       const handleModalClose = () => {
-  //          setModal(false)
-  //          console.log('close', numOfShows)
-  //       }
-
-  //   console.log(modal)
 
   // form sets state on input change and fires enterNewShow on submit
   return (
@@ -180,6 +163,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="titleIn"
+                      placeholder="Enter Title"
                       onChange={(evt) => setTitle(evt.target.value)}
                     />
                   </Form.Group>
@@ -190,6 +174,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="blurbIn"
+                      placeholder="Enter Blurb"
                       onChange={(evt) => setBlurb(evt.target.value)}
                     />
                   </Form.Group>
@@ -200,6 +185,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="typeIn"
+                      placeholder="Enter Type"
                       onChange={(evt) => setType(evt.target.value)}
                     />
                   </Form.Group>
@@ -215,46 +201,7 @@ function AdminForm() {
                       onChange={handleChange}
                     />
                   </Form.Group>
-                  {/* Choose small image */}
-                  <Form.Group>
-                    <Form.Label>Image (small): </Form.Label>
-                    <Form.Control
-                      type="file"
-                      name="imageSmIn"
-                      onChange={(evt) => setImageSm(evt.target.value)}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    {/* End of choose a image container */}
-                    {/* Status of the show */}
-                    <Form.Label>Status:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="statusIn"
-                      onChange={(evt) => setStatus(evt.target.value)}
-                    />
-                  </Form.Group>
-                  {/* End of the status of the show */}
-                  {/* <Form.Group>
-                             <Form.Label>Number of Shows: </Form.Label>
-                             
-                             <input
-                                type='number'
-                                name='numberOfShows'
-                                onChange={(evt) => setNumOfShows(evt.target.value)}>
-                             </input>
-                             
-                             <Button
-                                className="w-100"
-                                onClick={handleModalOpen} >
-                                Enter Dates
-                              </Button>
-                             
-                             {modal && <DatesModal
-                                closeModal={handleModalClose}
-                                numOfShows={numOfShows} />}
-                          
-                          </Form.Group> */}
+
                 </Card.Body>
 
                 {/* START OF Second Card Body */}
@@ -268,8 +215,9 @@ function AdminForm() {
                     <Form.Label>Artist Name: </Form.Label>
                     <Form.Control
                       type="text"
-                      name="displayNameInput"
-                      onChange={(evt) => setDisplayName(evt.target.value)}
+                      name="artistInput"
+                      placeholder="Enter Artist Name"
+                      onChange={(evt) => setArtist(evt.target.value)}
                     />
                   </Form.Group>
                   {/* End of Artist Name */}
@@ -279,6 +227,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="contactNameInput"
+                      placeholder="Enter Contact Name"
                       onChange={(evt) => setContactName(evt.target.value)}
                     />
                   </Form.Group>
@@ -286,9 +235,13 @@ function AdminForm() {
                   {/* Phone Container */}
                   <Form.Group>
                     <Form.Label>Phone: </Form.Label>
-                    <Form.Control
+                    <NumberFormat
                       type="text"
                       name="phoneInput"
+                      placeholder="Enter Phone"
+                      className='form-control'
+                      format="(###) ###-####"
+                      mask="_"
                       onChange={(evt) => setPhone(evt.target.value)}
                     />
                   </Form.Group>
@@ -299,6 +252,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="emailInput"
+                      placeholder="Enter Email"
                       onChange={(evt) => setEmail(evt.target.value)}
                     />
                   </Form.Group>
@@ -309,6 +263,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="bioInput"
+                      placeholder="Enter Artist Bio"
                       onChange={(evt) => setBio(evt.target.value)}
                     />
                   </Form.Group>
@@ -321,6 +276,7 @@ function AdminForm() {
                     <textarea
                       className="form-control"
                       name="showDescriptionInput"
+                      placeholder="Enter Show Description"
                       rows="6"
                       onChange={(evt) => setDescription(evt.target.value)}
                     />
@@ -364,16 +320,6 @@ function AdminForm() {
                     />
                   </Form.Group>
                   {/* End of Image 3 container */}
-                  {/* Image 4 container */}
-                  <Form.Group>
-                    <Form.Label>Image 4:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="image4Input"
-                      onChange={(evt) => setImage4(evt.target.value)}
-                    />
-                  </Form.Group>
-                  {/* End of image 4 container */}
                   {/* Video link container */}
                   <Form.Group>
                     <Form.Label>Video:</Form.Label>
@@ -389,6 +335,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="link1Input"
+                      placeholder="Enter Link"
                       onChange={(evt) => setLink1(evt.target.value)}
                     />
                   </Form.Group>
@@ -399,6 +346,7 @@ function AdminForm() {
                     <Form.Control
                       type="text"
                       name="link2Input"
+                      placeholder="Enter Link"
                       onChange={(evt) => setLink2(evt.target.value)}
                     />
                   </Form.Group>

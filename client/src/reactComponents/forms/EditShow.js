@@ -5,6 +5,7 @@ import { Form, Button, Card, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import DatesModal from './DatesModal'
 import "../formcss/editShow.css"
+import NumberFormat from "react-number-format";
 
 let id = document.location.hash.substring(1)
 
@@ -67,7 +68,7 @@ export default function EditShow() {
       if (!showIn.exists) {
          alert("no such document", id);
       } else {
-         
+
          let showInData = showIn.data();
          console.log('line 76 ', showInData)
          setThisShow(showInData);
@@ -170,6 +171,7 @@ export default function EditShow() {
                                  type="text"
                                  id="title"
                                  name="titleIn"
+                                 placeholder="Enter Title"
                                  value={title}
                                  onChange={(evt) => setTitle(evt.target.value)}
                               />
@@ -180,6 +182,7 @@ export default function EditShow() {
                                  type="text"
                                  id="blurb"
                                  name="blurbIn"
+                                 placeholder="Enter Blurb"
                                  value={blurb}
                                  onChange={(evt) => setBlurb(evt.target.value)}
                               />
@@ -190,6 +193,7 @@ export default function EditShow() {
                                  type="text"
                                  id="type"
                                  name="typeIn"
+                                 placeholder="Enter Show Type"
                                  value={type}
                                  onChange={(evt) => setType(evt.target.value)}
                               />
@@ -218,7 +222,7 @@ export default function EditShow() {
                            </Form.Group>
                            <Form.Group>
                               <Button
-                              id="show_button"
+                                 id="show_button"
                                  className="w-100"
                                  onClick={handleModalOpen} >
                                  Add Showtimes
@@ -251,6 +255,7 @@ export default function EditShow() {
                                  type="text"
                                  id="artist"
                                  name="artistInput"
+                                 placeholder="Enter Artist Name"
                                  value={artist}
                                  onChange={(evt) => setArtist(evt.target.value)}
                               />
@@ -261,13 +266,18 @@ export default function EditShow() {
                                  type="text"
                                  id="contactName"
                                  name="contactNameInput"
+                                 placeholder="Enter Contact Name"
                                  value={contactName}
                                  onChange={(evt) => setContactName(evt.target.value)}
                               />
                            </Form.Group>
                            <Form.Group>
                               <Form.Label>Phone: </Form.Label>
-                              <Form.Control
+                              <NumberFormat
+                                 className='form-control'
+                                 mask="_"
+                                 format="(###) ###-####"
+                                 placeholder="Enter Phone"
                                  type="text"
                                  id="phone"
                                  name="phoneInput"
@@ -281,6 +291,7 @@ export default function EditShow() {
                                  type="text"
                                  id="email"
                                  name="emailInput"
+                                 placeholder="Enter Email"
                                  value={email}
                                  onChange={(evt) => setEmail(evt.target.value)}
                               />
@@ -291,6 +302,7 @@ export default function EditShow() {
                                  type="text"
                                  id="bio"
                                  name="bioInput"
+                                 placeholder="Enter Artist Bio"
                                  onChange={(evt) => setBio(evt.target.value)}
                               />
                            </Form.Group>
@@ -300,6 +312,7 @@ export default function EditShow() {
                                  type="text"
                                  id="showDescription"
                                  name="showDescriptionInput"
+                                 placeholder="Enter Show Decription"
                                  rows="6"
                                  value={description}
                                  onChange={(evt) => setDescription(evt.target.value)}
@@ -335,7 +348,7 @@ export default function EditShow() {
                                  onChange={(evt) => setImage3(evt.target.value)}
                               />
                            </Form.Group>
-                           
+
                            <Form.Group>
                               <Form.Label>Video:</Form.Label>
                               <Form.Control
@@ -352,6 +365,7 @@ export default function EditShow() {
                                  type="text"
                                  id="link1"
                                  name="link1Input"
+                                 placeholder="Enter Link"
                                  value={link1}
                                  onChange={(evt) => setLink1(evt.target.value)}
                               />
@@ -362,12 +376,13 @@ export default function EditShow() {
                                  type="text"
                                  id="link2"
                                  name="link2Input"
+                                 placeholder="Enter Link"
                                  value={link2}
                                  onChange={(evt) => setLink2(evt.target.value)}
                               />
                            </Form.Group>
 
-                           <Button id="show_button"className="w-100" type="submit">
+                           <Button id="show_button" className="w-100" type="submit">
                               Submit Updates
                            </Button>
                         </Card.Body>
