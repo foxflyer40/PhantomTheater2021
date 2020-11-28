@@ -10,7 +10,7 @@ export default function SingleShow(props) {
    return (
       <div>
          {/* {props.id} */}
-         {numberOfShows}
+         {/* {numberOfShows} */}
          {/* {today} */}
          <h4>{props.title}</h4>
         
@@ -34,11 +34,19 @@ export default function SingleShow(props) {
          {props.blurb}
          <br />
          <br />
-         <button id='btnDelete' onClick={() => props.deleteThisShow(props.id)}>-Delete-</button>
+         <button
+            id='btnDelete'
+            onClick={() => props.deleteThisShow(props.id)}>
+            -Delete-
+            </button>
 
-         <button id='btnEdit' onClick={() => props.editThisShow(props.id)}>- Edit -</button>
+         <button
+            id='btnEdit'
+            onClick={() => props.editThisShow(props.id)}>
+            - Edit -
+            </button>
 
-         <button id='btnAddDates' onClick={() => props.addDatesThisShow(props.id) }> add Dates</button>
+         {/* <button id='btnAddDates' onClick={() => props.addDatesThisShow(props.id) }> add Dates</button> */}
          <hr />
 
       </div>

@@ -48,6 +48,7 @@ function AllShows() {
       setModal(true)
      
       console.log('addDates for ', id)
+      console.log('modal = ', modal)
    }
 
 
@@ -70,9 +71,11 @@ function AllShows() {
             ></SingleShow>            
          }) : 'Loading'
          }
-         {/* <div id='modal' style={{ visibility: modal ? 'visible' : 'hidden' }} >
-         <DatesModal />
-            </div> */}
+         <div id='modal' style={{ visibility: modal ? 'visible' : 'hidden' }} >
+
+            
+         <DatesModal ></DatesModal>
+            </div>
          
       </div>
    )
