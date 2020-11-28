@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import DatesModal from './DatesModal'
 import "../formcss/editShow.css"
 
+let id = document.location.hash.substring(1)
+
 let nullShow = {
    title: "title",
    type: "type",
@@ -136,13 +138,14 @@ export default function EditShow() {
       };
 
       console.log("second: ", showUpdate);
-      let id = document.location.hash.substring(1);
+      // let id = document.location.hash.substring(1);
       await firestore.collection("shows").doc(id).set(showUpdate);
       history.push("/adminDash");
    }
 
    const handleModalOpen = () => {
       setModal(true)
+      console.log('modal = ', modal)
    }
    const handleModalClose = () => {
       setModal(false)
@@ -235,21 +238,20 @@ export default function EditShow() {
                                  onClick={handleModalOpen} >
                                  Add Showtimes
                               </Button>
-                              <Form.Label>Showtimes: </Form.Label>
-
                               {modal && <DatesModal
                                  closeModal={handleModalClose}
+                                 dates={dates}
+                                 id={id}
                               />}
                            </Form.Group>
                            <Form.Group>
                               <Form.Label>Showtimes:</Form.Label>
-                              <Form.Control
-                                 type="array"
-                                 id="dates"
-                                 name="dates"
-                                 value={dates}
-                                
-                              />
+                              {dates.length >= 1 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[0]} /> : console.log()}
+                              {dates.length >= 2 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[1]} /> : console.log()}
+                              {dates.length >= 3 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[2]} /> : console.log()}
+                              {dates.length >= 4 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[3]} /> : console.log()}
+                              {dates.length >= 5 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[4]} /> : console.log()}
+                              {dates.length >= 6 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[5]} /> : console.log()}
                            </Form.Group>
                         </Card.Body>
                         {/* left side column of form END*/}

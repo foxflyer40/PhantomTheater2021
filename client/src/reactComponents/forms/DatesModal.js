@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
 import ShowTimeInput from './ShowTimeInput'
+import './DatesModal.css'
 
 const DatesModal = (props) => {
    let [numOfShows, setNumOfShows] = useState(0)
  
    const submitForm = (event) => {
+
       props.closeModal()
    }
 
    return (
-      <div>
-         <span>
-         <input
+      <div id='modalWindow' >Dates 
+       <br />
+         {props.id}
+         
+         <span>           
+            <input
             type='number'
             name='numberOfShows'
             onChange={(evt) => setNumOfShows(evt.target.value)}
@@ -26,6 +31,10 @@ const DatesModal = (props) => {
             {numOfShows >= 6 ? <ShowTimeInput></ShowTimeInput> : console.log()}
             <input type='submit' />
          </form>
+
+
+
+
       </div>
    )
 }

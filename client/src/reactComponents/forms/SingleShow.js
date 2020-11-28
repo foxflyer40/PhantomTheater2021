@@ -10,7 +10,7 @@ export default function SingleShow(props) {
    return (
       <div className="single_show">
          {/* {props.id} */}
-         {numberOfShows}
+         {/* {numberOfShows} */}
          {/* {today} */}
          <h4>{props.title}</h4>
         
@@ -38,7 +38,8 @@ export default function SingleShow(props) {
 
          <button id='btnEdit' className="show_button" onClick={() => props.editThisShow(props.id)}>- Edit -</button>
 
-         <button id='btnAddDates' className="show_button" onClick={() => props.addDatesThisShow(props.id) }> add Dates</button>
+         {/* <button id='btnAddDates' className="show_button" onClick={() => props.addDatesThisShow(props.id) }> add Dates</button> */}
+               
          <hr />
 
       </div>

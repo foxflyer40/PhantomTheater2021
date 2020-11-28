@@ -48,6 +48,7 @@ function AllShows() {
       setModal(true)
      
       console.log('addDates for ', id)
+      console.log('modal = ', modal)
    }
 
 
@@ -67,10 +68,14 @@ function AllShows() {
                blurb={show.blurb}
                artist={show.displayName}
                addDatesThisShow={addDatesThisShow}
-            ></SingleShow>
-            
+            ></SingleShow>            
          }) : 'Loading'
          }
+         <div id='modal' style={{ visibility: modal ? 'visible' : 'hidden' }} >
+
+            
+         <DatesModal ></DatesModal>
+            </div>
          
       </div>
    )
