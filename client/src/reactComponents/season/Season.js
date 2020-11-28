@@ -1,5 +1,5 @@
 // ----------------Imports -----------------------
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Season.css";
 import Calendar from "../images/calendar.jpg";
 import { firestore } from "../firebase/firebase";
@@ -15,27 +15,25 @@ const collectAllIdsAndDocs = (doc) => {
 
 // ------- Season function with calendar and show titles and dates
 function Season() {
-  
-let [allShows, setAllShows] = useState(null)
+
+  let [allShows, setAllShows] = useState(null)
 
 
-async function seeAllShows(){
+  async function seeAllShows() {
 
-  const showsRef = firestore.collection('shows')
-  const showSnapshot = await showsRef.where('status', '!=', 'proposal').get()
+    const showsRef = firestore.collection('shows')
+    const showSnapshot = await showsRef.where('status', '!=', 'proposal').get()
 
 
-const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
-if (!allShows) {
-  console.log('allShowsArray =', allShowsArray)
-  setAllShows(allShowsArray)
-}
+    const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
+    if (!allShows) {
+      console.log('allShowsArray =', allShowsArray)
+      setAllShows(allShowsArray)
+    }
 
-}
+  }
 
-seeAllShows()
-console.log('line 35')
-
+  seeAllShows()
 
   return (
     <div className="season_container">
@@ -43,18 +41,18 @@ console.log('line 35')
       { allShows ? allShows.map(show => {
 
         return <SeasonEvent
-        key = {show.id}
-        id = {show.id}
-        title={show.title}
-        dates={show.dates}
-        type ={show.type}
-        blurb = {show.blurb}
-        artist = {show.displayName}
-        imageLg = {show.imageLg}
+          key={show.id}
+          id={show.id}
+          title={show.title}
+          dates={show.dates}
+          type={show.type}
+          blurb={show.blurb}
+          artist={show.displayName}
+          imageLg={show.imageLg}
         ></SeasonEvent>
- 
+
       }) : 'loading'
-      
+
       }
 
     </div>
