@@ -17,7 +17,7 @@ function Artist() {
 
   async function seeAllArtists() {
     const artistsRef = firestore.collection('shows')
-    const artistSnapshot = await artistsRef.where('status', '!=', 'proposal').get()
+    const artistSnapshot = await artistsRef.where('status', '!=', 'Proposal').get()
 
     const allArtistsArray = artistSnapshot.docs.map(collectAllIdsAndDocs)
     if (!allArtists) {

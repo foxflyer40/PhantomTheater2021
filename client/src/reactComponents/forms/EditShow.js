@@ -13,10 +13,9 @@ let nullShow = {
    type: "type",
    blurb: "blurb",
    imageLg: "imageLg",
-   imageSm: "imageSm",
    status: "status",
    dates: [],
-   displayName: "displayName",
+   artist: "artist",
    contactName: "contactName",
    phone: "phone",
    email: "email",
@@ -25,7 +24,6 @@ let nullShow = {
    image1: "image1",
    image2: "image2",
    image3: "image3",
-   image4: "image4",
    video1: "video1",
    link1: "link1",
    link2: "link2",
@@ -43,11 +41,10 @@ export default function EditShow() {
    let [blurb, setBlurb] = useState("");
    let [type, setType] = useState("");
    let [imageLg, setImageLg] = useState("");
-   let [imageSm, setImageSm] = useState("");
    let [status, setStatus] = useState("");
    let [dates, setDates] = useState([]);
 
-   let [displayName, setDisplayName] = useState("");
+   let [artist, setArtist] = useState("");
    let [contactName, setContactName] = useState("");
    let [phone, setPhone] = useState("");
    let [email, setEmail] = useState("");
@@ -57,7 +54,6 @@ export default function EditShow() {
    let [image1, setImage1] = useState("");
    let [image2, setImage2] = useState("");
    let [image3, setImage3] = useState("");
-   let [image4, setImage4] = useState("");
    let [video1, setVideo1] = useState("");
    let [link1, setLink1] = useState("");
    let [link2, setLink2] = useState("");
@@ -71,20 +67,20 @@ export default function EditShow() {
       if (!showIn.exists) {
          alert("no such document", id);
       } else {
+         
          let showInData = showIn.data();
-
+         console.log('line 76 ', showInData)
          setThisShow(showInData);
-
+         console.log('line 78 ', thisShow)
          showInData.title ? setTitle(showInData.title) : setTitle("");
          showInData.blurb ? setBlurb(showInData.blurb) : setBlurb("");
          showInData.type ? setType(showInData.type) : setType("");
          showInData.imageLg ? setImageLg(showInData.imageLg) : setImageLg("");
-         showInData.imageSm ? setImageSm(showInData.imageSm) : setImageSm("");
          showInData.status ? setStatus(showInData.status) : setStatus("");
          showInData.dates ? setDates(showInData.dates) : setDates([]);
-         showInData.displayName
-            ? setDisplayName(showInData.displayName)
-            : setDisplayName("");
+         showInData.artist
+            ? setArtist(showInData.artist)
+            : setArtist("");
          showInData.contactName
             ? setContactName(showInData.contactName)
             : setContactName("");
@@ -97,7 +93,6 @@ export default function EditShow() {
          showInData.image1 ? setImage1(showInData.image1) : setImage1("");
          showInData.image2 ? setImage2(showInData.image2) : setImage2("");
          showInData.image3 ? setImage3(showInData.image3) : setImage3("");
-         showInData.image4 ? setImage4(showInData.image4) : setImage4("");
          showInData.video1 ? setVideo1(showInData.video1) : setVideo1("");
          showInData.link1 ? setLink1(showInData.link1) : setLink1("");
          showInData.link2 ? setLink2(showInData.link2) : setLink2("");
@@ -119,10 +114,9 @@ export default function EditShow() {
          type: type,
          blurb: blurb,
          imageLg: imageLg,
-         imageSm: imageSm,
          status: status,
          dates: dates,
-         displayName: displayName,
+         artist: artist,
          contactName: contactName,
          phone: phone,
          email: email,
@@ -131,14 +125,13 @@ export default function EditShow() {
          image1: image1,
          image2: image2,
          image3: image3,
-         image4: image4,
          video1: video1,
          link1: link1,
          link2: link2,
       };
 
       console.log("second: ", showUpdate);
-      // let id = document.location.hash.substring(1);
+      let id = document.location.hash.substring(1);
       await firestore.collection("shows").doc(id).set(showUpdate);
       history.push("/adminDash");
    }
@@ -212,16 +205,6 @@ export default function EditShow() {
                               />
                            </Form.Group>
                            <Form.Group>
-                              <Form.Label>Image (small): </Form.Label>
-                              <Form.Control
-                                 type="text"
-                                 id="imageSm"
-                                 name="imageSmIn"
-                                 value={imageSm}
-                                 onChange={(evt) => setImageSm(evt.target.value)}
-                              />
-                           </Form.Group>
-                           <Form.Group>
                               <Form.Label>Status:</Form.Label>
                               <select
                                  className='form-control'
@@ -266,10 +249,10 @@ export default function EditShow() {
                               <Form.Label>Artist Name: </Form.Label>
                               <Form.Control
                                  type="text"
-                                 id="displayName"
-                                 name="displayNameInput"
-                                 value={displayName}
-                                 onChange={(evt) => setDisplayName(evt.target.value)}
+                                 id="artist"
+                                 name="artistInput"
+                                 value={artist}
+                                 onChange={(evt) => setArtist(evt.target.value)}
                               />
                            </Form.Group>
                            <Form.Group>
@@ -352,16 +335,7 @@ export default function EditShow() {
                                  onChange={(evt) => setImage3(evt.target.value)}
                               />
                            </Form.Group>
-                           <Form.Group>
-                              <Form.Label>Image 4:</Form.Label>
-                              <Form.Control
-                                 type="text"
-                                 id="image4"
-                                 name="image4Input"
-                                 value={image4}
-                                 onChange={(evt) => setImage4(evt.target.value)}
-                              />
-                           </Form.Group>
+                           
                            <Form.Group>
                               <Form.Label>Video:</Form.Label>
                               <Form.Control

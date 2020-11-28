@@ -18,7 +18,7 @@ export default function AllProposals() {
    async function seeAllProposals() {
       // get all data from shows collection
       const proposalRef = firestore.collection('shows')
-      const proposalSnapshot = await proposalRef.where('status', '==', 'proposal').get()
+      const proposalSnapshot = await proposalRef.where('status', '==', 'Proposal').get()
 
       // create array of all proposals
       const allProposalsArray = proposalSnapshot.docs.map(collectAllIdsAndDocs)

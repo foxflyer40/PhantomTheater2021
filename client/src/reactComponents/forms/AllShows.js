@@ -21,7 +21,7 @@ function AllShows() {
       // get all data from shows collection
       const showsRef = firestore.collection('shows')
       const showSnapshot = await showsRef.where('status', '==', 'Booked').get()
-    
+
       // create array of all shows
       const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
       if (!allShows) {
@@ -46,7 +46,7 @@ function AllShows() {
 
    async function addDatesThisShow(id) {
       setModal(true)
-     
+
       console.log('addDates for ', id)
       console.log('modal = ', modal)
    }
@@ -56,28 +56,28 @@ function AllShows() {
    return (
       <div>
          { allShows ? allShows.map(show => {
-           
+
             return <SingleShow
                key={show.id}
                deleteThisShow={handleDelete}
                editThisShow={handleEdit}
                id={show.id}
-               title={show.title}
+               title={`Title : ${show.title}`}
                dates={show.dates}
-               type={show.type}
-               blurb={show.blurb}
-               artist={show.displayName}
+               type={`Show type : ${show.type}`}
+               blurb={`Blurb : ${show.blurb}`}
+               artist={`Artist : ${show.artist}`}
                addDatesThisShow={addDatesThisShow}
             ></SingleShow>            
          }) : 'Loading'
          }
-         <div id='modal' style={{ visibility: modal ? 'visible' : 'hidden' }} >
+<div id='modal' style={{ visibility: modal ? 'visible' : 'hidden' }} >
 
-            
-         <DatesModal ></DatesModal>
-            </div>
+
+   <DatesModal ></DatesModal>
+</div>
          
-      </div>
+      </div >
    )
 }
 
