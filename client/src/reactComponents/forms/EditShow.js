@@ -230,6 +230,7 @@ export default function EditShow() {
                            </Form.Group>
                            <Form.Group>
                               <Button
+                              id="show_button"
                                  className="w-100"
                                  onClick={handleModalOpen} >
                                  Add Showtimes
@@ -388,7 +389,7 @@ export default function EditShow() {
                               />
                            </Form.Group>
 
-                           <Button className="w-100" type="submit">
+                           <Button id="show_button"className="w-100" type="submit">
                               Submit Updates
                            </Button>
                         </Card.Body>

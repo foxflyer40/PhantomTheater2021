@@ -26,16 +26,16 @@ function Dashboard() {
     <div className="dash_board">
       <h2>Admin Dashboard</h2>
       <div className="dash_buttons">
-        <div className="dash_button">
-          <Button onClick={editProposal} type="submit">
+        <div>
+          <Button id="dash_button" onClick={editProposal} type="submit">
             Proposals
           </Button>
 
-          <Button onClick={editShow} type="submit">
+          <Button id="dash_button" onClick={editShow} type="submit">
             Shows
           </Button>
 
-          <Button onClick={addShow} type="submit">
+          <Button id="dash_button" onClick={addShow} type="submit">
             Add a Show
           </Button>
         </div>

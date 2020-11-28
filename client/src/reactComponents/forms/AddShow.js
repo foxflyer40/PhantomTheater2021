@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import app, { firestore } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { storage } from "../firebase/firebase";
-import "../formcss/addShow.css"
-
+import "../formcss/addShow.css";
 
 function AdminForm() {
-  
   // create state for show information
   let [title, setTitle] = useState("");
   let [blurb, setBlurb] = useState("");
@@ -17,9 +15,9 @@ function AdminForm() {
   let [imageLgFile, setimageLgFile] = useState("");
   let [imageSm, setImageSm] = useState("");
 
-   let [status, setStatus] = useState(""); //proposed / Booked / archived
-   let [numOfShows, setNumOfShows] = useState(0)
-//   let [dates, setDates] = useState(""); // creates array of dates/times
+  let [status, setStatus] = useState(""); //proposed / Booked / archived
+  let [numOfShows, setNumOfShows] = useState(0);
+  //   let [dates, setDates] = useState(""); // creates array of dates/times
 
   // create state for each artist field
   let [displayName, setDisplayName] = useState("");
@@ -45,7 +43,7 @@ function AdminForm() {
     imageLg: imageLg,
     imageSm: imageSm,
     status: status,
-   //  dates: dates,
+    //  dates: dates,
     displayName: displayName,
     contactName: contactName,
     phone: phone,
@@ -136,28 +134,32 @@ function AdminForm() {
         setImageLg(url);
       });
     });
-   };
-   
-//       const handleModalOpen = () => {
-//          setModal(true)
-//         console.log('open', numOfShows)
-//       }
-//       const handleModalClose = () => {
-//          setModal(false)
-//          console.log('close', numOfShows)
-//       }
+  };
 
-//   console.log(modal)
+  //       const handleModalOpen = () => {
+  //          setModal(true)
+  //         console.log('open', numOfShows)
+  //       }
+  //       const handleModalClose = () => {
+  //          setModal(false)
+  //          console.log('close', numOfShows)
+  //       }
+
+  //   console.log(modal)
 
   // form sets state on input change and fires enterNewShow on submit
   return (
     <div className="add_show">
-      <Container id="container_add"
+      {/* Add show container */}
+      <Container
+        id="container_add"
         className="d-flex align-items center justify-content-center mt-5"
         style={{ minHeight: "80vh" }}
       >
         <div className="w-100" style={{ maxWidth: "840px" }}>
           <Card>
+            {/* Start Of the First Column Card */}
+            {/* Start of the form Container. */}
             <Form
               id="adminForm"
               onSubmit={(event) => {
@@ -168,11 +170,12 @@ function AdminForm() {
               value="submit"
             >
               <div id="form" className="d-flex flex-direction row">
+                {/* Add Show section  */}
                 <Card.Body>
                   <h2 className="text-center mb-2">Add A Show:</h2>
                   <br />
-
-                  <Form.Group >
+                  {/* Insert Show Title */}
+                  <Form.Group>
                     <Form.Label>Show Title:</Form.Label>
                     <Form.Control
                       type="text"
@@ -180,6 +183,8 @@ function AdminForm() {
                       onChange={(evt) => setTitle(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Show Title */}
+                  {/* Show Blurb Container */}
                   <Form.Group>
                     <Form.Label>Show Blurb:</Form.Label>
                     <Form.Control
@@ -188,6 +193,8 @@ function AdminForm() {
                       onChange={(evt) => setBlurb(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Blurb */}
+                  {/* Insert Show Type */}
                   <Form.Group>
                     <Form.Label>Show Type:</Form.Label>
                     <Form.Control
@@ -196,23 +203,30 @@ function AdminForm() {
                       onChange={(evt) => setType(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Show Type */}
+                  {/*Container To choose a image */}
+                  {/* Choose a large image */}
                   <Form.Group>
                     <Form.Label>Image (large):</Form.Label>
                     <Form.Control
+                      id="file_button"
                       type="file"
                       name="imageLgIn"
                       onChange={handleChange}
                     />
                   </Form.Group>
+                  {/* Choose small image */}
                   <Form.Group>
                     <Form.Label>Image (small): </Form.Label>
                     <Form.Control
-                      type="text"
+                      type="file"
                       name="imageSmIn"
                       onChange={(evt) => setImageSm(evt.target.value)}
                     />
                   </Form.Group>
                   <Form.Group>
+                    {/* End of choose a image container */}
+                    {/* Status of the show */}
                     <Form.Label>Status:</Form.Label>
                     <Form.Control
                       type="text"
@@ -220,7 +234,8 @@ function AdminForm() {
                       onChange={(evt) => setStatus(evt.target.value)}
                     />
                   </Form.Group>
-                          {/* <Form.Group>
+                  {/* End of the status of the show */}
+                  {/* <Form.Group>
                              <Form.Label>Number of Shows: </Form.Label>
                              
                              <input
@@ -241,11 +256,14 @@ function AdminForm() {
                           
                           </Form.Group> */}
                 </Card.Body>
-                {/* Second Card Body */}
+
+                {/* START OF Second Card Body */}
                 <Card.Body>
                   <br />
                   <br />
-                   <br />
+                  <br />
+                  {/* Line breaks to bring the form down */}
+                  {/* Container to insert Artist Name */}
                   <Form.Group>
                     <Form.Label>Artist Name: </Form.Label>
                     <Form.Control
@@ -254,6 +272,8 @@ function AdminForm() {
                       onChange={(evt) => setDisplayName(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Artist Name */}
+                  {/* Contact Name container */}
                   <Form.Group>
                     <Form.Label>Contact Name: </Form.Label>
                     <Form.Control
@@ -262,6 +282,8 @@ function AdminForm() {
                       onChange={(evt) => setContactName(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Contact container */}
+                  {/* Phone Container */}
                   <Form.Group>
                     <Form.Label>Phone: </Form.Label>
                     <Form.Control
@@ -270,6 +292,8 @@ function AdminForm() {
                       onChange={(evt) => setPhone(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of phone container */}
+                  {/* Email Container */}
                   <Form.Group>
                     <Form.Label>Email:</Form.Label>
                     <Form.Control
@@ -278,6 +302,8 @@ function AdminForm() {
                       onChange={(evt) => setEmail(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of email container */}
+                  {/* Artist Bio container */}
                   <Form.Group>
                     <Form.Label>Artist Bio:</Form.Label>
                     <Form.Control
@@ -286,9 +312,10 @@ function AdminForm() {
                       onChange={(evt) => setBio(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Artist Bio container */}
+                  {/* Show Description Container */}
                   <Form.Group>
                     <Form.Label for="showDescription">
-                      {" "}
                       Description of the Show:
                     </Form.Label>
                     <textarea
@@ -297,16 +324,18 @@ function AdminForm() {
                       rows="6"
                       onChange={(evt) => setDescription(evt.target.value)}
                     />
+                    {/* End of Show Description Container */}
                   </Form.Group>
-                 
                 </Card.Body>
                 {/* End of Second Card Body */}
 
                 {/* Start of the Third Card Body */}
                 <Card.Body>
-
-                <br/><br/><br/>
-                <Form.Group>
+                  <br />
+                  <br />
+                  <br />
+                  {/* Image 1 Container */}
+                  <Form.Group>
                     <Form.Label>Image 1:</Form.Label>
                     <Form.Control
                       type="text"
@@ -314,6 +343,8 @@ function AdminForm() {
                       onChange={(evt) => setImage1(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Image 1 Container */}
+                  {/* Image 2 Container */}
                   <Form.Group>
                     <Form.Label>Image 2:</Form.Label>
                     <Form.Control
@@ -322,6 +353,8 @@ function AdminForm() {
                       onChange={(evt) => setImage2(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End Of image 2 container */}
+                  {/* Image 3 Container */}
                   <Form.Group>
                     <Form.Label>Image 3:</Form.Label>
                     <Form.Control
@@ -330,6 +363,8 @@ function AdminForm() {
                       onChange={(evt) => setImage3(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of Image 3 container */}
+                  {/* Image 4 container */}
                   <Form.Group>
                     <Form.Label>Image 4:</Form.Label>
                     <Form.Control
@@ -338,6 +373,8 @@ function AdminForm() {
                       onChange={(evt) => setImage4(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of image 4 container */}
+                  {/* Video link container */}
                   <Form.Group>
                     <Form.Label>Video:</Form.Label>
                     <Form.Control
@@ -346,6 +383,7 @@ function AdminForm() {
                       onChange={(evt) => setVideo1(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* Link 1 field containeer */}
                   <Form.Group>
                     <Form.Label>Link 1: </Form.Label>
                     <Form.Control
@@ -354,6 +392,8 @@ function AdminForm() {
                       onChange={(evt) => setLink1(evt.target.value)}
                     />
                   </Form.Group>
+                  {/* End of field 1 */}
+                  {/*link 2 container */}
                   <Form.Group>
                     <Form.Label>Link 2:</Form.Label>
                     <Form.Control
@@ -362,8 +402,9 @@ function AdminForm() {
                       onChange={(evt) => setLink2(evt.target.value)}
                     />
                   </Form.Group>
-
-                  <Button className="w-100" type="submit">
+                  {/* End of field 2 */}
+                  {/* End of Video container */}
+                  <Button id="add_submit" className="w-100" type="submit">
                     Submit
                   </Button>
                 </Card.Body>

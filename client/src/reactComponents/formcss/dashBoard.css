@@ -1,7 +1,6 @@
 .dash_board{
-    background-color:#1d2433;
+  background-color:#1d2433;
   color: white;
- 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,4 +20,15 @@
    align-items: center;
    justify-content: center;
   flex-direction:column;
+  
+}
+#dash_button{
+  background-color: #ffae57;
+  border:none;
+  color:#1d2433;
+}
+
+#dash_button:hover{
+  transition: transform 0.3s ease-out;
+  transform:scale(1.1);
 }

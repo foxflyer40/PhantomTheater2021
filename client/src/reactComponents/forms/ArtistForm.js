@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import app, { firestore } from "../firebase/firebase";
-import "../formcss/artistForm.css"
+import "../formcss/artistForm.css";
 
 function ArtistForm() {
   // create state for each artist field
@@ -126,7 +126,9 @@ function ArtistForm() {
   };
 
   return (
+    /* Artist Form container */
     <div className="artist_container">
+      {/* Container of the artist form */}
       <Container
         className="d-flex align-items center justify-content-center mt-5"
         style={{ minHeight: "80vh" }}
@@ -136,7 +138,7 @@ function ArtistForm() {
             <Card.Body>
               <h2 className="text-center mb-2">Artist Submission Form</h2>
               <br />
-
+              {/* Start of the form */}
               <Form
                 id="ArtistForm"
                 onSubmit={(evt) => {
@@ -146,6 +148,7 @@ function ArtistForm() {
                   handleUploadThree(evt);
                 }}
               >
+                {/* Artist name container */}
                 <Form.Group id="artName">
                   <Form.Label>Artist Name:</Form.Label>
                   <Form.Control
@@ -154,6 +157,8 @@ function ArtistForm() {
                     onChange={(evt) => setDisplayName(evt.target.value)}
                   />
                 </Form.Group>
+                {/* End of Artist Name Container */}
+                {/* Contact Name container */}
                 <Form.Group id="contactName">
                   <Form.Label>Contact Name:</Form.Label>
                   <Form.Control
@@ -162,6 +167,8 @@ function ArtistForm() {
                     onChange={(evt) => setContactName(evt.target.value)}
                   />
                 </Form.Group>
+                {/* End of Contact container */}
+                {/* Phone container */}
                 <Form.Group id="contactPhone">
                   <Form.Label>Contact Phone:</Form.Label>
                   <Form.Control
@@ -170,6 +177,8 @@ function ArtistForm() {
                     onChange={(evt) => setPhone(evt.target.value)}
                   />
                 </Form.Group>
+                {/* End of Phone container */}
+                {/* Email container */}
                 <Form.Group id="contactEmail">
                   <Form.Label>Contact Email:</Form.Label>
                   <Form.Control
@@ -178,6 +187,8 @@ function ArtistForm() {
                     onChange={(evt) => setEmail(evt.target.value)}
                   />
                 </Form.Group>
+                {/* End of email container */}
+                {/* Show name container*/}
                 <Form.Group id="showName">
                   <Form.Label>Show Name:</Form.Label>
                   <Form.Control
@@ -186,6 +197,8 @@ function ArtistForm() {
                     onChange={(evt) => setShowName(evt.target.value)}
                   />
                 </Form.Group>
+                {/* End of show name container */}
+                {/* Description of the show container */}
                 <Form.Group>
                   <Form.Label>Description of the Show: </Form.Label>
                   <Form.Control
@@ -197,6 +210,8 @@ function ArtistForm() {
                     onChange={(evt) => setShowDesc(evt.target.value)}
                   />
                 </Form.Group>
+                {/* End of description container */}
+                {/* Bio Container */}
                 <Form.Group>
                   <Form.Label for="bio">Bio:</Form.Label>
                   <textarea
@@ -206,19 +221,38 @@ function ArtistForm() {
                     onChange={(evt) => setBio(evt.target.value)}
                   />
                 </Form.Group>
+                {/*End of bio container */}
+                {/* Main image container */}
                 <Form.Group>
                   <Form.Label>Main Image:</Form.Label>
-                  <Form.Control className="img_submit" type="file" onChange={handleImgMain} />
+                  <Form.Control
+                    className="img_submit"
+                    type="file"
+                    onChange={handleImgMain}
+                  />
                 </Form.Group>
+                {/* End of MAIN image container */}
+                {/* Image two container */}
                 <Form.Group>
                   <Form.Label>Image Two:</Form.Label>
-                  <Form.Control className="img_submit" type="file" onChange={handleImgTwo} />
+                  <Form.Control
+                    className="img_submit"
+                    type="file"
+                    onChange={handleImgTwo}
+                  />
                 </Form.Group>
+                {/* End of image two container  */}
+                {/* Image three Container */}
                 <Form.Group>
                   <Form.Label>Image Three:</Form.Label>
-                  <Form.Control className="img_submit" type="file" onChange={handleImgThree} />
+                  <Form.Control
+                    className="img_submit"
+                    type="file"
+                    onChange={handleImgThree}
+                  />
                 </Form.Group>
-
+                {/* End of Image three container */}
+                {/* Video link COntainer */}
                 <Form.Group id="vidLink">
                   <Form.Label>Video Link:</Form.Label>
                   <Form.Control
@@ -227,8 +261,9 @@ function ArtistForm() {
                     onChange={(evt) => setVideoLink(evt.target.value)}
                   />
                 </Form.Group>
-
-                <Button className="w-100" type="submit">
+                {/* End of video link container */}
+                {/* Submit Button */}
+                <Button id="form_button" className="w-100" type="submit">
                   Submit
                 </Button>
               </Form>

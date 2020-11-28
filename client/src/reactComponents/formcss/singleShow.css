@@ -1,10 +1,14 @@
 .show_button{
   border:none;
-  background-color:#007bff ;
-  color: white;
+  background-color: #ffae57;
+  color:#1d2433;
   width: 75px;
     height: 35px;
    
+}
+.show_button:hover{
+  transition: transform 0.3s ease-out;
+  transform:scale(1.1);
 }
 
 .single_show h4{

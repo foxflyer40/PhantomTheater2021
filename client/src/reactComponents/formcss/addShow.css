@@ -1,17 +1,32 @@
-.add_show{
-    background-color:  #1d2433;
-    color: rgb(195, 247, 9);;
+/* Add show container styling */
+.add_show {
+  background-color: #1d2433;
+  color: rgb(195, 247, 9);
 }
-
-#form{
-    background-color: #1d2433;;
+/* Form back ground color */
+#form {
+  background-color: #1d2433;
 }
-#container_add{
-    background-color: #1d2433;
+/* Container styling */
+#container_add {
+  background-color: #1d2433;
 }
-.card{
-background-color: #1d2433;
-border-top:none;
-border-bottom: none;
-
+/* Background of the form */
+.card {
+  background-color: #1d2433;
+  border-top: none;
+  border-bottom: none;
+}
+/* Submit button styling */
+#add_submit {
+  background-color: #ffae57;
+  color: #1d2433;
+  border: none;
+  border-radius: 6%;
+  text-transform: uppercase;
+}
+/* Submit form button annimation */
+#add_submit:hover {
+  transition: transform 0.3s ease-out;
+  transform: scale(1.1);
 }

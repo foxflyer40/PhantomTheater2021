@@ -2,3 +2,12 @@
   color: rgb(195, 247, 9);
 
 }
+#login_button{
+  background-color: #ffae57;
+  border:none;
+  color:#1d2433;
+}
+#login_button:hover{
+  transition: transform 0.3s ease-out;
+  transform:scale(1.1);
+}

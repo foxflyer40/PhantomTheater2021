@@ -38,6 +38,7 @@ export default function Login() {
 
   return (
     <div className="login_container">
+    {/* Login form container */}
     <Container
       className="d-flex align-items center justify-content-center mt-5"
       style={{ minHeight: "80vh" }}
@@ -45,6 +46,7 @@ export default function Login() {
       <div className="w-100" style={{ maxWidth: "420px" }}>
         <Card>
           <Card.Body>
+          
             <h2 className="text-center mb-2">Admin Login</h2>
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
@@ -56,7 +58,7 @@ export default function Login() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" ref={passwordRef} required />
               </Form.Group>
-              <Button disabled={loading} className="w-100" type="submit">
+              <Button disabled={loading} id="login_button" className="w-100" type="submit">
                 Log In
               </Button>
             </Form>
