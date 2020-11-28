@@ -51,6 +51,9 @@ function ArtistForm() {
     event.target.bioInput.value = "";
     event.target.showNameInput.value = "";
     event.target.showDescInput.value = "";
+    // event.target.mainImage.value = "";
+    // event.target.imageTwo.value = "";
+    // event.target.imageThree.value = "";
     event.target.vidInput.value = "";
   }
 
@@ -75,7 +78,6 @@ function ArtistForm() {
 
     mainRef.put(imageFile).then((snapshot) => {
       mainRef.getDownloadURL().then((url) => {
-        console.log(url);
         setMainImage(url);
       });
     });
@@ -97,7 +99,6 @@ function ArtistForm() {
 
     imgTwoRef.put(imageTwoFile).then((snapshot) => {
       imgTwoRef.getDownloadURL().then((url) => {
-        console.log(url);
         setImageTwo(url);
       });
     });
@@ -119,7 +120,6 @@ function ArtistForm() {
 
     imgThreeRef.put(imageThreeFile).then((snapshot) => {
       imgThreeRef.getDownloadURL().then((url) => {
-        console.log(url);
         setImageThree(url);
       });
     });

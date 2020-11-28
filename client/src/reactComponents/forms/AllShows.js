@@ -20,7 +20,7 @@ function AllShows() {
    async function seeAllShows() {
       // get all data from shows collection
       const showsRef = firestore.collection('shows')
-      const showSnapshot = await showsRef.where('status', '!=', 'proposal').get()
+      const showSnapshot = await showsRef.where('status', '==', 'Booked').get()
     
       // create array of all shows
       const allShowsArray = showSnapshot.docs.map(collectAllIdsAndDocs)
