@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import app, { firestore } from "../firebase/firebase";
+import NumberFormat from 'react-number-format'
 import "../formcss/artistForm.css";
 
 function ArtistForm() {
@@ -14,13 +15,13 @@ function ArtistForm() {
   let [showDesc, setShowDesc] = useState("");
 
   let [imageFile, setImageFile] = useState("");
-  let [mainImage, setMainImage] = useState("");
+  let [image1, setimageOne] = useState("");
 
   let [imageTwoFile, setImageTwoFile] = useState("");
-  let [imageTwo, setImageTwo] = useState("");
+  let [image2, setImageTwo] = useState("");
 
   let [imageThreeFile, setImageThreeFile] = useState("");
-  let [imageThree, setImageThree] = useState("");
+  let [image3, setImageThree] = useState("");
 
   let [videoLink, setVideoLink] = useState("");
 
@@ -33,9 +34,9 @@ function ArtistForm() {
     showName: showName,
     showDesc: showDesc,
     bio: bio,
-    mainImage: mainImage,
-    imageTwo: imageTwo,
-    imageThree: imageThree,
+    image1: image1,
+    image2: image2,
+    image3: image3,
     videoLink: videoLink,
   };
 
@@ -43,7 +44,7 @@ function ArtistForm() {
   async function enterNewArtist(event) {
     event.preventDefault();
     // get artist collection | .doc creates new entry with auto id | .set(artist) populates new artist entry
-    firestore.collection("artists").doc().set(artist);
+    firestore.collection("shows").doc().set(artist);
     event.target.displayNameInput.value = "";
     event.target.contactNameInput.value = "";
     event.target.phoneInput.value = "";
@@ -51,7 +52,7 @@ function ArtistForm() {
     event.target.bioInput.value = "";
     event.target.showNameInput.value = "";
     event.target.showDescInput.value = "";
-    // event.target.mainImage.value = "";
+    // event.target.imageOne.value = "";
     // event.target.imageTwo.value = "";
     // event.target.imageThree.value = "";
     event.target.vidInput.value = "";
@@ -78,7 +79,7 @@ function ArtistForm() {
 
     mainRef.put(imageFile).then((snapshot) => {
       mainRef.getDownloadURL().then((url) => {
-        setMainImage(url);
+        setimageOne(url);
       });
     });
   };
@@ -136,7 +137,7 @@ function ArtistForm() {
         <div className="w-100" style={{ maxWidth: "420px" }}>
           <Card>
             <Card.Body>
-              <h2 className="text-center mb-2">Artist Submission Form</h2>
+              <h2 className="text-center mb-2">Fucken Artist Information Form 'n shit</h2>
               <br />
               {/* Start of the form */}
               <Form
@@ -154,6 +155,7 @@ function ArtistForm() {
                   <Form.Control
                     type="text"
                     name="displayNameInput"
+                    placeholder="Enter Artist Name"
                     onChange={(evt) => setDisplayName(evt.target.value)}
                   />
                 </Form.Group>
@@ -164,6 +166,7 @@ function ArtistForm() {
                   <Form.Control
                     type="text"
                     name="contactNameInput"
+                    placeholder="Enter Contact Name"
                     onChange={(evt) => setContactName(evt.target.value)}
                   />
                 </Form.Group>
@@ -171,7 +174,11 @@ function ArtistForm() {
                 {/* Phone container */}
                 <Form.Group id="contactPhone">
                   <Form.Label>Contact Phone:</Form.Label>
-                  <Form.Control
+                  <NumberFormat
+                    className="form-control"
+                    mask="_"
+                    format="(###) ###-####"
+                    placeholder="Enter Phone"
                     type="phone"
                     name="phoneInput"
                     onChange={(evt) => setPhone(evt.target.value)}
@@ -184,6 +191,7 @@ function ArtistForm() {
                   <Form.Control
                     type="email"
                     name="emailInput"
+                    placeholder="Enter Email"
                     onChange={(evt) => setEmail(evt.target.value)}
                   />
                 </Form.Group>
@@ -194,6 +202,7 @@ function ArtistForm() {
                   <Form.Control
                     type="text"
                     name="showNameInput"
+                    placeholder="Enter Show Name"
                     onChange={(evt) => setShowName(evt.target.value)}
                   />
                 </Form.Group>
@@ -205,6 +214,7 @@ function ArtistForm() {
                     type="text"
                     id="showDesc"
                     name="showDescInput"
+                    placeholder="Enter Show Description"
                     // I'd like to make it so that this field looks like bio looks
                     height="20px"
                     onChange={(evt) => setShowDesc(evt.target.value)}
@@ -218,13 +228,14 @@ function ArtistForm() {
                     className="form-control"
                     name="bioInput"
                     rows="6"
+                    placeholder="Enter Artist Bio"
                     onChange={(evt) => setBio(evt.target.value)}
                   />
                 </Form.Group>
                 {/*End of bio container */}
                 {/* Main image container */}
                 <Form.Group>
-                  <Form.Label>Main Image:</Form.Label>
+                  <Form.Label>Image One:</Form.Label>
                   <Form.Control
                     className="img_submit"
                     type="file"
@@ -259,6 +270,7 @@ function ArtistForm() {
                     type="url"
                     name="vidInput"
                     onChange={(evt) => setVideoLink(evt.target.value)}
+                    placeholder="Enter Video Link"
                   />
                 </Form.Group>
                 {/* End of video link container */}
