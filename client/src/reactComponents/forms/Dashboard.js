@@ -39,7 +39,7 @@ function Dashboard() {
             Add a Show
           </Button>
         </div>
-        <hr />
+        <div className="line"></div>
         <div>
           {toggle === "add" ? (
             <AddShow />

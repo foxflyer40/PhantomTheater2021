@@ -37,7 +37,7 @@ function Season() {
 
   return (
     <div className="season_container">
-      <h1>Season Page!</h1>
+      <h1>Season 2019</h1>
       { allShows ? allShows.map(show => {
 
         return <SeasonEvent
@@ -46,6 +46,7 @@ function Season() {
           title={show.title}
           dates={show.dates}
           type={show.type}
+          artist={show.artist}
           blurb={show.blurb}
           artist={show.displayName}
           imageLg={show.imageLg}
