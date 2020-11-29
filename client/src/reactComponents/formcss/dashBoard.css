@@ -1,5 +1,5 @@
-.dash_board{
-  background-color:#1d2433;
+.dash_board {
+  background-color: #1d2433;
   color: white;
   display: flex;
   align-items: center;
@@ -7,28 +7,39 @@
   flex-direction: column;
 }
 
-.dash_board h2{
-    color:  rgb(195, 247, 9);
+.dash_board h2 {
+  color: rgb(195, 247, 9);
 }
-.dash_board button{
-    margin-right: 20px;
-    border-radius: 6%;
+.dash_board button {
+  margin-right: 20px;
+  border-radius: 6%;
 }
 
-.dash_buttons{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-  flex-direction:column;
-  
+.dash_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-#dash_button{
+
+#dash_button {
   background-color: #ffae57;
-  border:none;
-  color:#1d2433;
+  border: none;
+  color: #1d2433;
 }
 
-#dash_button:hover{
+#dash_button:hover {
   transition: transform 0.3s ease-out;
-  transform:scale(1.1);
+  transform: scale(1.1);
+}
+
+.dash_board .line {
+  border: solid 1px;
+  border-color: #ffae57;
+  border-left: none;
+  border-right: none;
+  width: 40vw;
+  height: 5px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }

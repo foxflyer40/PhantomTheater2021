@@ -4,6 +4,7 @@ import "./Artist.css";
 import ArtistImage from "../images/artist.jpg";
 import { firestore } from "../firebase/firebase";
 import ArtistEvent from '../forms/ArtistEvent'
+import '../artist/Artist.css'
 
 const collectAllIdsAndDocs = (doc) => {
   return { id: doc.id, ...doc.data() }
@@ -36,13 +37,12 @@ function Artist() {
 
           key={show.id}
           id={show.id}
-
-          name={show.name}
+          artist={show.artist}
           image1={show.image1}
           image2={show.image2}
           image3={show.image3}
           blurb={show.blurb}
-          contact={show.email}
+          email={show.email}
           link1={show.link1}
           link2={show.link2}
         ></ArtistEvent >
