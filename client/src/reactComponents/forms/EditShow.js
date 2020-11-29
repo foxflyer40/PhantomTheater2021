@@ -32,6 +32,7 @@ let nullShow = {
 };
 
 export default function EditShow() {
+   let [numberOfShows, setNumberOfShows] = useState(0)
    const history = useHistory();
    // create state object to hold values from database
    let [thisShow, setThisShow] = useState(nullShow);
@@ -101,6 +102,7 @@ export default function EditShow() {
 
    if (thisShow.title === "title") {
       getOneShow();
+      
    }
 
    //*************************************************** */
@@ -108,6 +110,10 @@ export default function EditShow() {
    async function enterUpdates(event) {
       event.preventDefault();
       console.log("Updating...");
+
+// take each date input and .push onto the dates array
+
+
 
       let showUpdate = {
          title: title,
@@ -137,11 +143,11 @@ export default function EditShow() {
    }
 
    const handleAddShow = () => {
-      numberOfShows += 1
+      setNumberOfShows(numberOfShows += 1)
       console.log(numberOfShows)
    }
 
-   let numberOfShows = dates.length
+   
    return (
       <div className="edit_show">
          <Container
