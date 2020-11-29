@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 // path home
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve("/index.html"));
+  res.sendFile(path.resolve("./client/public"));
 });
 
 //--------------------email sending functionality---------------------//

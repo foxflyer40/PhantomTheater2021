@@ -97,6 +97,9 @@ export default function EditShow() {
          showInData.video1 ? setVideo1(showInData.video1) : setVideo1("");
          showInData.link1 ? setLink1(showInData.link1) : setLink1("");
          showInData.link2 ? setLink2(showInData.link2) : setLink2("");
+
+         numberOfShows !== showInData.dates.length ? setNumberOfShows(showInData.dates.length) : console.log()
+
       }
    }
 
@@ -145,6 +148,13 @@ export default function EditShow() {
    const handleAddShow = () => {
       setNumberOfShows(numberOfShows += 1)
       console.log(numberOfShows)
+   }
+
+   const handleDates = (evt) => {
+      let currentDates = dates
+      currentDates.push(evt.target.value)
+      setDates(currentDates)
+      console.log(dates)
    }
 
    
@@ -234,12 +244,12 @@ export default function EditShow() {
                            </Form.Group>
                            <Form.Group>
                               <Form.Label>Showtimes:</Form.Label>
-                              {dates.length >= 1 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[0]} /> : console.log()}
-                              {dates.length >= 2 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[1]} /> : console.log()}
-                              {dates.length >= 3 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[2]} /> : console.log()}
-                              {dates.length >= 4 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[3]} /> : console.log()}
-                              {dates.length >= 5 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[4]} /> : console.log()}
-                              {dates.length >= 6 ? <Form.Control type='dateTime-local' className="dates" defaultValue={dates[5]} /> : console.log()}
+                              {numberOfShows >= 1 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[0]} /> : console.log()}
+                              {numberOfShows >= 2 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[1]} /> : console.log()}
+                              {numberOfShows >= 3 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[2]} /> : console.log()}
+                              {numberOfShows >= 4 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[3]} /> : console.log()}
+                              {numberOfShows >= 5 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[4]} /> : console.log()}
+                              {numberOfShows >= 6 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[5]} /> : console.log()}
                            </Form.Group>
                         </Card.Body>
                         {/* left side column of form END*/}
