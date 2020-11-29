@@ -19,7 +19,7 @@ function AdminForm() {
 
   let [status, setStatus] = useState("Booked"); 
   let [numOfShows, setNumOfShows] = useState(0);
-  //   let [dates, setDates] = useState(""); // creates array of dates/times
+    let [dates, setDates] = useState([]); // creates array of dates/times
 
   // create state for each artist field
   let [artist, setArtist] = useState("");
@@ -42,7 +42,8 @@ function AdminForm() {
     type: type,
     blurb: blurb,
     imageLg: imageLg,
-    status: status,
+     status: status,
+    dates: dates,
     artist: artist,
     contactName: contactName,
     phone: phone,
@@ -73,7 +74,7 @@ function AdminForm() {
       event.target.blurbIn.value = "";
       event.target.typeIn.value = "";
       event.target.imageLgIn.value = "";
-      event.target.statusIn.value = "";
+      // event.target.statusIn.value = "";
       event.target.showDescriptionInput.value = "";
       event.target.artistInput.value = "";
       event.target.contactNameInput.value = "";
