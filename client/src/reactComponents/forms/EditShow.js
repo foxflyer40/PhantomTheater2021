@@ -3,11 +3,12 @@ import { firestore } from "../firebase/firebase";
 import { storage } from "../firebase/firebase";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import DatesModal from './DatesModal'
 import "../formcss/editShow.css"
 import NumberFormat from "react-number-format";
 
 let id = document.location.hash.substring(1)
+
+
 
 let nullShow = {
    title: "title",
@@ -32,8 +33,6 @@ let nullShow = {
 
 export default function EditShow() {
    const history = useHistory();
-
-   const [modal, setModal] = useState(false)
    // create state object to hold values from database
    let [thisShow, setThisShow] = useState(nullShow);
 
@@ -70,9 +69,9 @@ export default function EditShow() {
       } else {
 
          let showInData = showIn.data();
-         console.log('line 76 ', showInData)
+     
          setThisShow(showInData);
-         console.log('line 78 ', thisShow)
+   
          showInData.title ? setTitle(showInData.title) : setTitle("");
          showInData.blurb ? setBlurb(showInData.blurb) : setBlurb("");
          showInData.type ? setType(showInData.type) : setType("");
@@ -137,14 +136,12 @@ export default function EditShow() {
       history.push("/adminDash");
    }
 
-   const handleModalOpen = () => {
-      setModal(true)
-      console.log('modal = ', modal)
-   }
-   const handleModalClose = () => {
-      setModal(false)
+   const handleAddShow = () => {
+      numberOfShows += 1
+      console.log(numberOfShows)
    }
 
+   let numberOfShows = dates.length
    return (
       <div className="edit_show">
          <Container
@@ -224,14 +221,10 @@ export default function EditShow() {
                               <Button
                                  id="show_button"
                                  className="w-100"
-                                 onClick={handleModalOpen} >
+                                 onClick={handleAddShow} >
                                  Add Showtimes
                               </Button>
-                              {modal && <DatesModal
-                                 closeModal={handleModalClose}
-                                 dates={dates}
-                                 id={id}
-                              />}
+                
                            </Form.Group>
                            <Form.Group>
                               <Form.Label>Showtimes:</Form.Label>
