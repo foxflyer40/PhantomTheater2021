@@ -137,7 +137,7 @@ function ArtistForm() {
         <div className="w-100" style={{ maxWidth: "420px" }}>
           <Card>
             <Card.Body>
-              <h2 className="text-center mb-2">Fucken Artist Information Form 'n shit</h2>
+              <h2 className="text-center mb-2">Artist Information Form</h2>
               <br />
               {/* Start of the form */}
               <Form

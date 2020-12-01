@@ -33,7 +33,9 @@
 .currentPlayText {
   color: white;
 }
-
+.currentPlayText p{
+  font-size: 20pt;
+}
 /*------------------------ next playing image and text styling------------------------ */
 .whatNext {
   display: flex;
@@ -121,12 +123,12 @@
 @media screen and (min-width: 800px) {
   .currentPlayText {
     position: absolute;
-    top: 70%;
+    top: 8%;
     left: 5%;
   }
 
   .currentPlayText h1 {
-    font-size: 36pt;
+    font-size: 48pt;
   }
 
   .whatNext {
@@ -159,7 +161,7 @@
 @media screen and (min-width: 900px) {
   .currentPlayText {
     position: absolute;
-    top: 78%;
+    top: 8%;
     left: 5%;
   }
 
@@ -175,7 +177,7 @@
 @media screen and (min-width: 1050px) {
   .currentPlayText {
     position: absolute;
-    top: 78%;
+    top: 5%;
     left: 5%;
   }
 
@@ -191,7 +193,7 @@
 @media screen and (min-width: 1170px) {
   .currentPlayText {
     position: absolute;
-    top: 85%;
+    top: 5%;
     left: 5%;
   }
 
@@ -206,7 +208,7 @@
 @media screen and (min-width: 1250px) {
   .currentPlayText {
     position: absolute;
-    top: 85%;
+    top: 5%;
     left: 5%;
   }
 
@@ -217,7 +219,7 @@
   }
 
   .currentPlayText h1 {
-    font-size: 38pt;
+    font-size: 48pt;
   }
 
   .whatNextText h2 {

@@ -1,0 +1,83 @@
+/* General Info */
+
+.reserve {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+form {
+  width:90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reserve h1 {
+  color: rgb(195, 247, 9);
+  margin-bottom: 10px;
+  margin: 20px 0px 30px 0px;
+}
+
+.reserve label {
+  margin: 12px 0px 0px 0px;
+}
+/* Button */
+.reserve #button {
+  margin-right: 20px;
+  border-radius: 6%;
+  background-color: #ffae57;
+  border: none;
+  color: #1d2433;
+  padding: 10px;
+}
+
+#button:hover {
+  transition: transform 0.3s ease-out;
+  transform: scale(1.1);
+}
+/* div's */
+/* name div */
+.name input {
+  margin-right: 10px;
+}
+
+/* contact div */
+.contact {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+/* show div */
+.showInfo {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  margin: 10px;
+  margin-bottom:25px;
+}
+
+/* access div */
+.accessInfo {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.accessInfo p {
+  margin: 0px 10px 0px 10px;
+}
+
+.accessInfo #no,
+.accessInfo #yes {
+  margin: 0px 10px;
+}
+
+#addtlInfo {
+  margin-bottom: 10px;
+}

@@ -41,7 +41,6 @@
   float: right;
 }
 
-
 .aboutImage1,
 .aboutImage2 {
   width: 50vw;
@@ -63,6 +62,24 @@
   align-items: center;
 }
 
+.aboutWrapper h3 {
+  font-size: 22pt;
+}
+
+.aboutWrapper h4 {
+  color: rgb(195, 247, 9);
+  margin-top: 25px;
+}
+
+.aboutWrapper .barn {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.aboutWrapper .board {
+  text-align: center;
+}
+
 /* --------------Contact elements styling-------- */
 .contactWrapper {
   display: flex;
@@ -81,7 +98,6 @@
   font-size: 14pt;
 }
 
-
 /* ------Sponsor List Items Styling------------- */
 .sponsorsList {
   -webkit-column-count: 3;
@@ -93,9 +109,17 @@
   column-gap: 20px;
 }
 
+.sponsorsWrapper .thankYou {
+  text-align: center;
+}
+
 .sponsorHowTo {
   font-size: 18pt;
-  text-align: justify;
+  text-align: center;
+}
+
+.sponsorHowTo .special {
+  color: rgb(195, 247, 9);
 }
 
 /* -----------------------Screen resizing styling--------------- */
@@ -111,7 +135,6 @@
   h3 {
     font-size: 20pt;
   }
-
 }
 
 @media screen and (min-width: 601px) {

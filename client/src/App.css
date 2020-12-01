@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=IM+Fell+English+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
 
 * {
-  font-family: "IM Fell English SC";
+  font-family: "IM Fell DW Pica";
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;

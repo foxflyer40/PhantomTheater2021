@@ -26,7 +26,6 @@
 }
 
 .artistsContainer h3 {
-  color: rgb(195, 247, 9);
   font-size: 22pt;
 }
 
@@ -44,6 +43,7 @@
 
 .textContainer a {
   text-decoration: none;
+  margin-left: 15px;
   color: rgb(195, 247, 9);
 }
 

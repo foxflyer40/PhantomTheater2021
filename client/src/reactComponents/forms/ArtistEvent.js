@@ -21,8 +21,8 @@ function ArtistEvent(props) {
         <div className="artistContact">
           <h5> {props.email}</h5>
           
-          <a href={props.link1}>Artist Link</a>
-          <a href={props.link2}>Artist Link</a>
+          <a href={props.link1}>{props.link1}</a>
+          <a href={props.link2}>{props.link2}</a>
           <br />
         </div>
       </div>
