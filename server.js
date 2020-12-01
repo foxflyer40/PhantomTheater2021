@@ -51,16 +51,18 @@ app.post("/send", (req, res) => {
   let phone = req.body.phone;
   let description = req.body.description;
 
+
+//e-mail body template
+  let mailBody = `Artist Name: ${artist}\nEmail: ${email}\nPhone: ${phone}\nDescription: ${description}`;
+
 //structure of e-mail sent 
   let sentMsg = {
     from: artist,
-    to: "",
+    to: "bschussid@aol.com",
     subject: "You have a new show proposal!",
     text: mailBody,
   };
 
-//e-mail body template
-  let mailBody = `Artist Name: ${artist}\nEmail: ${email}\nPhone: ${phone}\nDescription: ${description}`;
 
 //e-mail send function + error handling
   transporter.sendMail(sentMsg, (err, info) => {
