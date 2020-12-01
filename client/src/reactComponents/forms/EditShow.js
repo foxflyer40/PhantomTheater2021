@@ -214,11 +214,11 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image (large):</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="imageLg"
                                  name="imageLgIn"
-                                 value={imageLg}
-                                 onChange={(evt) => setImageLg(evt.target.value)}
+                                 // value={imageLg}
+                                 // onChange={(evt) => setImageLg(evt.target.value)}
                               />
                            </Form.Group>
                            <Form.Group>
@@ -330,7 +330,7 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image 1:</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="image1"
                                  name="image1Input"
                                  value={image1}
@@ -340,7 +340,7 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image 2:</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="image2"
                                  name="image2Input"
                                  value={image2}
@@ -350,7 +350,7 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image 3:</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="image3"
                                  name="image3Input"
                                  value={image3}
@@ -390,11 +390,11 @@ export default function EditShow() {
                                  onChange={(evt) => setLink2(evt.target.value)}
                               />
                            </Form.Group>
-
+                        </Card.Body>
                            <Button id="show_button" className="w-100" type="submit">
                               Submit Updates
                            </Button>
-                        </Card.Body>
+                       
                         {/* right side column of form END */}
                      </div>
                   </Form>
