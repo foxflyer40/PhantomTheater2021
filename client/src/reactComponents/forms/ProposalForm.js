@@ -15,9 +15,6 @@ function ProposalForm() {
   let [phone, setPhone] = useState("");
   let [email, setEmail] = useState("");
 
-  //do we still want two separate collections??
-
-
   async function submitProposal(event) {
     event.preventDefault();
 

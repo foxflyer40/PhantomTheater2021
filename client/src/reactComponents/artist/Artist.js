@@ -38,9 +38,13 @@ function Artist() {
           key={show.id}
           id={show.id}
           artist={show.artist}
-          image1={show.image1}
-          image2={show.image2}
-          image3={show.image3}
+          // image1={show.image1}
+          // image2={show.image2}
+          // image3={show.image3}
+          image1={ArtistImage}
+          image2={ArtistImage}
+          image3={ArtistImage}
+
           blurb={show.blurb}
           email={show.email}
           link1={show.link1}

@@ -34,8 +34,8 @@ function Reserve() {
             <option value="newWorks">New Works</option>
             <option value="everyBrill">Every Brilliant Thing</option>
             <option value="OrlaghC">Orlagh Cassidy</option>
-            <option value="JeffC">Jeff Carey</option>
-            <option value="DJDance">DJ Dance Party</option>
+            {/* <option value="JeffC">Jeff Carey</option>
+            <option value="DJDance">DJ Dance Party</option> */}
           </select>
 
           <br />
@@ -62,7 +62,7 @@ function Reserve() {
           <input type="radio" className="access" name="access" value="yes" />
           <label id="no" for="no">No</label>
         </div>
-        <textarea id="addtlInfo" name="addtlInfo" rows="4" cols="50" placeholder="Enter assistance requirements "></textarea>
+        <textarea id="addtlInfo" name="addtlInfo" rows="4" cols="50" placeholder="Enter accessibility requirements "></textarea>
 
         <input id="button" type='submit' value='Reserve Now'></input>
 

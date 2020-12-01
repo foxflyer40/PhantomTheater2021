@@ -1,41 +1,44 @@
-
 /* -----Main Season page container styling-------- */
-.season_container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom:10px;
-    background-color: #1d2433;
-    color:white;
-    align-items: center;
+.season_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 10px;
+  background-color: #1d2433;
+  color: white;
+  align-items: center;
 }
 
 .season_container h1 {
-    margin: 20px 0px 30px 0px;
-    color: rgb(195, 247, 9);
+  margin: 20px 0px 30px 0px;
+  color: rgb(195, 247, 9);
 }
 
 .season_container h3 {
-    font-size: 22pt;
+  font-size: 22pt;
 }
 
 .season_container .date {
-    font-size: 15pt;
+  font-size: 15pt;
 }
 
 .season_container .blurb {
-    font-size: 14pt;
-    margin: 0px 100px;
+  font-size: 14pt;
+  margin: 0px 100px;
 }
 
 .season_container .line {
-    border: solid 1px;
-    border-color: #ffae57;
-    border-left: none;
-    border-right: none;
-    width: 60vw;
-    height: 5px;
-    margin-top: 15px;
-    margin-bottom: 30px;
-  }
+  border: solid 1px;
+  border-color: #ffae57;
+  border-left: none;
+  border-right: none;
+  width: 60vw;
+  height: 5px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.season_container img {
+  width: 70vw !important;
+}

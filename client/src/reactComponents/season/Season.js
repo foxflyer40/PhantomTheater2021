@@ -4,7 +4,7 @@ import "./Season.css";
 import Calendar from "../images/calendar.jpg";
 import { firestore } from "../firebase/firebase";
 import SeasonEvent from '../forms/SeasonEvent';
-
+import Stage from "../images/stage.jpg";
 
 
 
@@ -49,7 +49,8 @@ function Season() {
           artist={show.artist}
           blurb={show.blurb}
           artist={show.displayName}
-          imageLg={show.imageLg}
+          // imageLg={show.imageLg}
+          imageLg={Stage}
         ></SeasonEvent>
 
       }) : 'loading'
