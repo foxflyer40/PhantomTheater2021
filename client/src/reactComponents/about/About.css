@@ -21,7 +21,8 @@
   flex-direction: column;
   background-color: #1d2433;
   color: white;
-  align-items: center;
+  align-items: center; 
+  margin-bottom: 180px;
 }
 
 /*-----------------------Headers style, font color and margin adjustment----------- */

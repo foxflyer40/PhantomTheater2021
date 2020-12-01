@@ -4,7 +4,7 @@ import Masks from "../images/masks.jpg";
 import Google from "../images/google.jpg";
 import "./About.css";
 
-//------About Page component function containing Phantom Theater information 
+//------About Page component function containing Phantom Theater information
 // and sponsor list. -----------------------------------------------------------
 function About() {
   return (
