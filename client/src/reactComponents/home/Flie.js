@@ -1,19 +1,20 @@
 import React from "react";
-import { gsap } from "gsap";
+import gsap from "gsap"
 import "./Flie.css";
 
 function Flie() {
   const numFlies = 10;
-  const maxHeight = 1000;
-  const maxWidth = 1920;
+  const maxHeight = window.innerWidth;
+  const maxWidth = window.innerHeight;
 
   const random = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
   };
   for (var i = 0; i < numFlies; i++) {
+    let theDiv = document.getElementsByClassName("flies")
     let div = document.createElement("div");
     div.setAttribute("class", "firefly");
-    document.body.appendChild(div);
+    document.body.appendChild(theDiv);
   }
   var fireflies = document.querySelectorAll(".firefly");
   for (var i = 0; i < numFlies; i++) {
@@ -66,7 +67,10 @@ function Flie() {
       }
     );
   }
-  return <div className="flies"></div>;
+  
+  return (<div className="flies">
+    
+  </div>);
 }
 
 export default Flie;
