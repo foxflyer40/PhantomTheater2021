@@ -57,7 +57,7 @@ export default function AllProposals() {
                // contactName={proposal.contactName}
                phone={`Phone: ${proposal.phone}`}
                email={`Email:  ${proposal.email}`}
-               description={`Show Description: ${proposal.description}`}
+               description={proposal.description}
             ></SingleProposal>
          }) : 'Loading'
          }

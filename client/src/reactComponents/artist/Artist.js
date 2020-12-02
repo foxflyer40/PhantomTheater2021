@@ -1,7 +1,6 @@
 // ---------------------Imports --------------------------
 import React, { useState } from "react";
 import "./Artist.css";
-import ArtistImage from "../images/artist.jpg";
 import { firestore } from "../firebase/firebase";
 import ArtistEvent from '../forms/ArtistEvent'
 import '../artist/Artist.css'
@@ -38,14 +37,11 @@ function Artist() {
           key={show.id}
           id={show.id}
           artist={show.artist}
-          // image1={show.image1}
-          // image2={show.image2}
-          // image3={show.image3}
-          image1={ArtistImage}
-          image2={ArtistImage}
-          image3={ArtistImage}
+          image1={show.image1}
+          image2={show.image2}
+          image3={show.image3}
 
-          blurb={show.blurb}
+          bio={show.bio}
           email={show.email}
           link1={show.link1}
           link2={show.link2}

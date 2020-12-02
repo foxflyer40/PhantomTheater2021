@@ -1,7 +1,7 @@
 //-----------------------------Imports---------------------------------------------------------------
 import React from "react";
-import Image from "../images/phantomdinner.jpg";
-import Image2 from "../images/Flanigan.jpg";
+import Image from "../images/dinner2.png";
+import Image2 from "../images/SarahRose.jpg";
 import "./Home.css";
 
 
@@ -32,18 +32,18 @@ function Home() {
           <img className="homeImage" src={Image} />
         </div>
         <div className="currentPlayText">
-          <h1>Currently Playing Show Title</h1>
-          <p>11/20/2020-11/26/2020</p>
+          <h1>Phantom Dinner</h1>
+          <p>12/1/2020-12/3/2020</p>
         </div>
       </div>
 
       <div className="whatNext">
         <div className="whatNextImg">
-          <img src={Image2} />
+          <img id="nextImage" src={Image2} />
         </div>
         <div className="whatNextText">
-          <h2>Next Show Title</h2>
-          <p>20/20/2020- 02/02/0202</p>
+          <h2>MRV Performance Platform</h2>
+          <p>12/5/2020- 12/8/2020</p>
         </div>
       </div>
     </div>

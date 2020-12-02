@@ -19,10 +19,11 @@ function ProposalForm() {
     event.preventDefault();
 
     let showProposal = {
-      status: "Proposal",
-      title: "Enter Title",
-      type: "Enter Type",
-      blurb: "Enter blurb",
+      status: "",
+      title: "",
+      type: "",
+      blurb: "",
+      dates: [],
       description: description,
       artist: artist,
       phone: phone,

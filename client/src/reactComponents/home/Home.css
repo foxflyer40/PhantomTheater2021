@@ -92,7 +92,7 @@
 /* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width: 400px) {
   .currentPlayText {
-    top: 20%;
+    top: 5%;
   }
 
   .whatNextText {
@@ -116,18 +116,11 @@
 }
 
 /* -----------------------Screen resizing styling--------------- */
-@media screen and (min-width: 600px) {
-  .currentPlayText {
-    top: 25%;
-  }
-}
-
-/* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 800px) {
   .currentPlayText {
     position: absolute;
-    top: 8%;
+    top: 5%;
     left: 5%;
   }
 
@@ -152,7 +145,8 @@
   }
 
   .whatNextText h2 {
-    font-size: 30pt;
+    font-size: 24pt;
+    width:25vw;
   }
 
   .whatNextText p {
@@ -163,12 +157,6 @@
 /* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 900px) {
-  .currentPlayText {
-    position: absolute;
-    top: 8%;
-    left: 5%;
-  }
-
   .whatNextText {
     width: 25vw;
     top: 35%;
@@ -179,15 +167,9 @@
 /* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 1050px) {
-  .currentPlayText {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-  }
-
   .whatNextText {
     width: 25vw;
-    top: 35%;
+    top: 45%;
     left: 45%;
   }
 }
@@ -195,12 +177,6 @@
 /* -----------------------Screen resizing styling--------------- */
 
 @media screen and (min-width: 1170px) {
-  .currentPlayText {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-  }
-
   .whatNextText {
     width: 25vw;
     top: 55%;
@@ -210,12 +186,6 @@
 
 /* -----------------------Screen resizing styling--------------- */
 @media screen and (min-width: 1250px) {
-  .currentPlayText {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-  }
-
   .whatNextText {
     width: 25vw;
     top: 60%;

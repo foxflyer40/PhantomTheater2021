@@ -1,6 +1,7 @@
 import React from 'react'
 import '../artist/Artist.css'
 
+
 function ArtistEvent(props) {
   let artistImage1 = <img src={props.image1} alt="" className="artistImage" />
   let artistImage2 = <img src={props.image2} alt="" className="artistImage" />
@@ -12,11 +13,11 @@ function ArtistEvent(props) {
       <div className="artistImageContainer">
         {artistImage1}
         {artistImage2}
-        {artistImage3}
+        {artistImage3} 
       </div>
 
       <div className="textContainer">
-        <p>{props.blurb}</p>
+        <p>{props.bio}</p>
 
         <div className="artistContact">
           <h5> {props.email}</h5>

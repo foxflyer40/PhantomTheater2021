@@ -12,10 +12,10 @@ export default function SingleShow(props) {
          <br />
          <br /> */}
         <h4> {props.artist} </h4>
-         
+         <p>Show Description:</p>
         <h5>   {props.description} </h5>
          {/* {props.contactName}*/}
-         <br /> 
+   
          {props.phone}
          <br />
          {props.email}

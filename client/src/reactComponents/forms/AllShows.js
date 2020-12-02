@@ -57,7 +57,7 @@ function AllShows() {
                title={`Title : ${show.title}`}
                dates={show.dates}
                type={`Show type : ${show.type}`}
-               blurb={`Blurb : ${show.blurb}`}
+               blurb={`Summary : ${show.blurb}`}
                artist={`Artist : ${show.artist}`}
             
             ></SingleShow>            

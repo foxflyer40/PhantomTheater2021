@@ -29,6 +29,7 @@
 .about h1 {
   color: rgb(195, 247, 9);
   margin-bottom: 10px;
+  font-size: 38pt;
 }
 #about_us{
   color:#ffae57 ;
@@ -136,7 +137,6 @@
 
 @media screen and (min-width: 200px) {
   h3 {
-    font-size: 40pt;
     text-align: center;
   }
   .board {
