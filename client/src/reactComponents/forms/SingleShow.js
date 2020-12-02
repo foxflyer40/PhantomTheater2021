@@ -1,43 +1,48 @@
-// ------ Imports --- 
+// ------ Imports ---
 import React from "react";
 import "../formcss/singleShow.css";
 
-
-//  ---- Single show component functionality and export ---- 
+//  ---- Single show component functionality and export ----
 
 export default function SingleShow(props) {
   let numberOfShows = props.dates.length;
 
-  //------- changing the military time string to normal tim 
-  props.dates.forEach((date) => {
+  function changeDate(date) {
+    //------- changing the military time string to normal tim
+
     let newTime;
-  ///sepparating the string at the T.
+    ///sepparating the string at the T.
     let dateFix = date.split("T");
-  console.log(dateFix.length)
-  
-    if (dateFix.lenght > 0) {
-      console.log(dateFix);
+
+    // if (dateFix.lenght > 0) {
+    console.log(dateFix);
+    let startDate = dateFix[0];
+    let year = startDate.split("-")[0];
+    let month = startDate.split("-")[1];
+    let day = startDate.split("-")[2];
+
+    let endDate = month + "/" + day + "/" + year;
+    console.log(endDate);
 
     /// targetting second item of the dateFix array (which is the time)
-      let time = dateFix[1];
-      // hours is the first index item of the time array which was split at the :
-      let hours = time.split(":")[0];
-     
-      // if hours are a higher number than 12 (milt time)  then subtract 12 to convert to normal time
-      if (hours > 12) {
-        newTime = hours - 12;
-      } else {
-         // otherwise the time will just print the number if it is lower than 12
-        newTime = hours;
-      }
+    let time = dateFix[1];
+    // hours is the first index item of the time array which was split at the :
+    let hours = time.split(":")[0];
+    let minutes = time.split(":")[1];
 
-      console.log(newTime);
-      return newTime;
+    // if hours are a higher number than 12 (milt time)  then subtract 12 to convert to normal time
+    if (hours > 12) {
+      newTime = hours - 12 + ":" + minutes;
+    } else {
+      // otherwise the time will just print the number if it is lower than 12
+      newTime = hours + ":" + minutes;
     }
-  });
 
+    let finalDate = endDate + " " + newTime;
+
+    return finalDate;
+  }
   
-
   return (
     <div className="single_show">
       {/* {props.id} */}
@@ -45,17 +50,17 @@ export default function SingleShow(props) {
       {/* {today} */}
       <h4>{props.title}</h4>
 
-      {numberOfShows >= 1 ? props.dates[0] : console.log()}
+      {numberOfShows >= 1 ? changeDate(props.dates[0]) : console.log()}
       <br />
-      {numberOfShows >= 2 ? props.dates[1] : console.log()}
+      {numberOfShows >= 2 ? changeDate(props.dates[1]) : console.log()}
       <br />
-      {numberOfShows >= 3 ? props.dates[2] : console.log()}
+      {numberOfShows >= 3 ? changeDate(props.dates[2]) : console.log()}
       <br />
-      {numberOfShows >= 4 ? props.dates[3] : console.log()}
+      {numberOfShows >= 4 ? changeDate(props.dates[3]) : console.log()}
       <br />
-      {numberOfShows >= 5 ? props.dates[4] : console.log()}
+      {numberOfShows >= 5 ? changeDate(props.dates[4]) : console.log()}
       <br />
-      {numberOfShows >= 6 ? props.dates[5] : console.log()}
+      {numberOfShows >= 6 ? changeDate(props.dates[5]) : console.log()}
 
       {props.artist}
       <br />
@@ -87,3 +92,7 @@ export default function SingleShow(props) {
     </div>
   );
 }
+
+// 2020-07-12T20:30
+
+// 07/12/2020 08:30
