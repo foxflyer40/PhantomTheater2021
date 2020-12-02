@@ -29,6 +29,7 @@
 .about h1 {
   color: rgb(195, 247, 9);
   margin-bottom: 10px;
+  font-size: 38pt;
 }
 
 .aboutImgDiv1 {
@@ -127,22 +128,12 @@
 
 @media screen and (min-width: 200px) {
   h3 {
-    font-size: 40pt;
     text-align: center;
-  }
-}
-
-@media screen and (min-width: 400px) and (max-width: 600px) {
-  h3 {
-    font-size: 20pt;
   }
 }
 
 @media screen and (min-width: 601px) {
   .about {
     font-size: 16pt;
-  }
-  .about h1 {
-    font-size: 30pt;
   }
 }

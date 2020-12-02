@@ -9,6 +9,7 @@
 
 .dash_board h2 {
   color: rgb(195, 247, 9);
+  margin-top:20px;
 }
 .dash_board button {
   margin-right: 20px;
