@@ -8,15 +8,18 @@ export default function Login() {
   //grabs input from the form
   const emailRef = useRef();
   const passwordRef = useRef();
+
   //gets values from login function (defined in AuthContext.js) & authenticates
   const { login } = useAuth();
 
   //error handling - starts free of errors
   const [error, setError] = useState("");
+
   //loading is set in state to disable button after it is clicked
   //prevents multiple users from being created accidentally
   const [loading, setLoading] = useState(false);
   
+  //for re-routing
   const history = useHistory()
 
   async function handleSubmit(evt) {

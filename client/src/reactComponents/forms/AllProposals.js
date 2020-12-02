@@ -9,7 +9,6 @@ const collectAllIdsAndDocs = doc => {
    return { id: doc.id, ...doc.data() }
 }
 
-
 export default function AllProposals() {
 
    let [allProposals, setAllProposals] = useState(null)
@@ -29,6 +28,7 @@ export default function AllProposals() {
    }
    seeAllProposals()
 
+//delete function
    async function handleDelete(id) {
       console.log('delete function fired')
       const allProposalIn = allProposals
@@ -37,12 +37,13 @@ export default function AllProposals() {
       setAllProposals(newProposalIn)
    }
 
+//edit function
    async function handleEdit(id) {
       console.log('Edit function fired', id)
       history.push(`/EditShow#${id}`)
    }
 
-
+   
    return (
       <div>
          { allProposals ? allProposals.map(proposal => {
@@ -56,7 +57,7 @@ export default function AllProposals() {
                // contactName={proposal.contactName}
                phone={`Phone: ${proposal.phone}`}
                email={`Email:  ${proposal.email}`}
-               description={`Show Description: ${proposal.description}`}
+               description={proposal.description}
             ></SingleProposal>
          }) : 'Loading'
          }

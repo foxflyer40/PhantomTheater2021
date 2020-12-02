@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 import "../formcss/editShow.css"
 import NumberFormat from "react-number-format";
 
-let id = document.location.hash.substring(1)
 
 
 
@@ -70,30 +69,25 @@ export default function EditShow() {
       } else {
 
          let showInData = showIn.data();
-     
+
          setThisShow(showInData);
-   
+
          showInData.title ? setTitle(showInData.title) : setTitle("");
          showInData.blurb ? setBlurb(showInData.blurb) : setBlurb("");
          showInData.type ? setType(showInData.type) : setType("");
-         showInData.imageLg ? setImageLg(showInData.imageLg) : setImageLg("");
+         // showInData.imageLg ? setImageLg(showInData.imageLg) : setImageLg("");
+
          showInData.status ? setStatus(showInData.status) : setStatus("");
          showInData.dates ? setDates(showInData.dates) : setDates([]);
-         showInData.artist
-            ? setArtist(showInData.artist)
-            : setArtist("");
-         showInData.contactName
-            ? setContactName(showInData.contactName)
-            : setContactName("");
+         showInData.artist ? setArtist(showInData.artist) : setArtist("");
+         showInData.contactName ? setContactName(showInData.contactName) : setContactName("");
          showInData.phone ? setPhone(showInData.phone) : setPhone("");
          showInData.email ? setEmail(showInData.email) : setEmail("");
          showInData.bio ? setBio(showInData.bio) : setBio("");
-         showInData.description
-            ? setDescription(showInData.description)
-            : setDescription("");
-         showInData.image1 ? setImage1(showInData.image1) : setImage1("");
-         showInData.image2 ? setImage2(showInData.image2) : setImage2("");
-         showInData.image3 ? setImage3(showInData.image3) : setImage3("");
+         showInData.description ? setDescription(showInData.description) : setDescription("");
+         // showInData.image1 ? setImage1(showInData.image1) : setImage1("");
+         // showInData.image2 ? setImage2(showInData.image2) : setImage2("");
+         // showInData.image3 ? setImage3(showInData.image3) : setImage3("");
          showInData.video1 ? setVideo1(showInData.video1) : setVideo1("");
          showInData.link1 ? setLink1(showInData.link1) : setLink1("");
          showInData.link2 ? setLink2(showInData.link2) : setLink2("");
@@ -105,7 +99,7 @@ export default function EditShow() {
 
    if (thisShow.title === "title") {
       getOneShow();
-      
+
    }
 
    //*************************************************** */
@@ -114,9 +108,7 @@ export default function EditShow() {
       event.preventDefault();
       console.log("Updating...");
 
-// take each date input and .push onto the dates array
-
-
+      // take each date input and .push onto the dates array
 
       let showUpdate = {
          title: title,
@@ -157,7 +149,7 @@ export default function EditShow() {
       console.log(dates)
    }
 
-   
+
    return (
       <div className="edit_show">
          <Container
@@ -214,11 +206,11 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image (large):</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="imageLg"
                                  name="imageLgIn"
-                                 value={imageLg}
-                                 onChange={(evt) => setImageLg(evt.target.value)}
+                              // value={imageLg}
+                              // onChange={(evt) => setImageLg(evt.target.value)}
                               />
                            </Form.Group>
                            <Form.Group>
@@ -240,16 +232,16 @@ export default function EditShow() {
                                  onClick={handleAddShow} >
                                  Add Showtimes
                               </Button>
-                
+
                            </Form.Group>
                            <Form.Group>
                               <Form.Label>Showtimes:</Form.Label>
-                              {numberOfShows >= 1 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[0]} /> : console.log()}
-                              {numberOfShows >= 2 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[1]} /> : console.log()}
-                              {numberOfShows >= 3 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[2]} /> : console.log()}
-                              {numberOfShows >= 4 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[3]} /> : console.log()}
-                              {numberOfShows >= 5 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[4]} /> : console.log()}
-                              {numberOfShows >= 6 ? <Form.Control onChange={(evt) => handleDates(evt)}  type='dateTime-local' className="dates" defaultValue={dates[5]} /> : console.log()}
+                              {numberOfShows >= 1 ? <Form.Control onChange={(evt) => handleDates(evt)} type='dateTime-local' className="dates" defaultValue={dates[0]} /> : console.log()}
+                              {numberOfShows >= 2 ? <Form.Control onChange={(evt) => handleDates(evt)} type='dateTime-local' className="dates" defaultValue={dates[1]} /> : console.log()}
+                              {numberOfShows >= 3 ? <Form.Control onChange={(evt) => handleDates(evt)} type='dateTime-local' className="dates" defaultValue={dates[2]} /> : console.log()}
+                              {numberOfShows >= 4 ? <Form.Control onChange={(evt) => handleDates(evt)} type='dateTime-local' className="dates" defaultValue={dates[3]} /> : console.log()}
+                              {numberOfShows >= 5 ? <Form.Control onChange={(evt) => handleDates(evt)} type='dateTime-local' className="dates" defaultValue={dates[4]} /> : console.log()}
+                              {numberOfShows >= 6 ? <Form.Control onChange={(evt) => handleDates(evt)} type='dateTime-local' className="dates" defaultValue={dates[5]} /> : console.log()}
                            </Form.Group>
                         </Card.Body>
                         {/* left side column of form END*/}
@@ -330,7 +322,7 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image 1:</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="image1"
                                  name="image1Input"
                                  value={image1}
@@ -340,7 +332,7 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image 2:</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="image2"
                                  name="image2Input"
                                  value={image2}
@@ -350,7 +342,7 @@ export default function EditShow() {
                            <Form.Group>
                               <Form.Label>Image 3:</Form.Label>
                               <Form.Control
-                                 type="text"
+                                 type="file"
                                  id="image3"
                                  name="image3Input"
                                  value={image3}
@@ -390,11 +382,11 @@ export default function EditShow() {
                                  onChange={(evt) => setLink2(evt.target.value)}
                               />
                            </Form.Group>
-
-                           <Button id="show_button" className="w-100" type="submit">
-                              Submit Updates
-                           </Button>
                         </Card.Body>
+                        <Button id="show_button" className="w-100" type="submit">
+                           Submit Updates
+                           </Button>
+
                         {/* right side column of form END */}
                      </div>
                   </Form>

@@ -62,12 +62,13 @@ export default function SingleShow(props) {
       <br />
       {numberOfShows >= 6 ? changeDate(props.dates[5]) : console.log()}
 
+      {numberOfShows >= 6 ? props.dates[5] : console.log()}
+      <br />
       {props.artist}
       <br />
       {props.type}
       <br />
       <p className="blurb">{props.blurb}</p>
-      <br />
       <br />
       <div className="buttons">
         <button

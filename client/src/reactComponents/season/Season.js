@@ -1,11 +1,11 @@
 // ----------------Imports -----------------------
 import React, { useState } from "react";
 import "./Season.css";
-import Calendar from "../images/calendar.jpg";
 import { firestore } from "../firebase/firebase";
 import SeasonEvent from '../forms/SeasonEvent';
-import Stage from "../images/stage.jpg";
-
+import NewWorks from "../images/newworks.jpg";
+import EveryBrill from '../images/everybrill.jpg';
+import Orlagh from '../images/orlagh.jpg'
 
 
 const collectAllIdsAndDocs = (doc) => {
@@ -49,9 +49,9 @@ function Season() {
           artist={show.artist}
           blurb={show.blurb}
           artist={show.displayName}
-          // imageLg={show.imageLg}
-          imageLg={Stage}
-        > </SeasonEvent>
+          imageLg={show.imageLg}
+
+        ></SeasonEvent>
 
       }) : 'loading'
 
