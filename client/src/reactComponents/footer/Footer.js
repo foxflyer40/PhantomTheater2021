@@ -11,8 +11,8 @@ function Footer() {
   return (
     <div className="footer">
       <div className="social_images">
-        <img className='social' src={Facebook} />
-        <img className='social' id="insta" src={Instagram} />
+        <a href="https://www.facebook.com/Phantom-Theater-1730271753886842/?ref=page_internal"><img className='social' src={Facebook} /></a>
+        <a href="https://www.instagram.com/phantomtheater/"><img className='social' id="insta" src={Instagram} /></a>
       </div>
       <div className="footerLinks"><Link to='/ProposalForm'>For Artists</Link></div>
       <div>

@@ -3,10 +3,6 @@ import React, { useState } from "react";
 import "./Season.css";
 import { firestore } from "../firebase/firebase";
 import SeasonEvent from '../forms/SeasonEvent';
-import NewWorks from "../images/newworks.jpg";
-import EveryBrill from '../images/everybrill.jpg';
-import Orlagh from '../images/orlagh.jpg'
-
 
 const collectAllIdsAndDocs = (doc) => {
   return { id: doc.id, ...doc.data() };
@@ -37,7 +33,7 @@ function Season() {
 
   return (
     <div className="season_container">
-      <h1>Season 2019</h1>
+      <h1>Season 2020</h1>
       { allShows ? allShows.map(show => {
 
         return <SeasonEvent

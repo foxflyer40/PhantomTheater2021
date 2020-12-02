@@ -1,6 +1,6 @@
 //-------------------------------------Imports--------------------------
 import React from "react";
-import Masks from "../images/masks.jpg";
+import Masks from "../images/barn4.jpg";
 import Map from "../images/map.png";
 import "./About.css";
 
