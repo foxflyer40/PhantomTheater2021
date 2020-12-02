@@ -14,7 +14,7 @@ export default function SingleShow(props) {
     ///sepparating the string at the T.
     let dateFix = date.split("T");
 
-    // if (dateFix.lenght > 0) {
+    
     console.log(dateFix);
     let startDate = dateFix[0];
     let year = startDate.split("-")[0];
@@ -32,7 +32,7 @@ export default function SingleShow(props) {
 
     // if hours are a higher number than 12 (milt time)  then subtract 12 to convert to normal time
     if (hours > 12) {
-      newTime = hours - 12 + ":" + minutes;
+      newTime = hours - 12 + ":" + minutes + " PM";
     } else {
       // otherwise the time will just print the number if it is lower than 12
       newTime = hours + ":" + minutes;
@@ -93,6 +93,3 @@ export default function SingleShow(props) {
   );
 }
 
-// 2020-07-12T20:30
-
-// 07/12/2020 08:30
