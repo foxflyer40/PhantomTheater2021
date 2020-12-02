@@ -3,10 +3,6 @@ import React, { useState } from "react";
 import "./Season.css";
 import { firestore } from "../firebase/firebase";
 import SeasonEvent from '../forms/SeasonEvent';
-import NewWorks from "../images/newworks.jpg";
-import EveryBrill from '../images/everybrill.jpg';
-import Orlagh from '../images/orlagh.jpg'
-
 
 const collectAllIdsAndDocs = (doc) => {
   return { id: doc.id, ...doc.data() };
@@ -49,15 +45,9 @@ function Season() {
           artist={show.artist}
           blurb={show.blurb}
           artist={show.displayName}
-<<<<<<< HEAD
-          // imageLg={show.imageLg}
-          imageLg={Stage}
-        > </SeasonEvent>
-=======
           imageLg={show.imageLg}
 
         ></SeasonEvent>
->>>>>>> OH/frontend15
 
       }) : 'loading'
 
