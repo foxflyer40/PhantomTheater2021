@@ -49,15 +49,9 @@ function Season() {
           artist={show.artist}
           blurb={show.blurb}
           artist={show.displayName}
-<<<<<<< HEAD
-          // imageLg={show.imageLg}
-          imageLg={Stage}
-        > </SeasonEvent>
-=======
           imageLg={show.imageLg}
 
         ></SeasonEvent>
->>>>>>> OH/frontend15
 
       }) : 'loading'
 
