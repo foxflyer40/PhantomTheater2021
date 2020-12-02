@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 import "../formcss/editShow.css"
 import NumberFormat from "react-number-format";
 
-let id = document.location.hash.substring(1)
 
 
 
@@ -115,8 +114,6 @@ export default function EditShow() {
       console.log("Updating...");
 
 // take each date input and .push onto the dates array
-
-
 
       let showUpdate = {
          title: title,
