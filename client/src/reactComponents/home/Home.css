@@ -279,7 +279,10 @@
   }
 }
 
-/* ------------------------------ Section That selects childs and atach animation duration and move */
+/* ------------------------------ Section That selects childs ----------------------------------------- */
+/* Gets the child Attach the animation-name to the child */
+/* Then the animation-duration for that Child before*/
+/* Then the animation-duration and the delay after the animation happened */
 .firefly:nth-child(1) {
   animation-name: move1;
 }
@@ -433,6 +436,10 @@
 /* End off selecting the childs */
 
 /* ----------------- Moves keyframes transform translate------------------------------------- */
+/* Each Keyframes with the moves does the same */
+/* All the values on the left side is are considered for rendering */
+/* Values of each is diferent to guive it move between X and Y and a scale */
+
 /* Move 1 */
 @keyframes move1 {
   0% {

@@ -12,6 +12,8 @@ function Home() {
     <div className="homeContainer">
       <div className="currentPlay">
         <div className="imageDiv">
+
+        {/* Firefly Divs that draws to the page */}
             <div className="firefly"></div>
           <div className="firefly"></div>
           <div className="firefly"></div>
