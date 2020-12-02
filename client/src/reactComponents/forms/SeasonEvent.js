@@ -1,6 +1,6 @@
 import React from 'react'
-
-
+import "../formcss/seasonEvent.css"
+import {Link} from "react-router-dom"
 
 function SeasonEvent(props) {
     let showImage = <img src={props.imageLg} alt="" style={{ width: 200 + 'px' }} />
@@ -19,7 +19,7 @@ function SeasonEvent(props) {
             <p className="date">{props.dates[2]}</p>
             <p className="date">{props.dates[3]}</p>
             <p className="date">{props.dates[4]}</p>
-
+               <Link to="Reserve"><button className="season_button">Reserve</button></Link> 
             <div className="line"></div>
         </div>
 

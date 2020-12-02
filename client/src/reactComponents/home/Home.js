@@ -4,13 +4,15 @@ import Image from "../images/phantomdinner.jpg";
 import Image2 from "../images/Flanigan.jpg";
 import "./Home.css";
 
+
 //------ Homepage component function with currently playing as central image and next show -----------
 function Home() {
+ 
   return (
     <div className="homeContainer">
       <div className="currentPlay">
         <div className="imageDiv">
-          <div className="firefly"></div>
+            <div className="firefly"></div>
           <div className="firefly"></div>
           <div className="firefly"></div>
           <div className="firefly"></div>

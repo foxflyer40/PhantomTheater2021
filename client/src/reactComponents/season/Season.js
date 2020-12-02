@@ -51,12 +51,12 @@ function Season() {
           artist={show.displayName}
           // imageLg={show.imageLg}
           imageLg={Stage}
-        ></SeasonEvent>
+        > </SeasonEvent>
 
       }) : 'loading'
 
       }
-
+      
     </div>
   );
 }

@@ -11,7 +11,7 @@ function About() {
     <div className="about">
       <div className="aboutWrapper">
         <h1>About Us</h1>
-        <h3>SOMETIMES FUNKY, OCCASIONALLY SHOCKING,
+        <h3 id="about_us">SOMETIMES FUNKY, OCCASIONALLY SHOCKING,
 ALWAYS ENTERTAINING, NOT TO BE MISSED!</h3>
         <p>
           <div className="aboutImgDiv1">
@@ -37,8 +37,10 @@ ALWAYS ENTERTAINING, NOT TO BE MISSED!</h3>
 
 
         <h4>BOARD OF DIRECTORS</h4>
-        <p className="board">
-          Beth Binns Schoellkopf, Laura Brines, Dan Eckstein, Janet Hubbard-Brown, Dana Jinkins, Sheryl Kurland-Platt,  Lexi Leacock, Tracy Martin, Mary Moffroid, Sucosh Norton, Julia Purinton, Jim Sanford, Kate Youngdahl</p>
+        <div className="board">
+        <div className="board_right">Beth Binns Schoellkopf<br/> Laura Brines<br/> Dan Eckstein <br/> Janet Hubbard-Brown <br/>Dana Jinkins <br/>Sheryl Kurland-Platt<br/>Lexi Leacock</div>
+           <div className="board_left">Tracy Martin<br/>  Mary Moffroid<br/>  Sucosh Norton<br/>  Julia Purinton<br/> Jim Sanford<br/>  Kate Youngdahl</div>
+          </div>
         <div className="line"></div>
       </div>
 
@@ -53,7 +55,7 @@ ALWAYS ENTERTAINING, NOT TO BE MISSED!</h3>
           THEATER IS LOCATED AT THE CORNER OF AIRPORT and DUMP ROADS IN WARREN,
           VERMONT. Please respect our neighbors' wishes and access Phantom
           Theater from East Warren Road.
-          <br/>
+          <br/><br/>
           PHANTOM THEATER
           <br />BOX 416 WARREN, VT 05674
           <br />(802) 496-5997

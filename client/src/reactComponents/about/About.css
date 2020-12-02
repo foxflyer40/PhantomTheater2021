@@ -30,6 +30,9 @@
   color: rgb(195, 247, 9);
   margin-bottom: 10px;
 }
+#about_us{
+  color:#ffae57 ;
+}
 
 .aboutImgDiv1 {
   display: flex;
@@ -77,8 +80,10 @@
   margin-top: 0px;
 }
 
-.aboutWrapper .board {
-  text-align: center;
+.board {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
 }
 
 /* --------------Contact elements styling-------- */
