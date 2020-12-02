@@ -33,7 +33,7 @@ function Home() {
         </div>
         <div className="currentPlayText">
           <h1>Phantom Dinner</h1>
-          <p>12/1/2020-12/3/2020</p>
+          <p>07/25/2020</p>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ function Home() {
         </div>
         <div className="whatNextText">
           <h2>MRV Performance Platform</h2>
-          <p>12/5/2020- 12/8/2020</p>
+          <p>08/08/2020- 08/09/2020</p>
         </div>
       </div>
     </div>
