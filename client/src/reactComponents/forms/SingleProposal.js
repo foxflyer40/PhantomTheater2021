@@ -5,12 +5,8 @@ import "../formcss/singleProposal.css"
 export default function SingleShow(props) {
    return (
       <div className="single_proposal">
-         {/* {props.id} */}
-         {/* <br /> */}
-         {/* <h4>{props.title}</h4> */}
-{/*        
-         <br />
-         <br /> */}
+         {`Artist Link: http://localhost:3000/artistForm#${props.id}`}
+   
         <h4> {props.artist} </h4>
          <p>Show Description:</p>
         <h5>   {props.description} </h5>

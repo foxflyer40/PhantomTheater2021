@@ -19,7 +19,7 @@ function ProposalForm() {
     event.preventDefault();
 
     let showProposal = {
-      status: "",
+      status: "Proposal",
       title: "",
       type: "",
       blurb: "",

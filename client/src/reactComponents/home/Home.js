@@ -32,7 +32,7 @@ function Home() {
           <img className="homeImage" src={Image} />
         </div>
         <div className="currentPlayText">
-          <h1>Phantom Dinner</h1>
+          <h1>The Baron in the Trees</h1>
           <p>07/25/2020</p>
         </div>
       </div>
