@@ -1,6 +1,6 @@
 //-----------------------------Imports---------------------------------------------------------------
 import React from "react";
-import Image from "../images/dinner2.png";
+import Image from "../images/barn3crop.jpg";
 import Image2 from "../images/SarahRose.jpg";
 import "./Home.css";
 
@@ -32,12 +32,13 @@ function Home() {
           <img className="homeImage" src={Image} />
         </div>
         <div className="currentPlayText">
-          <h1>The Baron in the Trees</h1>
-          <p>07/25/2020</p>
+              <h1>Website Under Construction</h1>
+              <h3>See you this summer!</h3>
+          {/* <p>07/25/2020</p> */}
         </div>
       </div>
 
-      <div className="whatNext">
+      {/* <div className="whatNext">
         <div className="whatNextImg">
           <img id="nextImage" src={Image2} />
         </div>
@@ -45,7 +46,7 @@ function Home() {
           <h2>MRV Performance Platform</h2>
           <p>08/08/2020- 08/09/2020</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

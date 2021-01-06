@@ -14,7 +14,8 @@ function Footer() {
         <a href="https://www.facebook.com/Phantom-Theater-1730271753886842/?ref=page_internal"><img className='social' src={Facebook} /></a>
         <a href="https://www.instagram.com/phantomtheater/"><img className='social' id="insta" src={Instagram} /></a>
       </div>
-      <div className="footerLinks"><Link to='/ProposalForm'>Submit a Show Proposal</Link></div>
+        {/* <div className="footerLinks"><Link to='/ProposalForm'>Submit a Show Proposal</Link></div> */}
+        <div className="footerLinks"><Link to='/'>Submit a Show Proposal</Link></div>
       <div>
         <p>Copyright Phantom Theater 2020</p>
       </div>
