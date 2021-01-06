@@ -1,6 +1,6 @@
 //-----------------------------Imports---------------------------------------------------------------
 import React from "react";
-import Image from "../images/barn3crop.jpg";
+import Image from "../images/barn3.jpeg";
 import Image2 from "../images/SarahRose.jpg";
 import "./Home.css";
 
